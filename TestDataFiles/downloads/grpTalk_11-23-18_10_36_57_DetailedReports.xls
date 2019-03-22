@@ -1,0 +1,8 @@
+member	MobileNumber	StartTime	EndTime	Direction	Minutes	AmountUsed	status
+Ravi Kumar	919032796919		11/23/18  4:05:46 PM	OutBound			cannot connected
+Ravi Kumar	919032796919		11/23/18  4:05:09 PM	OutBound			User busy
+Ravi Kumar	919032796919		11/23/18  4:05:07 PM	OutBound			No Call
+Test1	914038119606		11/23/18  4:05:07 PM	OutBound			Call rejected
+Test1	914038119606		11/23/18  4:05:09 PM	OutBound			Call rejected
+Test1	914038119606		11/23/18  4:05:12 PM	OutBound			Call rejected
+Test1	914038119606		11/23/18  4:05:10 PM	OutBound			Call rejected

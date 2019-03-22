@@ -1,0 +1,3 @@
+member	MobileNumber	StartTime	EndTime	Direction	Minutes	AmountUsed	status
+Ravi Kumar	914067297230	02/25/19  8:42:31 PM	02/25/19  8:43:02 PM	OutBound	1	2	call ended
+TestContact1	914067297231	02/25/19  8:42:31 PM	02/25/19  8:43:02 PM	OutBound	1	2	call ended

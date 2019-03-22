@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="GT.GT.CreatingGroupTest">
+        <methods>
+          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
+          <include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab"/>
+          <include name="initialioseBrowser"/>
+          <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
+          <include name="verifyRepeatGrpCalEveryDayFunctionalityThroughHistory"/>
+          <include name="closeBrowser"/>
+          <include name="verifyCallFunctionalityFromUnMutedCount"/>
+          <include name="tearDown"/>
+          <include name="verifyRepeatDaysFunctionalityOnEditGrpTalks"/>
+          <include name="verifyNumberOfUsersFromSelectedContactsTab"/>
+          <include name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage"/>
+        </methods>
+      </class> <!-- GT.GT.CreatingGroupTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

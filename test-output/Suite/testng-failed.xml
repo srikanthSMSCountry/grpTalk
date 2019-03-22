@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="2" name="CreatingGroupTest(failed)">
+    <classes>
+      <class name="GT.GT.CreatingGroupTest">
+        <methods>
+          <include name="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutEnterGrpTalkName"/>
+          <include name="verifyHangUpInOnGoingCallOfindividualUser"/>
+          <include name="verifySearchOptionWithfullValidUserName"/>
+          <include name="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutSelectingAnyPhoneContacts"/>
+          <include name="verifyErrorMessageWhenJunkDataGivenInSearchBox"/>
+          <include name="verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage"/>
+          <include name="verifyGrpTalkNameFieldOnCreateGroupTalk"/>
+          <include name="verify_list_Of_Group_Users_On_MyGrpTalk_Page"/>
+          <include name="verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage"/>
+          <include name="verifyErrorMsgWhenWeSubmitSaveButtonWithOutEnterGrpTalkName"/>
+          <include name="verifyCallFunctionalityOfSavedGrpTalkGroupOnMyGrpTalkPage"/>
+          <include name="verifyRepeatDaysFunctionalityOnEditGrpTalks"/>
+          <include name="VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
+          <include name="verifyCallFunctionalityFromOnCallTab"/>
+          <include name="verifyCallFunctionalityWhenMuteAllButtonIsClickedInUnMutedTab"/>
+          <include name="VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule"/>
+          <include name="verifySelectSpecificCharacterOfContactsInPhoneContacts"/>
+          <include name="verifyAllButtonsDisplayedOnCallOverlay"/>
+          <include name="verifyDialFunctionalityOfScheduleGroup"/>
+          <include name="verifyNonRepeatedGroupCallFunctionalityThroughHistory"/>
+          <include name="verifyUnMuteFromMuteDialfunctionalityInGrpCall"/>
+          <include name="verifyMuteDialfunctionalityOnOverlayInGrpCall"/>
+          <include name="verifyNumberOfUsersFromSelectedContactsTab"/>
+          <include name="verifyCanclefunctionalityOnOverlayInGrpCall"/>
+          <include name="VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
+          <include name="verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial"/>
+          <include name="verifyRepeatGrpCalEveryDayFunctionalityThroughHistory"/>
+          <include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab"/>
+          <include name="initialioseBrowser"/>
+          <include name="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutEnterGrpTalkName"/>
+          <include name="verifyHistoryOfGroup"/>
+          <include name="verifySearchOptionWithPartialValidUserName"/>
+          <include name="verifyMuteCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup"/>
+          <include name="verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage"/>
+          <include name="verifyDatePickerFunctionalityOnEditGrpTalks"/>
+          <include name="verifyErrorMsgWhenWeSubmitSaveButtonWithOutSelectingAnyPhoneContacts"/>
+          <include name="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList"/>
+          <include name="verifyHeaderTabsAndLogosDisplayedOnMyGrpTalksPage"/>
+          <include name="verifySelectContactFromContactList"/>
+          <include name="verifyContactListInPhoneContacts"/>
+          <include name="verifyAddMemberInOnGoingGrpCallFromCreateGroupTalkPageByCreatingNewGroup"/>
+          <include name="verifyQuickDialButtonFunctionalityofGroupsInMyGrpTalk"/>
+          <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
+          <include name="verifyAddMemberInOnGoingGrpCallThroughWebList"/>
+          <include name="verifyCallFunctionalityForPrivateRoomTab"/>
+          <include name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage"/>
+          <include name="verifyfunctionalityOfExcelReportDownloadOptionOnHistory"/>
+          <include name="verifyMuteDialFunctionalityFromScheduleOverlay"/>
+          <include name="verifyScheduleGrpTalk"/>
+          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
+          <include name="verifyAddMemberInOnGoingGrpCallThroughContacts"/>
+          <include name="VerifyDialInOptionInAdvancedSettingsOnOverlayForSchedule"/>
+          <include name="verifyCallFunctionalityFromAllMembersTab"/>
+          <include name="verifyCreateWebLIst"/>
+          <include name="closeBrowser"/>
+          <include name="verifyCallFunctionalityFromUnMutedCount"/>
+          <include name="tearDown"/>
+          <include name="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutSelectingAnyPhoneContacts"/>
+          <include name="verifyCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup"/>
+          <include name="verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk"/>
+          <include name="VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
+          <include name="verifyDatePickerFunctionalityForScheduleOnEditGrpTalks"/>
+        </methods>
+      </class> <!-- GT.GT.CreatingGroupTest -->
+    </classes>
+  </test> <!-- CreatingGroupTest(failed) -->
+  <test thread-count="2" name="ContactsPageTest(failed)">
+    <classes>
+      <class name="GT.GT.ContactsPageTest">
+        <methods>
+          <include name="verifyAddContactsFromMobileContactsTabOnOverlay"/>
+          <include name="verifyCreateListFromContactsPageUsingPlusSymbol"/>
+          <include name="initialioseBrowser"/>
+          <include name="verifyAddContactsFromWebListsTabOnOverlay"/>
+          <include name="verifyCreateListFromContactsPage"/>
+          <include name="closeBrowser"/>
+          <include name="verifyCreateListFromExcelUpload"/>
+          <include name="verifyDeleteListFromContactsPage"/>
+          <include name="verifyReNameListFromContactsPage"/>
+          <include name="tearDown"/>
+          <include name="verifyDeleteAddedContactsFromAddContactsTabOnOverlay"/>
+          <include name="verifyAddContactsFromAddContactsTabOnOverlay"/>
+        </methods>
+      </class> <!-- GT.GT.ContactsPageTest -->
+    </classes>
+  </test> <!-- ContactsPageTest(failed) -->
+  <test thread-count="2" name="AccountPageTest(failed)">
+    <classes>
+      <class name="GT.GT.AccountPageTest">
+        <methods>
+          <include name="verifyConfigureClipsFunctionalityOnProfilePage"/>
+          <include name="verifyViewSubAccountDetailsFunctionalityInSubAccountsTab"/>
+          <include name="initialioseBrowser"/>
+          <include name="verifyTotalAmountUsedByUser"/>
+          <include name="tearDown"/>
+          <include name="verifyAddSubAccountFunctionalityByGivingNonRegisteredNumberInSubAccountsTab"/>
+          <include name="closeBrowser"/>
+          <include name="verifyErrorMsgOnAddSubAccountOverlayWhenMemeberLimitExceedsMainAccountMaxMemberLimit"/>
+          <include name="verifyAddSubAccountFunctionalityWithAlreadyExistedSubAccount"/>
+          <include name="verifyAddSubAccountFunctionalityWithAlreadyExistedMainAccount"/>
+          <include name="verifyTheCountOfAccountManagersInAccountManagersTab"/>
+          <include name="verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab"/>
+          <include name="verifyErrorMsgOnAddSubAccountOverlayWhenTransferAmountExceedsMainAccountAvailableAmountLimit"/>
+          <include name="verifyAllAndRechargesTabsOnMyAccountPage"/>
+          <include name="verifyAddSubAccountFunctionalityWhenSelectPoolAsSubAccountType"/>
+          <include name="verifyEditSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifyExistingSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifyAllTabsAreDisplayedOnMyAccountPage"/>
+          <include name="verifyAddAccountManagerFunctionalityByGivingNonRegisteredNumberInAccountManagersTab"/>
+          <include name="verifyEditUserProfile"/>
+        </methods>
+      </class> <!-- GT.GT.AccountPageTest -->
+    </classes>
+  </test> <!-- AccountPageTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

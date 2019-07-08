@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" thread-count="2" parallel="none">
-
-	<test name="CreatingGroupTest">
+<suite name="TestSuite">
+	<test name="ContactsPageTest1">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="stagingUrl" />
 		<classes>
-			<class name="GT.GT.CreatingGroupTest">	</class>
+			<class name="GT.GT.ContactsPageTest">
+				<methods>
+       				 <include name="verifyCreateListFromContactsPage" />
+       				 <include name="verifyCreateListFromExcelUpload" />
+      			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="AccountPageTest1">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="stagingUrl" />
+		<classes>
+			<class name="GT.GT.AccountPageTest">
+				<methods>
+       				 <include name="verifyAllAndRechargesTabsOnMyAccountPage" />
+       				 <include name="verifyAllTabsAreDisplayedOnMyAccountPage" />
+      			</methods>
+      		</class>	
+		</classes>
+	</test>
+	<test name="CreateAndCallGroupTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="stagingUrl" />
+		<classes>
+			<class name="GT.GT.CreateAndCallGroupTest">
+				<methods>
+       				 <include name="verifySearchOptionWithPartialValidUserName" />
+       				 <include name="verifyFooterTextDisplayedOnMyGrpTalksPage" />
+       				 <include name="verifySearchOptionWithfullValidUserName" />
+      			</methods>
+      		</class>
 		</classes>
 	</test>
 
-	<test name="ContactsPageTest">
-		<classes>
-			<class name="GT.GT.ContactsPageTest">	</class>
-		</classes>
-	</test>
-	
-	<test name="AccountPageTest">
-		<classes>
-			<class name="GT.GT.AccountPageTest">	</class>
-		</classes>
-	</test>
-	
-</suite> <!-- Suite -->
+</suite>
 
-
+			

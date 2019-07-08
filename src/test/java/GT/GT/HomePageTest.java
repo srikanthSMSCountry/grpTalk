@@ -1,20 +1,38 @@
 package GT.GT;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Ignore;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -23,53 +41,81 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import utility.*;
+
 import org.testng.Assert;
 import org.testng.ITestResult;
+import java.util.concurrent.TimeUnit;
 
-public class HomePageTest{
-	public static Logger logger = Logger.getLogger(CreatingGroupTest.class);
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+public class HomePageTest extends BrowserFunctions{
+	public static Logger logger = Logger.getLogger(CreateAndCallGroupTest.class);
 	
-	public static WebDriver driver;
-	ExtentReports extent ;
-	ExtentTest logger_ss;
-	//public static Logger logger = Logger.getLogger(AudioTest.class);
-	String downloadFilepath="D:\\grpTalk\\TestDataFiles\\downloads\\";
-	StringBuilder sb = new StringBuilder();
-
-	@BeforeSuite
-	public void initialioseBrowser() throws InterruptedException {
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("smsc_report.html");
+	@BeforeClass
+	public void beforeCalss(){
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("GrpTalk_Report_Of_HomePage.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		logger_ss = extent.createTest("BeforeTest");
-		System.setProperty("webdriver.chrome.driver", "D:\\GrpTalk\\Drivers\\chromedriver.exe");
-		System.out.println(System.getProperty("user.dir"));
-		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-		chromePrefs.put("profile.default_content_settings.popups", 0);
-		chromePrefs.put("download.default_directory", downloadFilepath);
-		ChromeOptions options = new ChromeOptions();
-		options.setExperimentalOption("prefs", chromePrefs);
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		cap.setCapability(ChromeOptions.CAPABILITY, options);
-		driver = new ChromeDriver(cap);
-		//driver = new ChromeDriver();
-		logger_ss.log(Status.INFO, "Chrome Browser Launched Successfully");
-		//logger.info("Started in Chrome Browser");
-		// driver = new HtmlUnitDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		// driver.get("http://ec2-34-216-45-200.us-west-2.compute.amazonaws.com/#/competitive-trends/702");
-		driver.manage().window().maximize();
-		driver.get("https://www.grptalk.com/");
-		logger_ss.log(Status.INFO, "GrpTalk home page opend successfully");
-		Thread.sleep(6000);
+		logger_ss = extent.createTest("GrpTalkHomePageTest");
+		logger_ss.log(Status.INFO, "GrpTalkHomePageTest");
 	}
-
-	@AfterSuite
-	public void closeBrowser() {
-	driver.quit();
-	logger_ss.log(Status.INFO, "Browser closed successfully");
-	}
+	
+	public String stagingContactUsNumber = "+91-40-47475544";
+	public String produtionContactUsNumber = "+91-40-71044555";
+	public String email =	"hello@grptalk.com";
+	public String appStoreLink = "https://apps.apple.com/in/app/grptalk/id1074172134?gclid=&ls=1&referrer=utm_source%3D%26utm_medium%3Dcpc&source=";
+	public String androidPlayStoreLink = "https://play.google.com/store/apps/details?id=com.mobile.android.grptalk&source=&gclid=&referrer=utm_source%3D%26utm_medium%3Dcpc&";
+	public String facebookLink = "https://www.facebook.com/grptalkconferencing/";
+	public String twitterLink = "https://twitter.com/grptalk";
+	public String youtubeLink = "https://www.youtube.com/channel/UC1hgEdzMlNtp9P4cl_hR0zQ";
+	
+//	By inboxButton = By.className("fa fa-comments");
+//	By email = By.id("email");
+//	By password = By.id("pwd");
+//	By loginButton = By.className("btn-Login");
+//	By archive = By.className("fa fa-archive");
+//	By agent = By.className("fa fa-user");
+//	By chatWidget = By.xpath("//*[@id='widget_btn_container']//*[@src='assets/img/chat-icon.png']");
+//	By welcomeMsgInChat = By.className("user_chat");
+//	
+//	 @Test
+//	 public void chatFunctionality() throws InterruptedException {
+//		// driver.navigate().to("www.staging.grptalk.com");
+//		 driver.switchTo().frame("chat_frame");
+//		 Actions action =new Actions(driver);
+//		 action.moveToElement(driver.findElement(chatWidget)).perform();
+//		 driver.findElement(chatWidget).click();
+//		 Assert.assertEquals(driver.findElement(welcomeMsgInChat).getText(), " Hello!! how may I help you?");
+//		  JavascriptExecutor jsExecutor = (JavascriptExecutor)this.driver;
+//		  String jsOpenNewWindow = "window.open('https://pop.telebu.com/');";
+//		  jsExecutor.executeScript(jsOpenNewWindow);
+//		  Thread.sleep(1000);
+//		  System.out.println("One opennd.");
+//		  driver.findElement(email).sendKeys("sravani.singari@smscountry.com");;
+//		  driver.findElement(password).sendKeys("Sravani@1");
+//		  driver.findElement(loginButton).click();
+//		  Thread.sleep(3000);
+//		  
+//		  Set<String> windowHandleSet = this.driver.getWindowHandles();
+//		  String window1 = (String)windowHandleSet.toArray()[0];
+//		  String window2 = (String)windowHandleSet.toArray()[1];
+//		  System.out.println(window1);
+//		  System.out.println(window2);
+//
+//	  }
 	
 	
 	@Test
@@ -80,9 +126,9 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "verfied visibilityOfGrpTalkEmail");
 		homePage.visibilityOfGrpTalkContactNumber();
 		logger_ss.log(Status.INFO, "verfied visibilityOfGrpTalkContactNumber");
-		Assert.assertEquals(homePage.grpTalkEmail(), "hello@grptalk.com");
+		Assert.assertEquals(homePage.grpTalkEmail(), email);
 		logger_ss.log(Status.INFO, "Successfully verfied GrpTalkEmail");
-		Assert.assertEquals(homePage.grpTalkContactNumber(), "+91-40-38119919");
+		Assert.assertEquals(homePage.grpTalkContactNumber(), stagingContactUsNumber);
 		logger_ss.log(Status.INFO, "Successfully verfied GrpTalkContact");
 		logger_ss.log(Status.INFO, "Successfully verfied GrpTalkEmailAndContactDisplayedInHeaderScetion");
 	}
@@ -93,7 +139,7 @@ public class HomePageTest{
 		HomePage homePage = new HomePage(driver);
 		String url=homePage.featuresTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on featuresTab and get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Features");
+		Assert.assertEquals(url, currentUrl+"/Features");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "Successfully verfied FeaturesTabFunctionality");
 	}
@@ -104,7 +150,7 @@ public class HomePageTest{
 		HomePage homePage = new HomePage(driver);
 		String url=homePage.howItWorksTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on howItWorksTab and get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/how-it-works");
+		Assert.assertEquals(url, currentUrl+"/how-it-works");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "Successfully verfied HowItWorksTabFunctionality");
 	}
@@ -118,7 +164,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on pricing tab and verfied PricingTabFunctionality");
 		String url= homePage.pricingTabURL();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Pricing");
+		Assert.assertEquals(url, currentUrl+"/Pricing");
 		logger_ss.log(Status.INFO, "verfied current url");
 		logger_ss.log(Status.INFO, "Successfully verfied PricingTabFunctionality");
 	}
@@ -129,7 +175,7 @@ public class HomePageTest{
 		HomePage homePage = new HomePage(driver);
 		String url=homePage.customerStoriesTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on ustomerStories tab and get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Customer-Stories");
+		Assert.assertEquals(url, currentUrl+"/Customer-Stories");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "Successfully verfied CustomerStoriesTabFunctionality");
 	}
@@ -141,7 +187,7 @@ public class HomePageTest{
 		driver.navigate().refresh();
 		String url=homePage.solutionsTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on solutions tab and get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Solutions.aspx");
+		Assert.assertEquals(url, currentUrl+"/Solutions.aspx");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "Successfully verfied solutions tab Functionality");
 	}
@@ -154,7 +200,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on AppStoreTab");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://itunes.apple.com/in/app/grptalk/id1074172134?ls=1&mt=8");
+		Assert.assertEquals(url, appStoreLink);
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "Successfully verfied AppStoreTabFunctionality");
 	}
@@ -167,7 +213,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on PlayStoreTab");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://play.google.com/store/apps/details?id=com.mobile.android.grptalk");
+		Assert.assertEquals(url, androidPlayStoreLink);
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "Successfully verfied PlayStoreTabFunctionality");
 	}
@@ -201,12 +247,11 @@ public class HomePageTest{
 		HomePage homePage = new HomePage(driver);
 		homePage.clickWebLoginTab();
 		logger_ss.log(Status.INFO, "clicked on web login tab");
-		//homePage.switchToNewTab();
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
 		Assert.assertTrue(homePage.visibilityOfImgQRCode());
 		logger_ss.log(Status.INFO, "verified visibilityOfImgQRCode ");
-		Assert.assertEquals(url, "https://web.grptalk.com/");
+		Assert.assertEquals(url, CommonMethods.passingData("productionWebHomePage")+"/");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "Successfully verfied WebLoginFunctionality");
 		//homePage.closeCurrentTab();
@@ -230,14 +275,11 @@ public class HomePageTest{
 		HomePage homePage = new HomePage(driver);
 		homePage.clickContactSalesTab();
 		logger_ss.log(Status.INFO, "clicked on ContactSalesTab without entered email");
-		Assert.assertEquals(homePage.getAlertTextForEmail(), "Please Enter Your Email");
-		logger_ss.log(Status.INFO, "verified AlertText ");
-		homePage.acceptAlert();
-		logger_ss.log(Status.INFO, "Accepted AlertText ");
 		homePage.enterEmail();
 		logger_ss.log(Status.INFO, "Entered email ");
 		homePage.clickContactSalesTab();
 		logger_ss.log(Status.INFO, "clicked on ContactSalesTab");
+		Thread.sleep(1000);
 		Assert.assertEquals(homePage.succesMsgOnAlert(), "Thanks for your interest in grptalk. Our team will get in touch with you shortly.");
 		logger_ss.log(Status.INFO, "verified succesMsgOnAlert ");
 		homePage.clickOkButtonOnOverlay();
@@ -255,7 +297,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on ScanQRCodeTab");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://web.grptalk.com/");
+		Assert.assertEquals(url, CommonMethods.passingData("productionWebHomePage")+"/");
 		logger_ss.log(Status.INFO, "verified current url");
 		Assert.assertTrue(homePage.visibilityOfImgQRCode());
 		logger_ss.log(Status.INFO, "verified visibilityOfImgQRCode");
@@ -270,7 +312,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on HomeLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/");
+		Assert.assertEquals(url, currentUrl+"/");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified HomeLinkInFooterSection");
 	}
@@ -283,7 +325,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on AboutLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/About-us");
+		Assert.assertEquals(url, currentUrl+"/About-us");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified AboutLinkInFooterSection");
 	}
@@ -296,7 +338,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on HowItWorksLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/how-it-works");
+		Assert.assertEquals(url, currentUrl+"/how-it-works");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified HowItWorksLinkInFooterSection");
 	}
@@ -309,7 +351,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on PricingLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Pricing");
+		Assert.assertEquals(url, currentUrl+"/Pricing");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified PricingLinkInFooterSection");
 	}
@@ -322,7 +364,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on FeaturesLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Features");
+		Assert.assertEquals(url, currentUrl+"/Features");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified FeaturesLinkInFooterSection");
 	}
@@ -335,7 +377,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on WebLoginLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://web.grptalk.com/");
+		Assert.assertEquals(url, CommonMethods.passingData("productionWebHomePage")+"/");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified WebLoginLinkInFooterSection");
 	}
@@ -348,7 +390,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on CustomerStoriesLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Customer-Stories");
+		Assert.assertEquals(url, currentUrl+"/Customer-Stories");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified CustomerStoriesLinkInFooterSection");
 	}
@@ -357,13 +399,14 @@ public class HomePageTest{
 	public void verifyBlogLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyBlogLinkInFooterSection","verifyBlogLinkInFooterSection");
 		HomePage homePage = new HomePage(driver);
+		System.out.println(driver.getWindowHandle());
 		homePage.clickBlogLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on BlogLinkInFooterSection");
 		homePage.switchToNewTab();
 		logger_ss.log(Status.INFO, "switched ToNewTab");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/blog/");
+		Assert.assertEquals(url, CommonMethods.passingData("productionHomePage")+"/blog/");
 		logger_ss.log(Status.INFO, "verified current url");
 		homePage.closeCurrentTab();
 		logger_ss.log(Status.INFO, "closed current tab");
@@ -371,7 +414,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "switched ToDefaultTab");
 		String grpTalkURL=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(grpTalkURL, "https://www.grptalk.com/");
+		Assert.assertEquals(grpTalkURL, currentUrl+"/");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified BlogLinkInFooterSection");
 	}
@@ -380,13 +423,16 @@ public class HomePageTest{
 	public void verifyFunctionalityOfFacebookLogoInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFunctionalityOfFacebookLogoInFooterSection","verifyFunctionalityOfFacebookLogoInFooterSection");
 		HomePage homePage = new HomePage(driver);
+		System.out.println(driver.getWindowHandle());
 		homePage.clickFacebookLogoInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on FacebookLogoInFooterSection");
+		Thread.sleep(1000);
 		homePage.switchToNewTab();
+		Thread.sleep(3000);
 		logger_ss.log(Status.INFO, "switched ToNewTab");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "getCurrentUrl");
-		Assert.assertEquals(url, "https://www.facebook.com/grptalkconferencing/");
+		Assert.assertEquals(url, facebookLink);
 		logger_ss.log(Status.INFO, "verified current url");
 		homePage.closeCurrentTab();
 		logger_ss.log(Status.INFO, "closed CurrentTab");
@@ -394,7 +440,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "switched ToDefaultTab");
 		String grpTalkURL=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "getCurrentUrl");
-		Assert.assertEquals(grpTalkURL, "https://www.grptalk.com/");
+		Assert.assertEquals(grpTalkURL,currentUrl+"/");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified FunctionalityOfFacebookLogoInFooterSection");
 	}
@@ -420,7 +466,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "switched ToNewTab");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "getCurrentUrl");
-		Assert.assertEquals(url, "https://twitter.com/grptalk");
+		Assert.assertEquals(url, twitterLink);
 		logger_ss.log(Status.INFO, "verified current url");
 		homePage.closeCurrentTab();
 		logger_ss.log(Status.INFO, "closed CurrentTab");
@@ -428,7 +474,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "switched ToDefaultTab");
 		String grpTalkURL=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get CurrentUrl");
-		Assert.assertEquals(grpTalkURL, "https://www.grptalk.com/");
+		Assert.assertEquals(grpTalkURL, currentUrl+"/");
 		logger_ss.log(Status.INFO, "verified current url");
 		logger_ss.log(Status.INFO, "successfully verified FunctionalityOfTwitterLogoInFooterSection");
 		
@@ -454,6 +500,7 @@ public class HomePageTest{
 //		logger_ss.log(Status.INFO, "successfully verified ChatFunctionality");
 //	}
 	
+	@Ignore
 	@Test(priority=5)
 	public void verifyChatFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyChatFunctionality","verifyChatFunctionality");
@@ -481,7 +528,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "switched ToNewTab");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get CurrentUrl");
-		Assert.assertEquals(url, "https://www.youtube.com/channel/UC1hgEdzMlNtp9P4cl_hR0zQ");
+		Assert.assertEquals(url, youtubeLink);
 		logger_ss.log(Status.INFO, "verified current url");
 		homePage.closeCurrentTab();
 		logger_ss.log(Status.INFO, "closed current tab");
@@ -489,7 +536,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "switched to DefaultTab");
 		String grpTalkURL=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get CurrentUrl");
-		Assert.assertEquals(grpTalkURL, "https://www.grptalk.com/");
+		Assert.assertEquals(grpTalkURL, currentUrl+"/");
 		logger_ss.log(Status.INFO, "verified CurrentUrl");
 		logger_ss.log(Status.INFO, "successfully verified FunctionalityOfYoutubeLogoInFooterSection");
 	}
@@ -503,7 +550,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on ContactLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get CurrentUrl");
-		Assert.assertEquals(url, "https://www.grptalk.com/contact-us");
+		Assert.assertEquals(url, currentUrl+"/contact-us");
 		logger_ss.log(Status.INFO, "verified CurrentUrl");
 		logger_ss.log(Status.INFO, "successfully verified ContactLinkInFooterSection");
 	}
@@ -517,7 +564,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on FAQ_LinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get CurrentUrl");
-		Assert.assertEquals(url, "https://www.grptalk.com/faqs");
+		Assert.assertEquals(url, currentUrl+"/faqs");
 		logger_ss.log(Status.INFO, "verified CurrentUrl");
 		logger_ss.log(Status.INFO, "successfully verified ContactLinkInFooterSection");
 	}	
@@ -530,7 +577,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on TermsAndConditionsLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get CurrentUrl");
-		Assert.assertEquals(url, "https://www.grptalk.com/terms-and-conditions");
+		Assert.assertEquals(url, currentUrl+"/terms-and-conditions");
 		logger_ss.log(Status.INFO, "verified CurrentUrl");
 		logger_ss.log(Status.INFO, "successfully verified TermsAndConditionsLinkInFooterSection");
 	}	
@@ -543,7 +590,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on PrivacyAndDataUsageLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
 		logger_ss.log(Status.INFO, "get CurrentUrl");
-		Assert.assertEquals(url, "https://www.grptalk.com/Privacy");
+		Assert.assertEquals(url, currentUrl+"/Privacy");
 		logger_ss.log(Status.INFO, "verified Current Url");
 		logger_ss.log(Status.INFO, "successfully verified PrivacyAndDataUsageLinkInFooterSection");
 	}	
@@ -557,7 +604,7 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "clicked on pricing tab and verfied PricingTabFunctionality");
 		String url= homePage.pricingTabURL();
 		logger_ss.log(Status.INFO, "get current url");
-		Assert.assertEquals(url, "https://www.grptalk.com/Pricing");
+		Assert.assertEquals(url, currentUrl+"/Pricing");
 		logger_ss.log(Status.INFO, "verfied current url");
 		logger_ss.log(Status.INFO, "Successfully verfied PricingTabFunctionality");
 	}
@@ -570,40 +617,5 @@ public class HomePageTest{
 		logger_ss.log(Status.INFO, "get copyRightTextInFooterSection and verified");
 		logger_ss.log(Status.INFO, "successfully verified CopyRightTextInFooterSection");
 	}
-	
-	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException, InterruptedException {
-		System.out.println("This is after method");
-		if (result.getStatus() == ITestResult.FAILURE) {
-			String temp = Utility.getScreenshot(driver);
-			logger_ss.fail(result.getThrowable().getMessage(),
-					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		}
-		extent.flush();
-	//	Utility.handleAlert(driver);
-	//	HomePage homePage = new HomePage(driver);
-		driver.navigate().to("https://www.grptalk.com/");
-		driver.navigate().refresh();
-		Thread.sleep(2000);
-//		Utility.handleAlert(driver);
-//		Thread.sleep(2000);
-//		try{
-//			if(driver.findElements(By.xpath("//*[@id='date']//label")).size()!=0){
-//				crtgrp.closeLiveGroupCallOfRecentlySavedGrpTalkGroup1();
-//				System.out.println("successfully hangUp live GrpCall");
-//				Thread.sleep(2000);
-//				
-//			}
-//			if(driver.findElements(By.xpath("//*[contains(@grpcallname,'Test153')]")).size()!=0){
-//				crtgrp.deleteSavedGrp();
-//				System.out.println("successfully deleted saved Grp");
-//			}
-//			driver.navigate().refresh();
-//		}
-//		
-//		catch(Exception e){
-//			System.out.println("Unable to hangUp live GrpCall or unable to delete saved Grps");
-//		}
-//	}
-	}	
+
 }

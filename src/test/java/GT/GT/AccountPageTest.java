@@ -15,6 +15,7 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Ignore;
@@ -25,34 +26,52 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import utility.*;
+
 public class AccountPageTest extends BrowserFunctions{
 	
-	/*
-	 * Click on account tab
-	 * click On Change Profile Button
-	 * edit User Profile and save details
-	 */
+	@BeforeClass
+	public void beforeCalss(){
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("GrpTalk_Report_Of_AccountsPage.html");
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		logger_ss = extent.createTest("AccountsPageTest");
+		logger_ss.log(Status.INFO, "AccountsPageTest");
+	}
+	
 	@Test
-	public void verifyEditUserProfile() throws InterruptedException{
+	public void verifyEditUserProfile() throws InterruptedException, AWTException{
 		logger_ss = extent.createTest("verifyEditUserProfile","verify Edit User Profile");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.ChangeProfileButton();
 		logger_ss.log(Status.INFO, "Clicked on Change Profile Button");
 		String profileName = accountpage.editUserProfile();
 		logger_ss.log(Status.INFO, "Edit and updated the user prfoile");
-		logger_ss.log(Status.INFO, "Expected username is:Ravi Kumar ");
+		logger_ss.log(Status.INFO, "Expected username is:Srikanth ");
 		logger_ss.log(Status.INFO, "Actual username is: ");
 		logger_ss.log(Status.INFO, profileName);
-		Assert.assertEquals(profileName, "Ravi Kumar");
+		Assert.assertEquals(profileName, "Srikanth");
 		logger_ss.log(Status.INFO, "Successfully verified the updated user profile");
+	}
+	
+	@Test
+	public void verifyRechargeWithPaytm() throws InterruptedException, AWTException{
+		logger_ss = extent.createTest("verifyRechargeWithPaytm","verifyRechargeWithPaytm");
+		AccountPage accountpage = new AccountPage();
+		accountpage.clickOnAccountTab();
+		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
+		accountpage.clickRechargeNowWithPaytmButton();
+		logger_ss.log(Status.INFO, "Clicked on RechargeNowWithPaytmButton");
+		accountpage.enterDetailsOnRechargeOverlayAndProceed();
+		Assert.assertEquals(accountpage.successMsgForPaytmRecharge(),CommonMethods.passingData("successMsgForPaytmRecharge"));
 	}
 	
 	@Test
 	public void verifyAllAndRechargesTabsOnMyAccountPage() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAllAndRechargesTabsOnMyAccountPage","verify All And Recharges Tabs On MyAccount Page");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		Assert.assertTrue(accountpage.clickRechargesTabOnMyAccountPage());
@@ -62,10 +81,10 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Successfully Clicked verified All And Recharges Tabs On MyAccount Page");
 	}
 	
-	@Test
+	@Test(priority=0)
 	public void verifyConfigureClipsFunctionalityOnProfilePage() throws InterruptedException, AWTException{
 		logger_ss = extent.createTest("verifyConfigureClipsFunctionalityOnProfilePage","verifyConfigureClipsFunctionalityOnProfilePage");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickConfigureClipsButton();
@@ -73,7 +92,7 @@ public class AccountPageTest extends BrowserFunctions{
 		accountpage.clickChooseFileForNormalclip();
 		logger_ss.log(Status.INFO, "Clicked on Choose File option For Normalclip");
 		//String path="D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3";
-		Utility.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded Normalclip");
 		accountpage.saveNormalClip();
 		logger_ss.log(Status.INFO, "Saved Normalclip");
@@ -81,7 +100,7 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Success Msg is displayed For UploadedNormalAudioClip");
 		accountpage.clickChooseFileForMuteClip();
 		logger_ss.log(Status.INFO, "Clicked on Choose File option For mute clip");
-		Utility.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded mute clip");
 		accountpage.saveMuteClip();
 		logger_ss.log(Status.INFO, "Saved mute clip");
@@ -111,38 +130,43 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Successfully verified ConfigureClipsFunctionalityOnProfilePage");
 	}
 	
-	@Test
-	public void verifyTotalAmountUsedByUser() throws InterruptedException{
+	@Test(priority=0)
+	public void verifyTotalAmountUsedByUser() throws Exception{
 		logger_ss = extent.createTest("verifyTotalAmountUsedByUser","verify Total Amount Used By User");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		String usedAmount= accountpage.usedAmontInWeb();
+		System.out.println("usedAmount"+usedAmount);
 		logger_ss.log(Status.INFO, "Getting the used amount in web");
 		double usedAmountBeforeCall= Double.parseDouble(usedAmount);
+		System.out.println("usedAmountBeforeCall"+usedAmountBeforeCall);
 		accountpage.navigateToGrpTalkHomePage();
 		logger_ss.log(Status.INFO, "navigated To GrpTalk Home Page");
-		CreatingGroup crtgrp = new CreatingGroup(driver);
-		crtgrp.selectSavedGroupByName("grpTalk");
+		CreatingGroup crtgrp = new CreatingGroup();
+		GrpTalks grpTalk = new GrpTalks();
+		grpTalk.selectSavedGroupByName("grpTalk");
 		logger_ss.log(Status.INFO, "Selected 'grpTalk' group In MyGrpTalk page");
-		crtgrp.dialGroupCallButton();
+		grpTalk.dialGroupCallButton();
 		logger_ss.log(Status.INFO, "Clicked on dial button");
-		crtgrp.dialGroupCallButtonOnOverlay();
+		grpTalk.dialGroupCallButtonOnOverlay();
 		logger_ss.log(Status.INFO, "Clicked on dial grpCall button on overlay");
-		crtgrp.visibleInprogressString();
+		grpTalk.verifyLiveCallState();
 		logger_ss.log(Status.INFO, "Verified the visiblity of inProgress element");
-		crtgrp.hangUpCurrentGrpTalkcall();
+		grpTalk.hangUpCurrentGrpTalkcall();
 		logger_ss.log(Status.INFO, "hangUp the Current GrpTalk call");
-		crtgrp.submitRateCallByClickingGoodOption();
+		grpTalk.submitRateCallByClickingGoodOption();
 		accountpage.navigateToGrpTalkHomePage();
 		logger_ss.log(Status.INFO, "navigated To GrpTalk Home Page");
-		crtgrp.selectSavedGroupByName("grpTalk");
+		grpTalk.selectSavedGroupByName("grpTalk");
 		logger_ss.log(Status.INFO, "Selected 'grpTalk' group In MyGrpTalk page");
-		crtgrp.historyButtonOnMyGrpTalks();
+		grpTalk.historyButtonOnMyGrpTalks();
 		logger_ss.log(Status.INFO, "Clicked on history Button On MyGrpTalks");
-		double amountChargedForCall =crtgrp.totalAmountChargedForGrpcall();
+		double amountChargedForCall =grpTalk.totalAmountChargedForGrpcall();
+		System.out.println("amountChargedForCall"+amountChargedForCall);
 		logger_ss.log(Status.INFO, "Getting the total amount charged for grpCall");
 		double totalAmount = usedAmountBeforeCall+amountChargedForCall;
+		System.out.println("totalAmount"+totalAmount);
 		logger_ss.log(Status.INFO, "Added usedAmountBeforeCall with amountChargedForCall:");
 		logger_ss.log(Status.INFO, String.valueOf(totalAmount));
 		accountpage.navigateToGrpTalkHomePage();
@@ -150,8 +174,10 @@ public class AccountPageTest extends BrowserFunctions{
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		String usedAmountAfterCall= accountpage.usedAmontInWeb();
+		System.out.println("usedAmountAfterCall"+usedAmountAfterCall);
 		logger_ss.log(Status.INFO, "Getting used amount in Web After call");
 		double totalUsedAmountAfterCall =  Double.parseDouble(usedAmountAfterCall);
+		System.out.println("totalUsedAmountAfterCall"+totalUsedAmountAfterCall);
 		logger_ss.log(Status.INFO, String.valueOf(totalUsedAmountAfterCall));
 		Assert.assertEquals(totalAmount, totalUsedAmountAfterCall);
 		logger_ss.log(Status.INFO, "Successfully verified the total amount used for before and after calls by the user");
@@ -178,7 +204,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAllTabsAreDisplayedOnMyAccountPage() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAllTabsAreDisplayedOnMyAccountPage","verifyAllTabsAreDisplayedOnMyAccountPage");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		Assert.assertTrue(accountpage.visibilityOfProfileTabOnMyAccountPage());
@@ -193,7 +219,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyTheCountOfAccountManagersInAccountManagersTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyTheCountOfAccountManagersInAccountManagersTab","verifyTheCountOfAccountManagersInAccountManagersTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickAccountManagersTab();
@@ -213,7 +239,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAddAccountManagerFunctionalityByGivingNonRegisteredNumberInAccountManagersTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAddAccountManagerFunctionalityByGivingNonRegisteredNumberInAccountManagersTab","verifyAddAccountManagerFunctionalityByGivingNonRegisteredNumberInAccountManagersTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickAccountManagersTab();
@@ -229,13 +255,12 @@ public class AccountPageTest extends BrowserFunctions{
 		Assert.assertTrue(accountpage.visibilityOfSendInvitationButtonOnAddAccountManagerOverlay());
 		logger_ss.log(Status.INFO, "Successfully verified visibilityOfSendInvitationButtonOnAddAccountManagerOverlay");
 		logger_ss.log(Status.INFO, "Successfully verified AddAccountManagerFunctionalityByGivingNonRegisteredNumberInAccountManagersTab");
-
 	}
 	
-	@Test
-	public void verifyAccountManagerFunctionalityInAccountManagersTab() throws InterruptedException{
+	@Test(priority=0)
+	public void verifyaaAccountManagerFunctionalityInAccountManagersTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAccountManagerFunctionalityInAccountManagersTab","verifyAccountManagerFunctionalityInAccountManagersTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickAccountManagersTab();
@@ -260,13 +285,13 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Successfully verified Active state of account manager");
 		accountpage.clickEditDetailsButtonOfAccountManager();
 		logger_ss.log(Status.INFO, "clicked on EditDetailsButtonOfAccountManager");
-		Assert.assertEquals(accountpage.accountManagerNameOnEditAccountManagerOverlay(), "Edit Account Manager for Uma");
+		Assert.assertEquals(accountpage.accountManagerNameOnEditAccountManagerOverlay(), "Edit Call Manager for Uma");
 		logger_ss.log(Status.INFO, "Successfully verified accountManagerNameOnEditAccountManagerOverlay");
 		accountpage.changeAccountStatus();
 		logger_ss.log(Status.INFO, "changed AccountStatus to block");
 		accountpage.clickSaveButtonOnEditAccountManagerOverlay();
 		logger_ss.log(Status.INFO, "clicked SaveButtonOnEditAccountManagerOverlay");
-		Assert.assertEquals(accountpage.successMsgOfBlockedAccountManager(), "Account Manager Blocked Successfully");
+		Assert.assertEquals(accountpage.successMsgOfBlockedAccountManager(), "Call Manager Blocked Successfully");
 		logger_ss.log(Status.INFO, "verified successMsgOfBlockedAccountManager");
 		Assert.assertTrue(accountpage.blockedStateOfAccountManager());
 		logger_ss.log(Status.INFO, "Successfully blocked AccountManager");
@@ -277,7 +302,7 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "changed AccountStatusToActive");
 		accountpage.clickSaveButtonOnEditAccountManagerOverlay();
 		logger_ss.log(Status.INFO, "clicked SaveButtonOnEditAccountManagerOverlay");
-		Assert.assertEquals(accountpage.successMsgOfActivatedAccountManager(), "Account Manager Activated Successfully");
+		Assert.assertEquals(accountpage.successMsgOfActivatedAccountManager(), "Call Manager Activated successfully");
 		logger_ss.log(Status.INFO, "verified successMsgOfActivatedAccountManager");
 		Assert.assertTrue(accountpage.activeStateOfAccountManager());
 		logger_ss.log(Status.INFO, "Successfully Activated AccountManager");
@@ -290,7 +315,7 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "changed AccountStatus to block");
 		accountpage.clickSaveButtonOnEditAccountManagerOverlay();
 		logger_ss.log(Status.INFO, "clicked SaveButtonOnEditAccountManagerOverlay");
-		Assert.assertEquals(accountpage.successMsgOfBlockedAccountManager(), "Account Manager Blocked Successfully");
+		Assert.assertEquals(accountpage.successMsgOfBlockedAccountManager(), "Call Manager Blocked Successfully");
 		logger_ss.log(Status.INFO, "verified successMsgOfBlockedAccountManager");
 		accountpage.deleteAccountManager();
 		Assert.assertEquals(accountpage.successMsgForDeletedAccountManager(), "Account Manager deleted Successfully");
@@ -304,7 +329,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAddSubAccountFunctionalityWithAlreadyExistedSubAccount() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAddSubAccountFunctionalityWithAlreadyExistedSubAccount","verifyAddSubAccountFunctionalityWithAlreadyExistedSubAccount");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickSubAccountsTab();
@@ -313,7 +338,7 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Clicked on AddSubAccountTab");
 		accountpage.enterNickNameOnAddSubAccountOverlay("smsc");
 		logger_ss.log(Status.INFO, "entered NickNameOnAddSubAccountOverlay");
-		accountpage.enterMobileOnAddSubAccountOverlay("9642850605");
+		accountpage.enterMobileOnAddSubAccountOverlay("8686588362");
 		logger_ss.log(Status.INFO, "entered MobileOnAddSubAccountOverlay");
 		Assert.assertEquals(accountpage.errorMessageOnOverlay(), "This Account is Already Sub Account, you can't make this account again as sub Account");
 		logger_ss.log(Status.INFO, "Successfully verified errorMessageOnOverlay");
@@ -323,7 +348,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAddSubAccountFunctionalityWithAlreadyExistedMainAccount() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAddSubAccountFunctionalityWithAlreadyExistedMainAccount","verifyAddSubAccountFunctionalityWithAlreadyExistedMainAccount");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickSubAccountsTab();
@@ -342,7 +367,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAddSubAccountFunctionalityWhenSelectPoolAsSubAccountType() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAddSubAccountFunctionality","verifyAddSubAccountFunctionality");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickSubAccountsTab();
@@ -351,9 +376,9 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Clicked on AddSubAccountTab");
 		accountpage.enterNickNameOnAddSubAccountOverlay("smsc");
 		logger_ss.log(Status.INFO, "entered NickNameOnAddSubAccountOverlay");
-		accountpage.enterMobileOnAddSubAccountOverlay("9550866282");
+		accountpage.enterMobileOnAddSubAccountOverlay("9642850605");
 		logger_ss.log(Status.INFO, "entered MobileOnAddSubAccountOverlay");
-		Assert.assertEquals(accountpage.successMessageOnOverlay(), "Registered with Srik");
+		Assert.assertEquals(accountpage.successMessageOnOverlay(), "Registered with Time Pasd");
 		logger_ss.log(Status.INFO, "successfully verified successMessageOnOverlay");
 		accountpage.clickPoolSubAccountOnAddSubAccountOverlay();
 		logger_ss.log(Status.INFO, "Clicked on PoolSubAccountOnAddSubAccountOverlay");
@@ -367,7 +392,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAddSubAccountFunctionalityByGivingNonRegisteredNumberInSubAccountsTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAddSubAccountFunctionalityByGivingNonRegisteredNumberInSubAccountsTab","verifyAddSubAccountFunctionalityByGivingNonRegisteredNumberInSubAccountsTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickSubAccountsTab();
@@ -388,7 +413,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyErrorMsgOnAddSubAccountOverlayWhenMemeberLimitExceedsMainAccountMaxMemberLimit() throws InterruptedException{
 		logger_ss = extent.createTest("verifyErrorMsgOnAddSubAccountOverlayWhenMemeberLimitExceedsMainAccountMaxMemberLimit","verifyErrorMsgOnAddSubAccountOverlayWhenMemeberLimitExceedsMainAccountMaxMemberLimit");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		int totalLines =accountpage.totalAvailableLines();
@@ -398,9 +423,9 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Clicked on AddSubAccountTab");
 		accountpage.enterNickNameOnAddSubAccountOverlay("smsc");
 		logger_ss.log(Status.INFO, "entered NickNameOnAddSubAccountOverlay");
-		accountpage.enterMobileOnAddSubAccountOverlay("9550866282");
+		accountpage.enterMobileOnAddSubAccountOverlay("9642850605");
 		logger_ss.log(Status.INFO, "entered MobileOnAddSubAccountOverlay");
-		Assert.assertEquals(accountpage.successMessageOnOverlay(), "Registered with Srik");
+		Assert.assertEquals(accountpage.successMessageOnOverlay(), "Registered with Time Pasd");
 		logger_ss.log(Status.INFO, "successfully verified successMessageOnOverlay");
 		accountpage.clickQuotaSubAccountOnAddSubAccountOverlay();
 		logger_ss.log(Status.INFO, "clicked on QuotaSubAccountOnAddSubAccountOverlay");
@@ -416,10 +441,11 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyErrorMsgOnAddSubAccountOverlayWhenTransferAmountExceedsMainAccountAvailableAmountLimit() throws InterruptedException{
 		logger_ss = extent.createTest("verifyErrorMsgOnAddSubAccountOverlayWhenTransferAmountExceedsMainAccountAvailableAmountLimit","verifyErrorMsgOnAddSubAccountOverlayWhenTransferAmountExceedsMainAccountAvailableAmountLimit");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		int currentBalance =accountpage.getCurrentBalance();
+		System.out.println("current balance::"+currentBalance);
 		logger_ss.log(Status.INFO, "Taken current balance");
 		accountpage.clickSubAccountsTab();
 		logger_ss.log(Status.INFO, "Clicked on sub accounts tab");
@@ -427,9 +453,9 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Clicked on AddSubAccountTab");
 		accountpage.enterNickNameOnAddSubAccountOverlay("smsc");
 		logger_ss.log(Status.INFO, "entered NickNameOnAddSubAccountOverlay");
-		accountpage.enterMobileOnAddSubAccountOverlay("9550866282");
+		accountpage.enterMobileOnAddSubAccountOverlay("9642850605");
 		logger_ss.log(Status.INFO, "entered MobileOnAddSubAccountOverlay");
-		Assert.assertEquals(accountpage.successMessageOnOverlay(), "Registered with Srik");
+		Assert.assertEquals(accountpage.successMessageOnOverlay(), "Registered with Time Pasd");
 		logger_ss.log(Status.INFO, "successfully verified successMessageOnOverlay");
 		accountpage.clickQuotaSubAccountOnAddSubAccountOverlay();
 		logger_ss.log(Status.INFO, "clicked on QuotaSubAccountOnAddSubAccountOverlay");
@@ -446,7 +472,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAddSubAccountFunctionalityInSubAccountsTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAddSubAccountFunctionalityInSubAccountsTab","verifyAddSubAccountFunctionalityInSubAccountsTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		int totalLines =accountpage.totalAvailableLines();
@@ -479,10 +505,11 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Successfully verified AddSubAccountFunctionalityInSubAccountsTab");
 	}
 	
+	@Ignore
 	@Test
 	public void verifyExistingSubAccountFunctionalityInSubAccountsTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyExistingSubAccountFunctionalityInSubAccountsTab","verifyExistingSubAccountFunctionalityInSubAccountsTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		int currentBalance =accountpage.getCurrentBalance();
@@ -496,7 +523,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab","verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		int currentBalance =accountpage.getCurrentBalance();
@@ -513,16 +540,16 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyViewSubAccountDetailsFunctionalityInSubAccountsTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyViewSubAccountDetailsFunctionalityInSubAccountsTab","verifyViewSubAccountDetailsFunctionalityInSubAccountsTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickSubAccountsTab();
 		logger_ss.log(Status.INFO, "Clicked on sub accounts tab");
 		accountpage.clickViewDetailsOfSubAccount();
 		logger_ss.log(Status.INFO, "clicked on ViewDetailsOfSubAccount");
-		Assert.assertEquals(accountpage.subAccountNameInSubAccountDetails(), "Srikanth Korada");
+		Assert.assertEquals(accountpage.subAccountNameInSubAccountDetails(), "srikanth airtel");
 		logger_ss.log(Status.INFO, "verified subAccountNameInSubAccountDetails");
-		Assert.assertEquals(accountpage.subAccountMobileNumbersInSubAccountDetails(), "918331996838");
+		Assert.assertEquals(accountpage.subAccountMobileNumbersInSubAccountDetails(), "919550866282");
 		logger_ss.log(Status.INFO, "verified subAccountMobileNumbersInSubAccountDetails");
 		logger_ss.log(Status.INFO, "Successfully verified ViewSubAccountDetailsFunctionalityInSubAccountsTab");
 	}
@@ -530,7 +557,7 @@ public class AccountPageTest extends BrowserFunctions{
 	@Test
 	public void verifyEditSubAccountFunctionalityInSubAccountsTab() throws InterruptedException{
 		logger_ss = extent.createTest("verifyEditSubAccountFunctionalityInSubAccountsTab","verifyEditSubAccountFunctionalityInSubAccountsTab");
-		AccountPage accountpage = new AccountPage(driver);
+		AccountPage accountpage = new AccountPage();
 		accountpage.clickOnAccountTab();
 		logger_ss.log(Status.INFO, "Clicked on account tab in MyGrpTalks page");
 		accountpage.clickSubAccountsTab();
@@ -562,38 +589,5 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Successfully verified EditSubAccountFunctionalityInSubAccountsTab");
 	}
 	
-//	@BeforeMethod
-//	public void beforeMethod(ITestResult result) throws IOException, InterruptedException {
-//		logger_ss = extent.createTest("beforeMethod","beforeMethod");
-//		AccountPage accountpage = new AccountPage(driver);
-//		accountpage.clickOnAccountTab();
-//		accountpage.clickAccountManagersTab();
-//		logger_ss.log(Status.INFO, "Clicked on account managers tab");
-//		accountpage.deleteExistingSubAccountManager();
-//		driver.navigate().to("https://web.grptalk.com/MyGrpTalks.aspx");
-//	}
-	
-	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException, InterruptedException {
-		//driver.navigate().refresh();
-		if (result.getStatus() == ITestResult.FAILURE) {
-			String temp = Utility.getScreenshot(driver);
-			logger_ss.fail(result.getThrowable().getMessage(),
-					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		}
-		extent.flush();
-		Thread.sleep(1000);
-		driver.navigate().to("https://web.grptalk.com/MyGrpTalks.aspx");
-		AccountPage accountpage = new AccountPage(driver);
-		try{
-			if(driver.findElements(By.xpath("//*[@id='date']//label")).size()!=0){
-				accountpage.closeLiveGroupCallOfRecentlySavedGrpTalkGroup();
-				Thread.sleep(2000);
-			}
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
-	}
 }
 

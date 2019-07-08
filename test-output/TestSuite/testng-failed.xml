@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]">
+  <test thread-count="5" name="CreateAndCallGroupTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="stagingUrl"/>
+    <classes>
+      <class name="GT.GT.CreateAndCallGroupTest">
+        <methods>
+          <include name="verifyDeleteNormalAndMuteClipsFromScheduleGRoup"/>
+          <include name="verifyRetryCallFunctionality"/>
+          <include name="closeBrowser1"/>
+          <include name="verifyCallFunctionalityOfListMembers"/>
+          <include name="verifyCallFunctionalityFromUnMutedCountInListView"/>
+          <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
+          <include name="verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage"/>
+          <include name="verifyMuteDialFunctionalityFromScheduleOverlay"/>
+          <include name="tearDown"/>
+          <include name="VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
+          <include name="removeLeaveGroup"/>
+          <include name="verifyCallFunctionalityFromAllMembersTabInListView"/>
+          <include name="verifyPrivateRoomFuntionalityInLiveCallListView"/>
+          <include name="verifySaveGroupWithNormalAndMuteClips"/>
+          <include name="VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
+          <include name="verifyCallFunctionalityFromOnCallTab"/>
+          <include name="verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage"/>
+          <include name="verifyDialFunctionalityOfScheduleGroup"/>
+          <include name="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList"/>
+          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
+          <include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab"/>
+          <include name="beforeCalss"/>
+          <include name="createAndSaveTheGroupByLeaveGroupName"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- GT.GT.CreateAndCallGroupTest -->
+    </classes>
+  </test> <!-- CreateAndCallGroupTest(failed) -->
+  <test thread-count="5" name="ContactsPageTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="stagingUrl"/>
+    <classes>
+      <class name="GT.GT.ContactsPageTest">
+        <methods>
+          <include name="closeBrowser1"/>
+          <include name="beforeCalss"/>
+          <include name="tearDown"/>
+          <include name="verifyCreateListFromExcelUpload"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- GT.GT.ContactsPageTest -->
+    </classes>
+  </test> <!-- ContactsPageTest(failed) -->
+  <test thread-count="5" name="AccountPageTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="stagingUrl"/>
+    <classes>
+      <class name="GT.GT.AccountPageTest">
+        <methods>
+          <include name="closeBrowser1"/>
+          <include name="verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab"/>
+          <include name="verifyEditSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="tearDown"/>
+          <include name="beforeCalss"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- GT.GT.AccountPageTest -->
+    </classes>
+  </test> <!-- AccountPageTest(failed) -->
+  <test thread-count="5" name="HomePageTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="stagingHomePage"/>
+    <classes>
+      <class name="GT.GT.HomePageTest">
+        <methods>
+          <include name="closeBrowser1"/>
+          <include name="verifyFunctionalityOfYoutubeLogoInFooterSection"/>
+          <include name="verifyPlayStoreTabFunctionality"/>
+          <include name="verifyFunctionalityOfTwitterLogoInFooterSection"/>
+          <include name="beforeCalss"/>
+          <include name="tearDown"/>
+          <include name="verifyAppStoreTabFunctionality"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- GT.GT.HomePageTest -->
+    </classes>
+  </test> <!-- HomePageTest(failed) -->
+  <test thread-count="5" name="WebGrpTalkHomePageTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="stagingWebHomePage"/>
+    <classes>
+      <class name="GT.GT.WebGrpTalkHomePageTest">
+        <methods>
+          <include name="closeBrowser1"/>
+          <include name="verifyFunctionalityOfTwitterLogoInFooterSection"/>
+          <include name="verifyAboutLinkInFooterSection"/>
+          <include name="verifyCustomerStoriesTabFunctionality"/>
+          <include name="verifyFunctionalityOfFacebookLogoInFooterSection"/>
+          <include name="verifyFeaturesTabFunctionality"/>
+          <include name="verifyFunctionalityOfYoutubeLogoInFooterSection"/>
+          <include name="verify_FAQ_LinkInFooterSection"/>
+          <include name="tearDown"/>
+          <include name="verifyHomeLinkInFooterSection"/>
+          <include name="verifyPricingTabFunctionality"/>
+          <include name="verifyHowItWorksLinkInFooterSection"/>
+          <include name="verifyTermsAndConditionsLinkInFooterSection"/>
+          <include name="verifyContactLinkInFooterSection"/>
+          <include name="verifyGrpTalkLogoFunctionality"/>
+          <include name="verifyFeaturesLinkInFooterSection"/>
+          <include name="verifyBlogLinkInFooterSection"/>
+          <include name="verifyPrivacyAndDataUsageLinkInFooterSection"/>
+          <include name="verifyCustomerStoriesLinkInFooterSection"/>
+          <include name="verifySolutionsTabFunctionality"/>
+          <include name="setup"/>
+          <include name="verifyHowItWorksTabFunctionality"/>
+          <include name="beforeCalss"/>
+          <include name="verifyPricingLinkInFooterSection"/>
+        </methods>
+      </class> <!-- GT.GT.WebGrpTalkHomePageTest -->
+    </classes>
+  </test> <!-- WebGrpTalkHomePageTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

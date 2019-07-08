@@ -12,72 +12,59 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WebGrpTalkHomePage {
 	WebDriver driver;
 	
-	By grpTalkEmail = By.xpath("//*[@class='col-sm-6 col-xs-12 hidden-xs']//*[@class='hdrlnkeml']");
-	By grpTalkContactNumber = By.xpath("//*[@class='col-sm-6 col-xs-9 contctusheads']//*[@class='hdrlnkeml']");
-	//By grpTalkLogo = By.xpath("//*[@alt='grptalk-logo']");
-	By grpTalkLogo = By.xpath("//*[@class='navbar navbar-default navbar-shrink']//*[@id='mainHome']//*[@alt='grptalk-logo']");
-	By featuresTab = By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Features']");
-	By howItWorksTab = By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='How grptalk Works']");
-	By pricingTab = By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Plans and Pricings of grp talk']");
-	By customerStoriesTab = By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Case Study']");
-	By blogTab = By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Blog']");
-	
-//	By blogTab1 = By.xpath("//*[@class='nav navbar-nav navbar-right']//li[5]//*[@id='lnkCase']");
-	By blogTab1 = By.xpath("//*[@class='navbar navbar-default navbar-shrink']//*[@id='bs-example-navbar-collapse-1']//li[5]//*[@id='lnkSolutions']");
-	
-	By webLoginTab = By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@class='page-scroll btn-pink ']");
-	
-	By emailField = By.id("txtEmail2");
-	By contactSalesButton = By.id("btnGetDemo2");
-	By appStoreButton = By.xpath("//*[@class='page-scroll btn btn-primary appstore-qrcode']");
-	By googlePlayButton = By.xpath("//*[@class='page-scroll btn btn-primary playstore-qrcode']");
-	By imgQRCode = By.id("imgQrCode");
-	
-	
-	By scrollUpButton = By.className("scroll icon");
-	
-	By grpTalkLogoInFooterSection = By.id("footerClick");
-	By copyRightTextInFooterSection = By.xpath("//*[@class='col-sm-6']");
-	By homeLinkInFooterSection = By.xpath("//*[@class='mr-xs']//*[@class='f-cont-li-01']//li[1]//a[1]");
-	By aboutLinkInFooterSection = By.xpath("//*[@href='https://www.grptalk.com/About-us']");
-	By howItWorksLinkInFooterSection = By.xpath("//*[@class='f-cont-li-01']//*[@href='https://www.grptalk.com/how-it-works']");
-	By pricingLinkInFooterSection = By.xpath("//*[@class='f-cont-li-01']//*[@href='https://www.grptalk.com/Pricing']");
-	
-	By featuresLinkInFooterSection = By.xpath("//*[@class='col-md-2 col-sm-4 col-xs-12 f-cont-menu clearfix']//*[@title='Features']");
-	By webLoginLinkInFooterSection = By.xpath("//*[@class='col-md-2 col-sm-3 col-xs-12 f-cont-menu clearfix']//*[@href='https://web.grptalk.com']");
-	By customerStoriesLinkInFooterSection = By.xpath("//*[@class='col-md-2 col-sm-3 col-xs-12 f-cont-menu clearfix']//*[@title='Case Study']");
-	By blogLinkInFooterSection = By.xpath("//*[@class='col-md-2 col-sm-3 col-xs-12 f-cont-menu clearfix']//*[@target='_blank']");
-	
-	By contactLinkInFooterSection = By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[@href='https://www.grptalk.com/Contact-us']");
-	By FAQsLinkInFooterSection = By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[@href='https://www.grptalk.com/faqs']");
-	By TermsAndConditionsLinkInFooterSection = By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[@href='https://www.grptalk.com/terms-and-conditions']");
-	By PrivacyAndDataUsageLinkInFooterSection = By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[@href='https://www.grptalk.com/Privacy']");
-	
-	By fbLogoInFooterSection = By.xpath("//*[@class='bgSocialIcon fb']");
-	By twitterLogoInFooterSection = By.xpath("//*[@class='bgSocialIcon twitter']");
-	By youtubeLogoInFooterSection = By.xpath("//*[@class='bgSocialIcon youtube']");
-	
-	By textAboutGrpTalkInFooterSection = By.xpath("//*[@class='col-md-4 col-sm-12 col-xs-12 grp_logo']/p");
-	By textOnFeaturesPage = By.id("bannerHeading1");
-	By textOnHowItWorksPage = By.id("bannerHeading1");
-	By textOnPricingPage = By.id("bannerHeading1");
-	By participantsTabOnPricingPage = By.xpath("//*[@class='box g3-5 participants']");
+	By grpTalkEmail 						= By.xpath("//*[@class='col-sm-6 col-xs-12 hidden-xs']//*[@class='hdrlnkeml']");
+	By grpTalkContactNumber 				= By.xpath("//*[@class='col-sm-6 col-xs-9 contctusheads']//*[@class='hdrlnkeml']");
+	By grpTalkLogo 							= By.xpath("//*[@id='main-slide']//*[@id='mainHome']//*[@alt='grptalk-logo']");
+	By featuresTab 							= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Features']");
+	By howItWorksTab 						= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='How grptalk Works']");
+	By pricingTab 							= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Plans and Pricings of grp talk']");
+	By customerStoriesTab 					= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Case Study']");
+	By blogTab 								= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Blog']");
+	By blogTab1 							= By.xpath("//*[@class='navbar navbar-default navbar-shrink']//*[@id='bs-example-navbar-collapse-1']//li[5]//*[@id='lnkSolutions']");
+	By webLoginTab 							= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@class='page-scroll btn-pink ']");
+	By emailField 							= By.id("txtEmail2");
+	By contactSalesButton 					= By.id("btnGetDemo2");
+	By appStoreButton 						= By.xpath("//*[@class='page-scroll btn btn-primary appstore-qrcode']");
+	By googlePlayButton 					= By.xpath("//*[@class='page-scroll btn btn-primary playstore-qrcode']");
+	By imgQRCode 							= By.id("imgQrCode");
+	By scrollUpButton 						= By.className("scroll icon");
+	By grpTalkLogoInFooterSection 			= By.id("footerClick");
+	By copyRightTextInFooterSection 		= By.xpath("//*[@class='col-sm-6']");
+	By homeLinkInFooterSection 				= By.xpath("//*[@class='mr-xs']//*[@class='f-cont-li-01']//li[1]//a[1]");
+	By aboutLinkInFooterSection 			= By.xpath("//*[contains(@href,'/About-us')]");
+	By howItWorksLinkInFooterSection 		= By.xpath("//*[@class='f-cont-li-01']//*[contains(@href,'/how-it-works')]");
+	By pricingLinkInFooterSection 			= By.xpath("//*[@class='f-cont-li-01']//*[contains(@href,'/Pricing')]");
+	By featuresLinkInFooterSection 			= By.xpath("//*[@class='col-md-2 col-sm-4 col-xs-12 f-cont-menu clearfix']//*[@title='Features']");
+	By webLoginLinkInFooterSection 			= By.xpath("//*[@class='col-md-2 col-sm-3 col-xs-12 f-cont-menu clearfix']//*[@href='https://web.grptalk.com']");
+	By customerStoriesLinkInFooterSection 	= By.xpath("//*[@class='col-md-2 col-sm-3 col-xs-12 f-cont-menu clearfix']//*[@title='Case Study']");
+	By blogLinkInFooterSection 				= By.xpath("//*[@class='col-md-2 col-sm-3 col-xs-12 f-cont-menu clearfix']//*[@target='_blank']");
+	By contactLinkInFooterSection 			= By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[contains(@href,'/Contact-us')]");
+	By FAQsLinkInFooterSection 				= By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[contains(@href,'/faqs')]");
+	By TermsAndConditionsLinkInFooterSection = By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[contains(@href,'/terms-and-conditions')]");
+	By PrivacyAndDataUsageLinkInFooterSection = By.xpath("//*[@class='col-md-12 col-xs-12 f-cont-menu']//*[contains(@href,'/Privacy')]");
+	By fbLogoInFooterSection 				= By.xpath("//*[@class='bgSocialIcon fb']");
+	By twitterLogoInFooterSection 			= By.xpath("//*[@class='bgSocialIcon twitter']");
+	By youtubeLogoInFooterSection 			= By.xpath("//*[@class='bgSocialIcon youtube']");
+	By textAboutGrpTalkInFooterSection 		= By.xpath("//*[@class='col-md-4 col-sm-12 col-xs-12 grp_logo']/p");
+	By textOnFeaturesPage 					= By.id("bannerHeading1");
+	By textOnHowItWorksPage 				= By.id("bannerHeading1");
+	By textOnPricingPage 					= By.id("bannerHeading1");
+	By participantsTabOnPricingPage 		= By.xpath("//*[@class='box g3-5 participants']");
     By conferenceCallsPerMonthTabOnPricingPage = By.xpath("//*[@class='box c5-10 conference']");
-    By minutesTabOnPricingPage = By.xpath("//*[@class='box t30-45 minutes']");
-    By completeButtonOnPricingPage = By.id("btnComplete");
-    By nameForPricingPlan = By.id("txtName");
-    By mobileForPricingPlan = By.id("txtMobile");
-    By emailForPricingPlan = By.id("txtEmail3");
-    By sendButtonOnPricingPage = By.id("4thSend");
+    By minutesTabOnPricingPage 				= By.xpath("//*[@class='box t30-45 minutes']");
+    By completeButtonOnPricingPage 			= By.id("btnComplete");
+    By nameForPricingPlan 					= By.id("txtName");
+    By mobileForPricingPlan 				= By.id("txtMobile");
+    By emailForPricingPlan 					= By.id("txtEmail3");
+    By sendButtonOnPricingPage 				= By.id("4thSend");
     By textMessageForSubmittedDetailsForPricing = By.xpath("//*[@id='divThankU']//*[@class='text-center']");
-    
-    By totalMinutesPerMonthOnPrcingPage = By.className("txtGradient");
-    By textOnCustomerStoriesPage = By.id("bannerHeading1");
-    By textOnBlogPage = By.xpath("//*[@id='bannerHeading1']");
-    By overlay = By.xpath("//*[@class='btn btn-primary app-store']");
-    By imgQRCodeOnWebGrpTalkPage = By.id("imgQrCode");
-    By textDisplayedOnChatBox=By.className("Linkify");
-    By chatFrame =By.xpath("//*[@id='drift-widget-container']//*[@id='drift-widget']");
+    By totalMinutesPerMonthOnPrcingPage 	= By.className("txtGradient");
+    By textOnCustomerStoriesPage 			= By.id("bannerHeading1");
+    By textOnBlogPage 						= By.xpath("//*[@id='bannerHeading1']");
+    By overlay 								= By.xpath("//*[@class='btn btn-primary app-store']");
+    By imgQRCodeOnWebGrpTalkPage 			= By.id("imgQrCode");
+    By textDisplayedOnChatBox				= By.className("Linkify");
+    By chatFrame 							= By.xpath("//*[@id='drift-widget-container']//*[@id='drift-widget']");
     
 	public WebGrpTalkHomePage(WebDriver driver2){
         this.driver = driver2;
@@ -86,7 +73,6 @@ public class WebGrpTalkHomePage {
 	public String textDisplayedOnChatBox(){
 		return driver.findElement(textDisplayedOnChatBox).getText();
 	}
-	
 	
 	public void clickAboutLinkInFooterSection(){
 		Actions actions=new Actions(driver);
@@ -245,7 +231,6 @@ public class WebGrpTalkHomePage {
 	public void clickGrpTalkContactNumber() throws InterruptedException{
 		driver.findElement(grpTalkContactNumber).click();
 		Thread.sleep(3000);
-		//driver.switchTo().alert().accept();
 	}
 	
 	public String featuresTabFunctionality(){
@@ -258,7 +243,7 @@ public class WebGrpTalkHomePage {
 	public String howItWorksTabFunctionality(){
 		WebDriverWait wait=new WebDriverWait(driver, 5);
 		driver.findElement(howItWorksTab).click();
-		wait.until(ExpectedConditions.textToBePresentInElementLocated(textOnHowItWorksPage,"How does grptalk work?"));
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(textOnHowItWorksPage,"How grptalk works?"));
 		return driver.getCurrentUrl();
 		
 	}
@@ -266,7 +251,7 @@ public class WebGrpTalkHomePage {
 	public String pricingTabFunctionality() throws InterruptedException{
 		WebDriverWait wait=new WebDriverWait(driver, 5);
 		driver.findElement(pricingTab).click();
-		wait.until(ExpectedConditions.textToBePresentInElementLocated(textOnPricingPage,"Get the perfect conferencing plan for your needs!"));
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(textOnPricingPage,"Find a conference call plan that's right for you"));
 		driver.findElement(participantsTabOnPricingPage).click();
 		driver.findElement(conferenceCallsPerMonthTabOnPricingPage).click();
 		driver.findElement(minutesTabOnPricingPage).click();
@@ -380,19 +365,4 @@ public class WebGrpTalkHomePage {
 	public void closeCurrentTab(){
 		driver.close();
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

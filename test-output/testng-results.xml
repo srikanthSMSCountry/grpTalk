@@ -1,671 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="8" ignored="0" total="59" passed="51">
+<testng-results skipped="0" failed="6" ignored="1" total="31" passed="24">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5161305" started-at="2019-02-25T13:52:03Z" finished-at="2019-02-25T15:18:04Z">
+  <suite name="Suite" duration-ms="1004370" started-at="2019-07-08T06:37:47Z" finished-at="2019-07-08T06:54:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5161305" started-at="2019-02-25T13:52:03Z" finished-at="2019-02-25T15:18:04Z">
-      <class name="GT.GT.CreatingGroupTest">
-        <test-method status="PASS" signature="initialioseBrowser()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="initialioseBrowser" is-config="true" duration-ms="15923" started-at="2019-02-25T13:51:47Z" finished-at="2019-02-25T13:52:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialioseBrowser -->
-        <test-method status="PASS" signature="VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk" duration-ms="26636" started-at="2019-02-25T13:52:03Z" finished-at="2019-02-25T13:52:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49574" started-at="2019-02-25T13:52:30Z" finished-at="2019-02-25T13:53:19Z">
+    <test name="Test" duration-ms="1004370" started-at="2019-07-08T06:37:47Z" finished-at="2019-07-08T06:54:31Z">
+      <class name="GT.GT.HomePageTest">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="setup" is-config="true" duration-ms="15306" started-at="2019-07-08T06:37:47Z" finished-at="2019-07-08T06:38:02Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk status=SUCCESS method=CreatingGroupTest.VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[stagingHomePage]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="beforeCalss()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="beforeCalss" is-config="true" duration-ms="1" started-at="2019-07-08T06:38:02Z" finished-at="2019-07-08T06:38:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeCalss -->
+        <test-method status="PASS" signature="verifyAboutLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyAboutLinkInFooterSection" duration-ms="764" started-at="2019-07-08T06:38:02Z" finished-at="2019-07-08T06:38:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAboutLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31234" started-at="2019-07-08T06:38:03Z" finished-at="2019-07-08T06:38:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAboutLinkInFooterSection status=SUCCESS method=HomePageTest.verifyAboutLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule" duration-ms="21732" started-at="2019-02-25T13:53:19Z" finished-at="2019-02-25T13:53:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39931" started-at="2019-02-25T13:53:41Z" finished-at="2019-02-25T13:54:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule status=SUCCESS method=CreatingGroupTest.VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk" duration-ms="26114" started-at="2019-02-25T13:54:21Z" finished-at="2019-02-25T13:54:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49530" started-at="2019-02-25T13:54:47Z" finished-at="2019-02-25T13:55:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk status=SUCCESS method=CreatingGroupTest.VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="VerifyDialInOptionInAdvancedSettingsOnOverlayForSchedule()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="VerifyDialInOptionInAdvancedSettingsOnOverlayForSchedule" duration-ms="36211" started-at="2019-02-25T13:55:37Z" finished-at="2019-02-25T13:56:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyDialInOptionInAdvancedSettingsOnOverlayForSchedule -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39849" started-at="2019-02-25T13:56:13Z" finished-at="2019-02-25T13:56:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyDialInOptionInAdvancedSettingsOnOverlayForSchedule status=SUCCESS method=CreatingGroupTest.VerifyDialInOptionInAdvancedSettingsOnOverlayForSchedule()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk" duration-ms="48216" started-at="2019-02-25T13:56:53Z" finished-at="2019-02-25T13:57:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="31855" started-at="2019-02-25T13:57:41Z" finished-at="2019-02-25T13:58:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk status=SUCCESS method=CreatingGroupTest.VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage" duration-ms="36058" started-at="2019-02-25T13:58:13Z" finished-at="2019-02-25T13:58:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="32114" started-at="2019-02-25T13:58:49Z" finished-at="2019-02-25T13:59:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage status=SUCCESS method=CreatingGroupTest.verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyAddMemberInOnGoingGrpCallFromCreateGroupTalkPageByCreatingNewGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyAddMemberInOnGoingGrpCallFromCreateGroupTalkPageByCreatingNewGroup" duration-ms="86240" started-at="2019-02-25T13:59:21Z" finished-at="2019-02-25T14:00:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddMemberInOnGoingGrpCallFromCreateGroupTalkPageByCreatingNewGroup -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="40032" started-at="2019-02-25T14:00:47Z" finished-at="2019-02-25T14:01:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAddMemberInOnGoingGrpCallFromCreateGroupTalkPageByCreatingNewGroup status=SUCCESS method=CreatingGroupTest.verifyAddMemberInOnGoingGrpCallFromCreateGroupTalkPageByCreatingNewGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyAddMemberInOnGoingGrpCallThroughWebList()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyAddMemberInOnGoingGrpCallThroughWebList" duration-ms="90085" started-at="2019-02-25T14:01:27Z" finished-at="2019-02-25T14:02:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddMemberInOnGoingGrpCallThroughWebList -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="40052" started-at="2019-02-25T14:02:57Z" finished-at="2019-02-25T14:03:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAddMemberInOnGoingGrpCallThroughWebList status=SUCCESS method=CreatingGroupTest.verifyAddMemberInOnGoingGrpCallThroughWebList()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList" duration-ms="7222" started-at="2019-02-25T14:03:37Z" finished-at="2019-02-25T14:03:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49331" started-at="2019-02-25T14:03:45Z" finished-at="2019-02-25T14:04:34Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList status=SUCCESS method=CreatingGroupTest.verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyAllButtonsDisplayedOnCallOverlay()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyAllButtonsDisplayedOnCallOverlay" duration-ms="1976" started-at="2019-02-25T14:04:34Z" finished-at="2019-02-25T14:04:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAllButtonsDisplayedOnCallOverlay -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49736" started-at="2019-02-25T14:04:36Z" finished-at="2019-02-25T14:05:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAllButtonsDisplayedOnCallOverlay status=SUCCESS method=CreatingGroupTest.verifyAllButtonsDisplayedOnCallOverlay()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityForPrivateRoomTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityForPrivateRoomTab" duration-ms="63897" started-at="2019-02-25T14:05:26Z" finished-at="2019-02-25T14:06:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityForPrivateRoomTab -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39903" started-at="2019-02-25T14:06:30Z" finished-at="2019-02-25T14:07:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityForPrivateRoomTab status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityForPrivateRoomTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityFromAllMembersTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityFromAllMembersTab" duration-ms="73891" started-at="2019-02-25T14:07:09Z" finished-at="2019-02-25T14:08:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityFromAllMembersTab -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39818" started-at="2019-02-25T14:08:23Z" finished-at="2019-02-25T14:09:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityFromAllMembersTab status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityFromAllMembersTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup" duration-ms="37781" started-at="2019-02-25T14:09:03Z" finished-at="2019-02-25T14:09:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39790" started-at="2019-02-25T14:09:41Z" finished-at="2019-02-25T14:10:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityFromOnCallTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityFromOnCallTab" duration-ms="72201" started-at="2019-02-25T14:10:21Z" finished-at="2019-02-25T14:11:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityFromOnCallTab -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39800" started-at="2019-02-25T14:11:33Z" finished-at="2019-02-25T14:12:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityFromOnCallTab status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityFromOnCallTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk" duration-ms="40422" started-at="2019-02-25T14:12:13Z" finished-at="2019-02-25T14:12:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49361" started-at="2019-02-25T14:12:53Z" finished-at="2019-02-25T14:13:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyCallFunctionalityFromUnMutedCount()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityFromUnMutedCount" duration-ms="72723" started-at="2019-02-25T14:13:42Z" finished-at="2019-02-25T14:14:55Z">
+        <test-method status="FAIL" signature="verifyAppStoreTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyAppStoreTabFunctionality" duration-ms="5613" started-at="2019-07-08T06:38:34Z" finished-at="2019-07-08T06:38:40Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [2] but found [1]]]>
+              <![CDATA[expected [https://apps.apple.com/in/app/grptalk/id1074172134?gclid=&ls=1&referrer=utm_source%3D%26utm_medium%3Dcpc&source=] but found [https://apps.apple.com/in/app/grptalk/id1074172134?gclid=&ls=1&referrer=utm_source%3D%26utm_medium%3D&source=]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [2] but found [1]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:652)
-at org.testng.Assert.assertEquals(Assert.java:662)
-at GT.GT.CreatingGroupTest.verifyCallFunctionalityFromUnMutedCount(CreatingGroupTest.java:2444)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityFromUnMutedCount -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="32573" started-at="2019-02-25T14:14:55Z" finished-at="2019-02-25T14:15:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityFromUnMutedCount status=FAILURE method=CreatingGroupTest.verifyCallFunctionalityFromUnMutedCount()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyCallFunctionalityOfDialAllButtonInCallEndedTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab" duration-ms="56081" started-at="2019-02-25T14:15:28Z" finished-at="2019-02-25T14:16:24Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [2] but found [1]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [2] but found [1]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:652)
-at org.testng.Assert.assertEquals(Assert.java:662)
-at GT.GT.CreatingGroupTest.verifyCallFunctionalityOfDialAllButtonInCallEndedTab(CreatingGroupTest.java:1988)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityOfDialAllButtonInCallEndedTab -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="32494" started-at="2019-02-25T14:16:24Z" finished-at="2019-02-25T14:16:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityOfDialAllButtonInCallEndedTab status=FAILURE method=CreatingGroupTest.verifyCallFunctionalityOfDialAllButtonInCallEndedTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyCallFunctionalityOfIndividualDialInCallEndedTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityOfIndividualDialInCallEndedTab" duration-ms="50588" started-at="2019-02-25T14:16:56Z" finished-at="2019-02-25T14:17:47Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [2] but found [1]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [2] but found [1]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:652)
-at org.testng.Assert.assertEquals(Assert.java:662)
-at GT.GT.CreatingGroupTest.verifyCallFunctionalityOfIndividualDialInCallEndedTab(CreatingGroupTest.java:2041)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityOfIndividualDialInCallEndedTab -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="32295" started-at="2019-02-25T14:17:47Z" finished-at="2019-02-25T14:18:19Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityOfIndividualDialInCallEndedTab status=FAILURE method=CreatingGroupTest.verifyCallFunctionalityOfIndividualDialInCallEndedTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityOfSavedGrpTalkGroupOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityOfSavedGrpTalkGroupOnMyGrpTalkPage" duration-ms="37154" started-at="2019-02-25T14:18:19Z" finished-at="2019-02-25T14:18:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityOfSavedGrpTalkGroupOnMyGrpTalkPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49279" started-at="2019-02-25T14:18:56Z" finished-at="2019-02-25T14:19:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityOfSavedGrpTalkGroupOnMyGrpTalkPage status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityOfSavedGrpTalkGroupOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage" duration-ms="183823" started-at="2019-02-25T14:19:46Z" finished-at="2019-02-25T14:22:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49597" started-at="2019-02-25T14:22:49Z" finished-at="2019-02-25T14:23:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCallFunctionalityWhenMuteAllButtonIsClickedInUnMutedTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCallFunctionalityWhenMuteAllButtonIsClickedInUnMutedTab" duration-ms="49032" started-at="2019-02-25T14:23:39Z" finished-at="2019-02-25T14:24:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCallFunctionalityWhenMuteAllButtonIsClickedInUnMutedTab -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39748" started-at="2019-02-25T14:24:28Z" finished-at="2019-02-25T14:25:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCallFunctionalityWhenMuteAllButtonIsClickedInUnMutedTab status=SUCCESS method=CreatingGroupTest.verifyCallFunctionalityWhenMuteAllButtonIsClickedInUnMutedTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCanclefunctionalityOnOverlayInGrpCall()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCanclefunctionalityOnOverlayInGrpCall" duration-ms="1951" started-at="2019-02-25T14:25:08Z" finished-at="2019-02-25T14:25:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCanclefunctionalityOnOverlayInGrpCall -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49424" started-at="2019-02-25T14:25:10Z" finished-at="2019-02-25T14:25:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCanclefunctionalityOnOverlayInGrpCall status=SUCCESS method=CreatingGroupTest.verifyCanclefunctionalityOnOverlayInGrpCall()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyContactListInPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyContactListInPhoneContacts" duration-ms="7434" started-at="2019-02-25T14:25:59Z" finished-at="2019-02-25T14:26:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyContactListInPhoneContacts -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49340" started-at="2019-02-25T14:26:07Z" finished-at="2019-02-25T14:26:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyContactListInPhoneContacts status=SUCCESS method=CreatingGroupTest.verifyContactListInPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyCreateWebLIst()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyCreateWebLIst" duration-ms="8048" started-at="2019-02-25T14:26:56Z" finished-at="2019-02-25T14:27:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCreateWebLIst -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49264" started-at="2019-02-25T14:27:04Z" finished-at="2019-02-25T14:27:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCreateWebLIst status=SUCCESS method=CreatingGroupTest.verifyCreateWebLIst()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyDatePickerFunctionalityForScheduleOnEditGrpTalks()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyDatePickerFunctionalityForScheduleOnEditGrpTalks" duration-ms="34488" started-at="2019-02-25T14:27:53Z" finished-at="2019-02-25T14:28:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDatePickerFunctionalityForScheduleOnEditGrpTalks -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39681" started-at="2019-02-25T14:28:28Z" finished-at="2019-02-25T14:29:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDatePickerFunctionalityForScheduleOnEditGrpTalks status=SUCCESS method=CreatingGroupTest.verifyDatePickerFunctionalityForScheduleOnEditGrpTalks()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyDatePickerFunctionalityOnEditGrpTalks()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyDatePickerFunctionalityOnEditGrpTalks" duration-ms="34699" started-at="2019-02-25T14:29:08Z" finished-at="2019-02-25T14:29:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDatePickerFunctionalityOnEditGrpTalks -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39705" started-at="2019-02-25T14:29:42Z" finished-at="2019-02-25T14:30:22Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDatePickerFunctionalityOnEditGrpTalks status=SUCCESS method=CreatingGroupTest.verifyDatePickerFunctionalityOnEditGrpTalks()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyDialFunctionalityOfScheduleGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyDialFunctionalityOfScheduleGroup" duration-ms="161049" started-at="2019-02-25T14:30:22Z" finished-at="2019-02-25T14:33:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDialFunctionalityOfScheduleGroup -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="40447" started-at="2019-02-25T14:33:03Z" finished-at="2019-02-25T14:33:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDialFunctionalityOfScheduleGroup status=SUCCESS method=CreatingGroupTest.verifyDialFunctionalityOfScheduleGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyErrorMessageWhenJunkDataGivenInSearchBox()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyErrorMessageWhenJunkDataGivenInSearchBox" duration-ms="9792" started-at="2019-02-25T14:33:43Z" finished-at="2019-02-25T14:33:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMessageWhenJunkDataGivenInSearchBox -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49348" started-at="2019-02-25T14:33:53Z" finished-at="2019-02-25T14:34:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMessageWhenJunkDataGivenInSearchBox status=SUCCESS method=CreatingGroupTest.verifyErrorMessageWhenJunkDataGivenInSearchBox()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyErrorMsgWhenWeSubmitSaveButtonWithOutEnterGrpTalkName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyErrorMsgWhenWeSubmitSaveButtonWithOutEnterGrpTalkName" duration-ms="8259" started-at="2019-02-25T14:34:43Z" finished-at="2019-02-25T14:34:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMsgWhenWeSubmitSaveButtonWithOutEnterGrpTalkName -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49256" started-at="2019-02-25T14:34:51Z" finished-at="2019-02-25T14:35:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMsgWhenWeSubmitSaveButtonWithOutEnterGrpTalkName status=SUCCESS method=CreatingGroupTest.verifyErrorMsgWhenWeSubmitSaveButtonWithOutEnterGrpTalkName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyErrorMsgWhenWeSubmitSaveButtonWithOutSelectingAnyPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyErrorMsgWhenWeSubmitSaveButtonWithOutSelectingAnyPhoneContacts" duration-ms="5605" started-at="2019-02-25T14:35:40Z" finished-at="2019-02-25T14:35:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMsgWhenWeSubmitSaveButtonWithOutSelectingAnyPhoneContacts -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49386" started-at="2019-02-25T14:35:46Z" finished-at="2019-02-25T14:36:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMsgWhenWeSubmitSaveButtonWithOutSelectingAnyPhoneContacts status=SUCCESS method=CreatingGroupTest.verifyErrorMsgWhenWeSubmitSaveButtonWithOutSelectingAnyPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutEnterGrpTalkName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutEnterGrpTalkName" duration-ms="8299" started-at="2019-02-25T14:36:35Z" finished-at="2019-02-25T14:36:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMsgWhenWeSubmitScheduleButtonWithOutEnterGrpTalkName -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49210" started-at="2019-02-25T14:36:43Z" finished-at="2019-02-25T14:37:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMsgWhenWeSubmitScheduleButtonWithOutEnterGrpTalkName status=SUCCESS method=CreatingGroupTest.verifyErrorMsgWhenWeSubmitScheduleButtonWithOutEnterGrpTalkName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutSelectingAnyPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutSelectingAnyPhoneContacts" duration-ms="5551" started-at="2019-02-25T14:37:33Z" finished-at="2019-02-25T14:37:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMsgWhenWeSubmitScheduleButtonWithOutSelectingAnyPhoneContacts -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49320" started-at="2019-02-25T14:37:38Z" finished-at="2019-02-25T14:38:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMsgWhenWeSubmitScheduleButtonWithOutSelectingAnyPhoneContacts status=SUCCESS method=CreatingGroupTest.verifyErrorMsgWhenWeSubmitScheduleButtonWithOutSelectingAnyPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutEnterGrpTalkName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutEnterGrpTalkName" duration-ms="10533" started-at="2019-02-25T14:38:27Z" finished-at="2019-02-25T14:38:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMsgWhenWeSubmitStartNowButtonWithOutEnterGrpTalkName -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49226" started-at="2019-02-25T14:38:38Z" finished-at="2019-02-25T14:39:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMsgWhenWeSubmitStartNowButtonWithOutEnterGrpTalkName status=SUCCESS method=CreatingGroupTest.verifyErrorMsgWhenWeSubmitStartNowButtonWithOutEnterGrpTalkName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutSelectingAnyPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutSelectingAnyPhoneContacts" duration-ms="7726" started-at="2019-02-25T14:39:27Z" finished-at="2019-02-25T14:39:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMsgWhenWeSubmitStartNowButtonWithOutSelectingAnyPhoneContacts -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49776" started-at="2019-02-25T14:39:35Z" finished-at="2019-02-25T14:40:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMsgWhenWeSubmitStartNowButtonWithOutSelectingAnyPhoneContacts status=SUCCESS method=CreatingGroupTest.verifyErrorMsgWhenWeSubmitStartNowButtonWithOutSelectingAnyPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyFooterTextDisplayedOnMyGrpTalksPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyFooterTextDisplayedOnMyGrpTalksPage" duration-ms="22" started-at="2019-02-25T14:40:25Z" finished-at="2019-02-25T14:40:25Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Copy rights © all rights are reserved 2018.] but found [Copy rights © all rights are reserved 2016.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Copy rights © all rights are reserved 2018.] but found [Copy rights © all rights are reserved 2016.]
+              <![CDATA[java.lang.AssertionError: expected [https://apps.apple.com/in/app/grptalk/id1074172134?gclid=&ls=1&referrer=utm_source%3D%26utm_medium%3Dcpc&source=] but found [https://apps.apple.com/in/app/grptalk/id1074172134?gclid=&ls=1&referrer=utm_source%3D%26utm_medium%3D&source=]
 at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.failNotEquals(Assert.java:776)
 at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 at org.testng.Assert.assertEquals(Assert.java:118)
 at org.testng.Assert.assertEquals(Assert.java:453)
 at org.testng.Assert.assertEquals(Assert.java:463)
-at GT.GT.CreatingGroupTest.verifyFooterTextDisplayedOnMyGrpTalksPage(CreatingGroupTest.java:138)
+at GT.GT.HomePageTest.verifyAppStoreTabFunctionality(HomePageTest.java:203)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 at java.lang.reflect.Method.invoke(Unknown Source)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -688,447 +86,40 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFooterTextDisplayedOnMyGrpTalksPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49752" started-at="2019-02-25T14:40:25Z" finished-at="2019-02-25T14:41:14Z">
+        </test-method> <!-- verifyAppStoreTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31322" started-at="2019-07-08T06:38:40Z" finished-at="2019-07-08T06:39:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyFooterTextDisplayedOnMyGrpTalksPage status=FAILURE method=CreatingGroupTest.verifyFooterTextDisplayedOnMyGrpTalksPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyAppStoreTabFunctionality status=FAILURE method=HomePageTest.verifyAppStoreTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyGrpTalkNameFieldOnCreateGroupTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyGrpTalkNameFieldOnCreateGroupTalk" duration-ms="17222" started-at="2019-02-25T14:41:14Z" finished-at="2019-02-25T14:41:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyGrpTalkNameFieldOnCreateGroupTalk -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39783" started-at="2019-02-25T14:41:32Z" finished-at="2019-02-25T14:42:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyGrpTalkNameFieldOnCreateGroupTalk status=SUCCESS method=CreatingGroupTest.verifyGrpTalkNameFieldOnCreateGroupTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyHangUpInOnGoingCallOfindividualUser()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyHangUpInOnGoingCallOfindividualUser" duration-ms="88120" started-at="2019-02-25T14:42:11Z" finished-at="2019-02-25T14:43:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHangUpInOnGoingCallOfindividualUser -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="40218" started-at="2019-02-25T14:43:40Z" finished-at="2019-02-25T14:44:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyHangUpInOnGoingCallOfindividualUser status=SUCCESS method=CreatingGroupTest.verifyHangUpInOnGoingCallOfindividualUser()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyHeaderTabsAndLogosDisplayedOnMyGrpTalksPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyHeaderTabsAndLogosDisplayedOnMyGrpTalksPage" duration-ms="176" started-at="2019-02-25T14:44:20Z" finished-at="2019-02-25T14:44:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHeaderTabsAndLogosDisplayedOnMyGrpTalksPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49520" started-at="2019-02-25T14:44:20Z" finished-at="2019-02-25T14:45:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyHeaderTabsAndLogosDisplayedOnMyGrpTalksPage status=SUCCESS method=CreatingGroupTest.verifyHeaderTabsAndLogosDisplayedOnMyGrpTalksPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyHistoryOfGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyHistoryOfGroup" duration-ms="9561" started-at="2019-02-25T14:45:10Z" finished-at="2019-02-25T14:45:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHistoryOfGroup -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="48491" started-at="2019-02-25T14:45:19Z" finished-at="2019-02-25T14:46:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyHistoryOfGroup status=SUCCESS method=CreatingGroupTest.verifyHistoryOfGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyMuteCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyMuteCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup" duration-ms="49504" started-at="2019-02-25T14:46:08Z" finished-at="2019-02-25T14:46:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyMuteCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39808" started-at="2019-02-25T14:46:57Z" finished-at="2019-02-25T14:47:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyMuteCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup status=SUCCESS method=CreatingGroupTest.verifyMuteCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyMuteDialFunctionalityFromScheduleOverlay()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyMuteDialFunctionalityFromScheduleOverlay" duration-ms="164370" started-at="2019-02-25T14:47:37Z" finished-at="2019-02-25T14:50:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyMuteDialFunctionalityFromScheduleOverlay -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="40045" started-at="2019-02-25T14:50:21Z" finished-at="2019-02-25T14:51:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyMuteDialFunctionalityFromScheduleOverlay status=SUCCESS method=CreatingGroupTest.verifyMuteDialFunctionalityFromScheduleOverlay()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyMuteDialfunctionalityOnOverlayInGrpCall()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyMuteDialfunctionalityOnOverlayInGrpCall" duration-ms="36208" started-at="2019-02-25T14:51:01Z" finished-at="2019-02-25T14:51:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyMuteDialfunctionalityOnOverlayInGrpCall -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49314" started-at="2019-02-25T14:51:38Z" finished-at="2019-02-25T14:52:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyMuteDialfunctionalityOnOverlayInGrpCall status=SUCCESS method=CreatingGroupTest.verifyMuteDialfunctionalityOnOverlayInGrpCall()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial" duration-ms="39633" started-at="2019-02-25T14:52:27Z" finished-at="2019-02-25T14:53:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49351" started-at="2019-02-25T14:53:06Z" finished-at="2019-02-25T14:53:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial status=SUCCESS method=CreatingGroupTest.verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyNonRepeatedGroupCallFunctionalityThroughHistory()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyNonRepeatedGroupCallFunctionalityThroughHistory" duration-ms="3012" started-at="2019-02-25T14:53:56Z" finished-at="2019-02-25T14:53:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNonRepeatedGroupCallFunctionalityThroughHistory -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49367" started-at="2019-02-25T14:53:59Z" finished-at="2019-02-25T14:54:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyNonRepeatedGroupCallFunctionalityThroughHistory status=SUCCESS method=CreatingGroupTest.verifyNonRepeatedGroupCallFunctionalityThroughHistory()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyNumberOfUsersFromSelectedContactsTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyNumberOfUsersFromSelectedContactsTab" duration-ms="2095" started-at="2019-02-25T14:54:48Z" finished-at="2019-02-25T14:54:50Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[unknown error: Element <button type="button" class="btn btn-white" id="createGrpTalk">...</button> is not clickable at point (168, 56). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); cursor: default; position: fixed; opacity: 0.000591981;"></div>
-  (Session info: chrome=72.0.3626.109)
-  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
-System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.75.122', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:15445}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.109, webStorageEnabled: true}
-Session ID: ea8dad07ec7cb990931ef4ba5de54fec]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <button type="button" class="btn btn-white" id="createGrpTalk">...</button> is not clickable at point (168, 56). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); cursor: default; position: fixed; opacity: 0.000591981;"></div>
-  (Session info: chrome=72.0.3626.109)
-  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
-System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.75.122', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:15445}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.109, webStorageEnabled: true}
-Session ID: ea8dad07ec7cb990931ef4ba5de54fec
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-at GT.GT.CreatingGroup.clickCreateGrpButton(CreatingGroup.java:716)
-at GT.GT.CreatingGroupTest.verifyNumberOfUsersFromSelectedContactsTab(CreatingGroupTest.java:285)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNumberOfUsersFromSelectedContactsTab -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="50378" started-at="2019-02-25T14:54:50Z" finished-at="2019-02-25T14:55:41Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyNumberOfUsersFromSelectedContactsTab status=FAILURE method=CreatingGroupTest.verifyNumberOfUsersFromSelectedContactsTab()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyQuickDialButtonFunctionalityofGroupsInMyGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyQuickDialButtonFunctionalityofGroupsInMyGrpTalk" duration-ms="4571" started-at="2019-02-25T14:55:41Z" finished-at="2019-02-25T14:55:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyQuickDialButtonFunctionalityofGroupsInMyGrpTalk -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="50237" started-at="2019-02-25T14:55:45Z" finished-at="2019-02-25T14:56:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyQuickDialButtonFunctionalityofGroupsInMyGrpTalk status=SUCCESS method=CreatingGroupTest.verifyQuickDialButtonFunctionalityofGroupsInMyGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage" duration-ms="23943" started-at="2019-02-25T14:56:35Z" finished-at="2019-02-25T14:56:59Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[unknown error: Element <li class="selectedContacts">...</li> is not clickable at point (652, 181). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); cursor: wait; position: fixed; opacity: 0.6;"></div>
-  (Session info: chrome=72.0.3626.109)
-  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
-System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.75.122', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:15445}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.109, webStorageEnabled: true}
-Session ID: ea8dad07ec7cb990931ef4ba5de54fec]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <li class="selectedContacts">...</li> is not clickable at point (652, 181). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); cursor: wait; position: fixed; opacity: 0.6;"></div>
-  (Session info: chrome=72.0.3626.109)
-  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
-System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.75.122', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:15445}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.109, webStorageEnabled: true}
-Session ID: ea8dad07ec7cb990931ef4ba5de54fec
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-at GT.GT.CreatingGroup.selectedContactsTab(CreatingGroup.java:843)
-at GT.GT.CreatingGroup.removeContactFromSavedGroup(CreatingGroup.java:1118)
-at GT.GT.CreatingGroupTest.verifyRemoveContactFromSavedGroupOnMyGrpTalkPage(CreatingGroupTest.java:839)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRemoveContactFromSavedGroupOnMyGrpTalkPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="40021" started-at="2019-02-25T14:56:59Z" finished-at="2019-02-25T14:57:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyRemoveContactFromSavedGroupOnMyGrpTalkPage status=FAILURE method=CreatingGroupTest.verifyRemoveContactFromSavedGroupOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage" duration-ms="17880" started-at="2019-02-25T14:57:39Z" finished-at="2019-02-25T14:57:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49214" started-at="2019-02-25T14:57:57Z" finished-at="2019-02-25T14:58:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage status=SUCCESS method=CreatingGroupTest.verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyRepeatDaysFunctionalityOnEditGrpTalks()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyRepeatDaysFunctionalityOnEditGrpTalks" duration-ms="20452" started-at="2019-02-25T14:58:47Z" finished-at="2019-02-25T14:59:07Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[unknown error: Element <input type="text" style="background: #fff; width: 100%; text-align: left;" placeholder="Sun, Mon, Tue, Wed, Thu, Fri, Sat" value="" size="16" data-field="repeat weekdays" data-target="#repeatCall" class="form-control-inline repeatWeekDays custom-form" id="repeat" readonly=""> is not clickable at point (653, 546). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); cursor: wait; position: fixed; opacity: 0.6;"></div>
-  (Session info: chrome=72.0.3626.109)
-  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
-System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.75.122', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:15445}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.109, webStorageEnabled: true}
-Session ID: ea8dad07ec7cb990931ef4ba5de54fec]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <input type="text" style="background: #fff; width: 100%; text-align: left;" placeholder="Sun, Mon, Tue, Wed, Thu, Fri, Sat" value="" size="16" data-field="repeat weekdays" data-target="#repeatCall" class="form-control-inline repeatWeekDays custom-form" id="repeat" readonly=""> is not clickable at point (653, 546). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); cursor: wait; position: fixed; opacity: 0.6;"></div>
-  (Session info: chrome=72.0.3626.109)
-  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
-System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.75.122', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:15445}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.109, webStorageEnabled: true}
-Session ID: ea8dad07ec7cb990931ef4ba5de54fec
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-at GT.GT.CreatingGroup.clickRepeatDaysFiledOnEditGrpTalk(CreatingGroup.java:508)
-at GT.GT.CreatingGroupTest.verifyRepeatDaysFunctionalityOnEditGrpTalks(CreatingGroupTest.java:1710)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRepeatDaysFunctionalityOnEditGrpTalks -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39995" started-at="2019-02-25T14:59:07Z" finished-at="2019-02-25T14:59:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyRepeatDaysFunctionalityOnEditGrpTalks status=FAILURE method=CreatingGroupTest.verifyRepeatDaysFunctionalityOnEditGrpTalks()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="verifyRepeatGrpCalEveryDayFunctionalityThroughHistory()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyRepeatGrpCalEveryDayFunctionalityThroughHistory" duration-ms="3610" started-at="2019-02-25T14:59:47Z" finished-at="2019-02-25T14:59:51Z">
+        <test-method status="FAIL" signature="verifyBlogLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyBlogLinkInFooterSection" duration-ms="6336" started-at="2019-07-08T06:39:11Z" finished-at="2019-07-08T06:39:18Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[expected [http://staging.grptalk.com/login] but found [http://staging.grptalk.com/]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+              <![CDATA[java.lang.AssertionError: expected [http://staging.grptalk.com/login] but found [http://staging.grptalk.com/]
 at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertTrue(Assert.java:44)
-at org.testng.Assert.assertTrue(Assert.java:54)
-at GT.GT.CreatingGroupTest.verifyRepeatGrpCalEveryDayFunctionalityThroughHistory(CreatingGroupTest.java:2619)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at GT.GT.HomePageTest.verifyBlogLinkInFooterSection(HomePageTest.java:417)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 at java.lang.reflect.Method.invoke(Unknown Source)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -1151,158 +142,649 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRepeatGrpCalEveryDayFunctionalityThroughHistory -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49773" started-at="2019-02-25T14:59:51Z" finished-at="2019-02-25T15:00:40Z">
+        </test-method> <!-- verifyBlogLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31152" started-at="2019-07-08T06:39:18Z" finished-at="2019-07-08T06:39:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyRepeatGrpCalEveryDayFunctionalityThroughHistory status=FAILURE method=CreatingGroupTest.verifyRepeatGrpCalEveryDayFunctionalityThroughHistory()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyBlogLinkInFooterSection status=FAILURE method=HomePageTest.verifyBlogLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyScheduleGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyScheduleGrpTalk" duration-ms="17946" started-at="2019-02-25T15:00:40Z" finished-at="2019-02-25T15:00:58Z">
+        <test-method status="PASS" signature="verifyContactLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyContactLinkInFooterSection" duration-ms="850" started-at="2019-07-08T06:39:49Z" finished-at="2019-07-08T06:39:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyScheduleGrpTalk -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39650" started-at="2019-02-25T15:00:58Z" finished-at="2019-02-25T15:01:38Z">
+        </test-method> <!-- verifyContactLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30885" started-at="2019-07-08T06:39:50Z" finished-at="2019-07-08T06:40:21Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyScheduleGrpTalk status=SUCCESS method=CreatingGroupTest.verifyScheduleGrpTalk()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyContactLinkInFooterSection status=SUCCESS method=HomePageTest.verifyContactLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifySearchOptionWithPartialValidUserName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifySearchOptionWithPartialValidUserName" duration-ms="10337" started-at="2019-02-25T15:01:38Z" finished-at="2019-02-25T15:01:48Z">
+        <test-method status="PASS" signature="verifyContactSalesButtonFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyContactSalesButtonFunctionality" duration-ms="6347" started-at="2019-07-08T06:40:21Z" finished-at="2019-07-08T06:40:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySearchOptionWithPartialValidUserName -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49741" started-at="2019-02-25T15:01:48Z" finished-at="2019-02-25T15:02:38Z">
+        </test-method> <!-- verifyContactSalesButtonFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30970" started-at="2019-07-08T06:40:27Z" finished-at="2019-07-08T06:40:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySearchOptionWithPartialValidUserName status=SUCCESS method=CreatingGroupTest.verifySearchOptionWithPartialValidUserName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyContactSalesButtonFunctionality status=SUCCESS method=HomePageTest.verifyContactSalesButtonFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifySearchOptionWithfullValidUserName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifySearchOptionWithfullValidUserName" duration-ms="11509" started-at="2019-02-25T15:02:38Z" finished-at="2019-02-25T15:02:50Z">
+        <test-method status="PASS" signature="verifyCopyRightTextInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyCopyRightTextInFooterSection" duration-ms="105" started-at="2019-07-08T06:40:58Z" finished-at="2019-07-08T06:40:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySearchOptionWithfullValidUserName -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49269" started-at="2019-02-25T15:02:50Z" finished-at="2019-02-25T15:03:39Z">
+        </test-method> <!-- verifyCopyRightTextInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30827" started-at="2019-07-08T06:40:58Z" finished-at="2019-07-08T06:41:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySearchOptionWithfullValidUserName status=SUCCESS method=CreatingGroupTest.verifySearchOptionWithfullValidUserName()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyCopyRightTextInFooterSection status=SUCCESS method=HomePageTest.verifyCopyRightTextInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifySelectContactFromContactList()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifySelectContactFromContactList" duration-ms="8061" started-at="2019-02-25T15:03:39Z" finished-at="2019-02-25T15:03:47Z">
+        <test-method status="PASS" signature="verifyCustomerStoriesLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyCustomerStoriesLinkInFooterSection" duration-ms="705" started-at="2019-07-08T06:41:29Z" finished-at="2019-07-08T06:41:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySelectContactFromContactList -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="461870" started-at="2019-02-25T15:03:47Z" finished-at="2019-02-25T15:11:29Z">
+        </test-method> <!-- verifyCustomerStoriesLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30806" started-at="2019-07-08T06:41:30Z" finished-at="2019-07-08T06:42:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySelectContactFromContactList status=SUCCESS method=CreatingGroupTest.verifySelectContactFromContactList()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyCustomerStoriesLinkInFooterSection status=SUCCESS method=HomePageTest.verifyCustomerStoriesLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifySelectSpecificCharacterOfContactsInPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifySelectSpecificCharacterOfContactsInPhoneContacts" duration-ms="11519" started-at="2019-02-25T15:11:29Z" finished-at="2019-02-25T15:11:40Z">
+        <test-method status="PASS" signature="verifyCustomerStoriesTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyCustomerStoriesTabFunctionality" duration-ms="548" started-at="2019-07-08T06:42:00Z" finished-at="2019-07-08T06:42:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySelectSpecificCharacterOfContactsInPhoneContacts -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="48950" started-at="2019-02-25T15:11:40Z" finished-at="2019-02-25T15:12:29Z">
+        </test-method> <!-- verifyCustomerStoriesTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30868" started-at="2019-07-08T06:42:01Z" finished-at="2019-07-08T06:42:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySelectSpecificCharacterOfContactsInPhoneContacts status=SUCCESS method=CreatingGroupTest.verifySelectSpecificCharacterOfContactsInPhoneContacts()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyCustomerStoriesTabFunctionality status=SUCCESS method=HomePageTest.verifyCustomerStoriesTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyUnMuteFromMuteDialfunctionalityInGrpCall()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyUnMuteFromMuteDialfunctionalityInGrpCall" duration-ms="39994" started-at="2019-02-25T15:12:29Z" finished-at="2019-02-25T15:13:09Z">
+        <test-method status="PASS" signature="verifyFeaturesLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyFeaturesLinkInFooterSection" duration-ms="575" started-at="2019-07-08T06:42:32Z" finished-at="2019-07-08T06:42:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUnMuteFromMuteDialfunctionalityInGrpCall -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49812" started-at="2019-02-25T15:13:09Z" finished-at="2019-02-25T15:13:59Z">
+        </test-method> <!-- verifyFeaturesLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30845" started-at="2019-07-08T06:42:32Z" finished-at="2019-07-08T06:43:03Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUnMuteFromMuteDialfunctionalityInGrpCall status=SUCCESS method=CreatingGroupTest.verifyUnMuteFromMuteDialfunctionalityInGrpCall()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyFeaturesLinkInFooterSection status=SUCCESS method=HomePageTest.verifyFeaturesLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verify_list_Of_Group_Users_On_MyGrpTalk_Page()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verify_list_Of_Group_Users_On_MyGrpTalk_Page" duration-ms="19197" started-at="2019-02-25T15:13:59Z" finished-at="2019-02-25T15:14:18Z">
+        <test-method status="PASS" signature="verifyFeaturesTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyFeaturesTabFunctionality" duration-ms="523" started-at="2019-07-08T06:43:03Z" finished-at="2019-07-08T06:43:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify_list_Of_Group_Users_On_MyGrpTalk_Page -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="39745" started-at="2019-02-25T15:14:18Z" finished-at="2019-02-25T15:14:58Z">
+        </test-method> <!-- verifyFeaturesTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30926" started-at="2019-07-08T06:43:04Z" finished-at="2019-07-08T06:43:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verify_list_Of_Group_Users_On_MyGrpTalk_Page status=SUCCESS method=CreatingGroupTest.verify_list_Of_Group_Users_On_MyGrpTalk_Page()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyFeaturesTabFunctionality status=SUCCESS method=HomePageTest.verifyFeaturesTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyfunctionalityOfExcelReportDownloadOptionOnHistory()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyfunctionalityOfExcelReportDownloadOptionOnHistory" duration-ms="7058" started-at="2019-02-25T15:14:58Z" finished-at="2019-02-25T15:15:05Z">
+        <test-method status="FAIL" signature="verifyFunctionalityOfFacebookLogoInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyFunctionalityOfFacebookLogoInFooterSection" duration-ms="10358" started-at="2019-07-08T06:43:35Z" finished-at="2019-07-08T06:43:45Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [http://staging.grptalk.com/login] but found [http://staging.grptalk.com/]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [http://staging.grptalk.com/login] but found [http://staging.grptalk.com/]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at GT.GT.HomePageTest.verifyFunctionalityOfFacebookLogoInFooterSection(HomePageTest.java:443)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyfunctionalityOfExcelReportDownloadOptionOnHistory -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="49804" started-at="2019-02-25T15:15:05Z" finished-at="2019-02-25T15:15:55Z">
+        </test-method> <!-- verifyFunctionalityOfFacebookLogoInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31150" started-at="2019-07-08T06:43:45Z" finished-at="2019-07-08T06:44:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyfunctionalityOfExcelReportDownloadOptionOnHistory status=SUCCESS method=CreatingGroupTest.verifyfunctionalityOfExcelReportDownloadOptionOnHistory()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyFunctionalityOfFacebookLogoInFooterSection status=FAILURE method=HomePageTest.verifyFunctionalityOfFacebookLogoInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyAddMemberInOnGoingGrpCallThroughContacts()[pri:5, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="verifyAddMemberInOnGoingGrpCallThroughContacts" duration-ms="88807" started-at="2019-02-25T15:15:55Z" finished-at="2019-02-25T15:17:24Z">
+        <test-method status="FAIL" signature="verifyFunctionalityOfTwitterLogoInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyFunctionalityOfTwitterLogoInFooterSection" duration-ms="86" started-at="2019-07-08T06:44:16Z" finished-at="2019-07-08T06:44:16Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[unknown error: Element <span class="bgSocialIcon twitter"></span> is not clickable at point (1071, 594). Other element would receive the click: <iframe id="pop_frame" class="POP_iframe" src="https://lib.pop.telebu.com/5d036b9d7ebfba16d5afdbd9/chat?domain=staging.grptalk.com&amp;referrer=" title="Telebu POP" tabindex="-1" style="border: none; display: block; position: fixed; top: auto; left: auto; bottom: 10px; right: 10px; width: auto; height: 70px; visibility: visible; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1;"></iframe>
+  (Session info: chrome=75.0.3770.100)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
+System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.72.155', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62591}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 75.0.3770.100, webStorageEnabled: true}
+Session ID: 7eb1e5e5eedd2379836f38d36ffd35f5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <span class="bgSocialIcon twitter"></span> is not clickable at point (1071, 594). Other element would receive the click: <iframe id="pop_frame" class="POP_iframe" src="https://lib.pop.telebu.com/5d036b9d7ebfba16d5afdbd9/chat?domain=staging.grptalk.com&amp;referrer=" title="Telebu POP" tabindex="-1" style="border: none; display: block; position: fixed; top: auto; left: auto; bottom: 10px; right: 10px; width: auto; height: 70px; visibility: visible; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1;"></iframe>
+  (Session info: chrome=75.0.3770.100)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
+System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.72.155', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62591}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 75.0.3770.100, webStorageEnabled: true}
+Session ID: 7eb1e5e5eedd2379836f38d36ffd35f5
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at GT.GT.HomePage.clickTwitterLogoInFooterSection(HomePage.java:253)
+at GT.GT.HomePageTest.verifyFunctionalityOfTwitterLogoInFooterSection(HomePageTest.java:463)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddMemberInOnGoingGrpCallThroughContacts -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="tearDown" is-config="true" duration-ms="40728" started-at="2019-02-25T15:17:24Z" finished-at="2019-02-25T15:18:04Z">
+        </test-method> <!-- verifyFunctionalityOfTwitterLogoInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31179" started-at="2019-07-08T06:44:16Z" finished-at="2019-07-08T06:44:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyAddMemberInOnGoingGrpCallThroughContacts status=SUCCESS method=CreatingGroupTest.verifyAddMemberInOnGoingGrpCallThroughContacts()[pri:5, instance:GT.GT.CreatingGroupTest@bd8db5a] output={null}]]]>
+                <![CDATA[[TestResult name=verifyFunctionalityOfTwitterLogoInFooterSection status=FAILURE method=HomePageTest.verifyFunctionalityOfTwitterLogoInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:GT.GT.CreatingGroupTest@bd8db5a]" name="closeBrowser" is-config="true" duration-ms="634" started-at="2019-02-25T15:18:04Z" finished-at="2019-02-25T15:18:05Z">
+        <test-method status="FAIL" signature="verifyFunctionalityOfYoutubeLogoInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyFunctionalityOfYoutubeLogoInFooterSection" duration-ms="142" started-at="2019-07-08T06:44:47Z" finished-at="2019-07-08T06:44:48Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[unknown error: Element <span class="bgSocialIcon youtube"></span> is not clickable at point (1114, 594). Other element would receive the click: <iframe id="pop_frame" class="POP_iframe" src="https://lib.pop.telebu.com/5d036b9d7ebfba16d5afdbd9/chat?domain=staging.grptalk.com&amp;referrer=" title="Telebu POP" tabindex="-1" style="border: none; display: block; position: fixed; top: auto; left: auto; bottom: 10px; right: 10px; width: auto; height: 70px; visibility: visible; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1;"></iframe>
+  (Session info: chrome=75.0.3770.100)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
+System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.72.155', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62591}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 75.0.3770.100, webStorageEnabled: true}
+Session ID: 7eb1e5e5eedd2379836f38d36ffd35f5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <span class="bgSocialIcon youtube"></span> is not clickable at point (1114, 594). Other element would receive the click: <iframe id="pop_frame" class="POP_iframe" src="https://lib.pop.telebu.com/5d036b9d7ebfba16d5afdbd9/chat?domain=staging.grptalk.com&amp;referrer=" title="Telebu POP" tabindex="-1" style="border: none; display: block; position: fixed; top: auto; left: auto; bottom: 10px; right: 10px; width: auto; height: 70px; visibility: visible; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1;"></iframe>
+  (Session info: chrome=75.0.3770.100)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
+System info: host: 'DESKTOP-5HEF6VE', ip: '192.168.72.155', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\smsc\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62591}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 75.0.3770.100, webStorageEnabled: true}
+Session ID: 7eb1e5e5eedd2379836f38d36ffd35f5
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at GT.GT.HomePage.clickYoutubeLogoInFooterSection(HomePage.java:261)
+at GT.GT.HomePageTest.verifyFunctionalityOfYoutubeLogoInFooterSection(HomePageTest.java:525)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- GT.GT.CreatingGroupTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- verifyFunctionalityOfYoutubeLogoInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31124" started-at="2019-07-08T06:44:48Z" finished-at="2019-07-08T06:45:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyFunctionalityOfYoutubeLogoInFooterSection status=FAILURE method=HomePageTest.verifyFunctionalityOfYoutubeLogoInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyGrpTalkEmailAndContactDisplayedInHeaderScetion()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyGrpTalkEmailAndContactDisplayedInHeaderScetion" duration-ms="153" started-at="2019-07-08T06:45:19Z" finished-at="2019-07-08T06:45:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGrpTalkEmailAndContactDisplayedInHeaderScetion -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30813" started-at="2019-07-08T06:45:19Z" finished-at="2019-07-08T06:45:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyGrpTalkEmailAndContactDisplayedInHeaderScetion status=SUCCESS method=HomePageTest.verifyGrpTalkEmailAndContactDisplayedInHeaderScetion()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyHomeLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyHomeLinkInFooterSection" duration-ms="716" started-at="2019-07-08T06:45:50Z" finished-at="2019-07-08T06:45:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomeLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30766" started-at="2019-07-08T06:45:50Z" finished-at="2019-07-08T06:46:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyHomeLinkInFooterSection status=SUCCESS method=HomePageTest.verifyHomeLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyHowItWorksLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyHowItWorksLinkInFooterSection" duration-ms="611" started-at="2019-07-08T06:46:21Z" finished-at="2019-07-08T06:46:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHowItWorksLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30805" started-at="2019-07-08T06:46:22Z" finished-at="2019-07-08T06:46:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyHowItWorksLinkInFooterSection status=SUCCESS method=HomePageTest.verifyHowItWorksLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyHowItWorksTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyHowItWorksTabFunctionality" duration-ms="701" started-at="2019-07-08T06:46:53Z" finished-at="2019-07-08T06:46:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHowItWorksTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30811" started-at="2019-07-08T06:46:53Z" finished-at="2019-07-08T06:47:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyHowItWorksTabFunctionality status=SUCCESS method=HomePageTest.verifyHowItWorksTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="FAIL" signature="verifyPlayStoreTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyPlayStoreTabFunctionality" duration-ms="1638" started-at="2019-07-08T06:47:24Z" finished-at="2019-07-08T06:47:26Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [https://play.google.com/store/apps/details?id=com.mobile.android.grptalk&source=&gclid=&referrer=utm_source%3D%26utm_medium%3Dcpc&] but found [https://play.google.com/store/apps/details?id=com.mobile.android.grptalk&source=&gclid=&referrer=utm_source%3D%26utm_medium%3D&]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [https://play.google.com/store/apps/details?id=com.mobile.android.grptalk&source=&gclid=&referrer=utm_source%3D%26utm_medium%3Dcpc&] but found [https://play.google.com/store/apps/details?id=com.mobile.android.grptalk&source=&gclid=&referrer=utm_source%3D%26utm_medium%3D&]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at GT.GT.HomePageTest.verifyPlayStoreTabFunctionality(HomePageTest.java:216)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPlayStoreTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31372" started-at="2019-07-08T06:47:26Z" finished-at="2019-07-08T06:47:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPlayStoreTabFunctionality status=FAILURE method=HomePageTest.verifyPlayStoreTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyPricingLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyPricingLinkInFooterSection" duration-ms="712" started-at="2019-07-08T06:47:57Z" finished-at="2019-07-08T06:47:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPricingLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30877" started-at="2019-07-08T06:47:58Z" finished-at="2019-07-08T06:48:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPricingLinkInFooterSection status=SUCCESS method=HomePageTest.verifyPricingLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyPricingTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyPricingTabFunctionality" duration-ms="3559" started-at="2019-07-08T06:48:29Z" finished-at="2019-07-08T06:48:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPricingTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30818" started-at="2019-07-08T06:48:32Z" finished-at="2019-07-08T06:49:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPricingTabFunctionality status=SUCCESS method=HomePageTest.verifyPricingTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyPrivacyAndDataUsageLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyPrivacyAndDataUsageLinkInFooterSection" duration-ms="544" started-at="2019-07-08T06:49:03Z" finished-at="2019-07-08T06:49:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPrivacyAndDataUsageLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30824" started-at="2019-07-08T06:49:04Z" finished-at="2019-07-08T06:49:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPrivacyAndDataUsageLinkInFooterSection status=SUCCESS method=HomePageTest.verifyPrivacyAndDataUsageLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyRequest_A_PriceTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyRequest_A_PriceTabFunctionality" duration-ms="2989" started-at="2019-07-08T06:49:34Z" finished-at="2019-07-08T06:49:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRequest_A_PriceTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30860" started-at="2019-07-08T06:49:37Z" finished-at="2019-07-08T06:50:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyRequest_A_PriceTabFunctionality status=SUCCESS method=HomePageTest.verifyRequest_A_PriceTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyScanQRCodeTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyScanQRCodeTabFunctionality" duration-ms="1150" started-at="2019-07-08T06:50:08Z" finished-at="2019-07-08T06:50:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyScanQRCodeTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31000" started-at="2019-07-08T06:50:09Z" finished-at="2019-07-08T06:50:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyScanQRCodeTabFunctionality status=SUCCESS method=HomePageTest.verifyScanQRCodeTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifySolutionsTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifySolutionsTabFunctionality" duration-ms="2075" started-at="2019-07-08T06:50:40Z" finished-at="2019-07-08T06:50:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySolutionsTabFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30798" started-at="2019-07-08T06:50:43Z" finished-at="2019-07-08T06:51:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySolutionsTabFunctionality status=SUCCESS method=HomePageTest.verifySolutionsTabFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyStartDemoFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyStartDemoFunctionality" duration-ms="4004" started-at="2019-07-08T06:51:13Z" finished-at="2019-07-08T06:51:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStartDemoFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30739" started-at="2019-07-08T06:51:17Z" finished-at="2019-07-08T06:51:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyStartDemoFunctionality status=SUCCESS method=HomePageTest.verifyStartDemoFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyTermsAndConditionsLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyTermsAndConditionsLinkInFooterSection" duration-ms="4721" started-at="2019-07-08T06:51:48Z" finished-at="2019-07-08T06:51:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTermsAndConditionsLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30803" started-at="2019-07-08T06:51:53Z" finished-at="2019-07-08T06:52:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTermsAndConditionsLinkInFooterSection status=SUCCESS method=HomePageTest.verifyTermsAndConditionsLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyWebLoginFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyWebLoginFunctionality" duration-ms="1402" started-at="2019-07-08T06:52:24Z" finished-at="2019-07-08T06:52:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWebLoginFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="31057" started-at="2019-07-08T06:52:25Z" finished-at="2019-07-08T06:52:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyWebLoginFunctionality status=SUCCESS method=HomePageTest.verifyWebLoginFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyWebLoginLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyWebLoginLinkInFooterSection" duration-ms="1197" started-at="2019-07-08T06:52:56Z" finished-at="2019-07-08T06:52:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWebLoginLinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30952" started-at="2019-07-08T06:52:57Z" finished-at="2019-07-08T06:53:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyWebLoginLinkInFooterSection status=SUCCESS method=HomePageTest.verifyWebLoginLinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verifyYouTubeVideoFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verifyYouTubeVideoFunctionality" duration-ms="42" started-at="2019-07-08T06:53:28Z" finished-at="2019-07-08T06:53:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyYouTubeVideoFunctionality -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30789" started-at="2019-07-08T06:53:28Z" finished-at="2019-07-08T06:53:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyYouTubeVideoFunctionality status=SUCCESS method=HomePageTest.verifyYouTubeVideoFunctionality()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="verify_FAQ_LinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="verify_FAQ_LinkInFooterSection" duration-ms="630" started-at="2019-07-08T06:53:59Z" finished-at="2019-07-08T06:54:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_FAQ_LinkInFooterSection -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="tearDown" is-config="true" duration-ms="30966" started-at="2019-07-08T06:54:00Z" finished-at="2019-07-08T06:54:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verify_FAQ_LinkInFooterSection status=SUCCESS method=HomePageTest.verify_FAQ_LinkInFooterSection()[pri:0, instance:GT.GT.HomePageTest@4232c52b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="closeBrowser1(java.lang.String)[pri:0, instance:GT.GT.HomePageTest@4232c52b]" name="closeBrowser1" is-config="true" duration-ms="839" started-at="2019-07-08T06:54:31Z" finished-at="2019-07-08T06:54:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser1 -->
+      </class> <!-- GT.GT.HomePageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

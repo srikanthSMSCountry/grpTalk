@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="stagingHomePage"/>
     <classes>
-      <class name="GT.GT.CreatingGroupTest">
+      <class name="GT.GT.HomePageTest">
         <methods>
-          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
-          <include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab"/>
-          <include name="initialioseBrowser"/>
-          <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
-          <include name="verifyRepeatGrpCalEveryDayFunctionalityThroughHistory"/>
-          <include name="closeBrowser"/>
-          <include name="verifyCallFunctionalityFromUnMutedCount"/>
+          <include name="closeBrowser1"/>
+          <include name="verifyBlogLinkInFooterSection"/>
+          <include name="verifyFunctionalityOfYoutubeLogoInFooterSection"/>
+          <include name="verifyFunctionalityOfFacebookLogoInFooterSection"/>
+          <include name="verifyPlayStoreTabFunctionality"/>
+          <include name="verifyFunctionalityOfTwitterLogoInFooterSection"/>
+          <include name="beforeCalss"/>
           <include name="tearDown"/>
-          <include name="verifyRepeatDaysFunctionalityOnEditGrpTalks"/>
-          <include name="verifyNumberOfUsersFromSelectedContactsTab"/>
-          <include name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage"/>
+          <include name="verifyAppStoreTabFunctionality"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- GT.GT.CreatingGroupTest -->
+      </class> <!-- GT.GT.HomePageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

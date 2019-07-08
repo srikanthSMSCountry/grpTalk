@@ -1,0 +1,5 @@
+member	MobileNumber	StartTime	EndTime	Direction	Minutes	AmountUsed	status
+Host Contacr	918634503003	05/22/19  9:21:08 AM	05/22/19  9:25:03 AM	OutBound	4	4	call ended
+TestContact1	918634503007	05/22/19  9:21:08 AM	05/22/19  9:25:03 AM	OutBound	4	4	call ended
+TestContact2	918634503010	05/22/19  9:21:07 AM	05/22/19  9:25:03 AM	OutBound	4	4	call ended
+TestContact3	918634503013	05/22/19  9:21:08 AM	05/22/19  9:25:03 AM	OutBound	4	4	call ended

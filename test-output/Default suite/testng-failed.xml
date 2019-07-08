@@ -3,21 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="GT.GT.CreatingGroupTest">
+      <class name="GT.GT.CreateAndCallGroupTest">
         <methods>
-          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
-          <include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab"/>
-          <include name="initialioseBrowser"/>
-          <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
-          <include name="verifyRepeatGrpCalEveryDayFunctionalityThroughHistory"/>
-          <include name="closeBrowser"/>
-          <include name="verifyCallFunctionalityFromUnMutedCount"/>
+          <include name="verifyCallFunctionalityFromAllMembersTab"/>
+          <include name="closeBrowser1"/>
           <include name="tearDown"/>
-          <include name="verifyRepeatDaysFunctionalityOnEditGrpTalks"/>
-          <include name="verifyNumberOfUsersFromSelectedContactsTab"/>
-          <include name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage"/>
+          <include name="beforeCalss"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- GT.GT.CreatingGroupTest -->
+      </class> <!-- GT.GT.CreateAndCallGroupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,7 +1,8 @@
 package GT.GT;
 
+import java.awt.AWTException;
 import java.util.List;
-
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,74 +10,178 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AccountPage {
+import com.aventstack.extentreports.Status;
 
-	WebDriver driver;
+import utility.*;
+
+public class AccountPage extends BrowserFunctions{
 	
-	By userNameFieldOnEditProfileOverlay = By.id("userName");
- 	By saveButtonOnEditProfileOverlay = By.id("saveData");
- 	By emailIDfieldOnEditProfileOverlay = By.id("emailID");
- 	By profileName = By.id("nickname");
-	By account = By.xpath("//*[@id='account-li']/a");
- 	By changeProfileButton = By.id("changeProfileDetails");
- 	By allTabInMyAccount = By.xpath("//*[@id='accountTabs']/li[3]/a");
- 	By rechargeTabInMyAccount = By.id("recharge");
- 	By usedAmontInWeb = By.id("web_inr");
- 	By grpTalkLogo = By.id("imgLogo");
- 	By liveCallButton =By.xpath("//*[@id='date']//label");
- 	By hangUpAllButtonInGrpCall = By.xpath("//*[@id='hangup']/a/img");
- 	By totalAvailableLines = By.id("tot_channels");
+	private static final TimeUnit SECONDS = null;
+	
+	By chooseImageButton 						= By.xpath("//*[@value='Choose image']");
+	By userNameFieldOnEditProfileOverlay 		= By.id("userName");
+ 	By saveButtonOnEditProfileOverlay 			= By.id("saveData");
+ 	By emailIDfieldOnEditProfileOverlay 		= By.id("emailID");
+ 	By profileName 								= By.id("nickname");
+	By account 									= By.xpath("//*[@id='account-li']/a");
+ 	By changeProfileButton 						= By.id("changeProfileDetails");
+ 	By allTabInMyAccount 						= By.xpath("//*[@id='accountTabs']/li[3]/a");
+ 	By rechargeTabInMyAccount 					= By.id("recharge");
+ 	By usedAmontInWeb 							= By.id("web_inr");
+ 	By grpTalkLogo 								= By.id("imgLogo");
+ 	By liveCallButton 							= By.xpath("//*[@id='date']//label");
+ 	By hangUpAllButtonInGrpCall 				= By.xpath("//*[@id='hangup']/a/img");
+ 	By totalAvailableLines 						= By.id("tot_channels");
+ 	By profileTab 								= By.id("showProfile");
+ 	By currrentBalance 							= By.id("hdnBalance");
+ 	By subAccountsTab 							= By.id("subAccountLi");
+ 	By accountManagersTab 						= By.id("AccountManagerLi");
+ 	By addSubAccountTab 						= By.id("ModalAddSubAccount");
+ 	By nickNameFieldOnAddSubAccountOverlay 		= By.id("createProfileName");
+ 	By mobileNumberFieldOnAddSubAccountOverlay 	= By.id("createMobNo");
+ 	By quotaSubAccountOnAddSubAccountOverlay 	= By.id("rdShare");
+ 	By poolSubAccountOnAddSubAccountOverlay 	= By.id("rdPool");
+ 	By maxMemberLimitFieldOnAddSubAccountOverlay= By.id("createMemberLimit");
+ 	By transferAmountFieldOnAddSubAccountOverlay= By.id("createAmount");
+ 	By addButtonOnAddSubAccountOverlay 			= By.id("createAdd");
+ 	By closeButtonOnAddSubAccountOverlay 		= By.id("createClose");
+ 	By closeMarkOnAddSubAccountOverlay 			= By.id("closeAddSubAcc");
+ 	By sendInvitationButtonOnAddSubAccountOverlay= By.id("createInvitation");
+ 	By errorMsgForInvalidRegisteredMobileNumberOnSubAccountOverlay = By.id("nonRegisteredMsg");
+ 	By availableLinesText 						= By.id("SubAccountDiv");
+ 	By addAccountManagerTab 					= By.id("ModalAddAccountManager");
+ 	By nickNameFieldOnAddAccountManagerOverlay 	= By.id("createManagerProfileName");
+ 	By mobileNumberFieldOnAddAccountManagerOverlay = By.id("createManagerMobNo");
+ 	By closeButtonOnAddAccountManagerOverlay 	= By.id("createManagerClose");
+ 	By addButtonOnAddAccountManagerOverlay 		=By.id("createManagerAdd");
+ 	By sendInvitationButtonOnAddAccountManagerOverlay = By.id("createManagerInvitation");
+ 	By closeMarkOnAddAccountManagerOverlay 		=By.id("closeAddAccMgr");
+	By successMsgForValidRegistredMobileNumber 	= By.id("actualManagerName");
+	By successMsgWithNameForValidRegistredMobileNumber = By.id("registeredManagerMsg");
+	By errorMsgForInvalidRegisteredMobileNumber = By.id("nonRegisteredMgrMsg");
+	By unAvailabilityMsgOfAccountManagers 		= By.id("divGetAccountManager");
+	By successMsgForCreationOfAccountManager	= By.xpath("//*[@class='toast toast-success']");
+	By accountManagerNameAndNumber 				= By.xpath("//*[@id='divGetAccountManager']//*[@class='subAcc-Item']"); 
+	By activeStateOfAccountManager 				= By.xpath("//*[@id='divGetAccountManager']//*[@class='fa fa-check text-green']");
+	By editDetailsButtonOfAccountManager 		= By.xpath("//*[@id='divGetAccountManager']//*[@class='subAcc-Item']//*[@class='glyphicon glyphicon-pencil']");
+	By accountManagerNameOnEditAccountManagerOverlay = By.id("h4EditAccountManager");
+	By accountStatus 							= By.id("ddlAccountManagerStatus");
+	By saveButtonOnEditAccountManagerOverlay 	= By.id("btnEditAccountManager");
+	By successMsgOfBlockedAccountManager		= By.xpath("//*[@class='toast toast-success']");
+	By blockedStateOfAccountManager 			= By.xpath("//*[@id='divGetAccountManager']//*[@class='fa fa-remove text-red']");
+	By deleteOptionForAccountManager 			= By.xpath("//*[@class='tab-content']//*[@id='divGetAccountManager']//*[@class='DeleteManagerDetails']");
+	By successMsgForDeletedAccountManager 		= By.xpath("//*[@class='toast toast-success']");
+	By numberOfAccountManagers 					= By.xpath("//*[@id='divGetAccountManager']//*[@class='subAcc-Item']");
+	By successMsgOfActivatedAccountManager		= By.xpath("//*[@class='toast toast-success']");
+	By errorMessage								= By.id("nonRegisteredMsg");
+	By successMsg 								= By.id("registeredMsg");
+	By maxMemberLimitErrorMsg 					= By.id("memberLimitMsg");
+	By transferAmountLimitErrorMsg 				= By.id("amountMsg");
+	By configureClips 							= By.xpath("//*[@class='btn btn-primary btn-pink btnConfiguration']");
+	By chooseFileForMuteClip 					= By.xpath("//*[@id='divClips']/fieldset[2]/input[2][@value='Choose File']");
+	By chooseFileForNormalclip 					= By.xpath("//*[@id='divClips']/fieldset[1]/input[2][@value='Choose File']");
+	By saveNormalClip 							= By.xpath("//*[@id='divClips']//*[@id='btnSaveWelcomeClip']");
+	By saveMuteClip 							= By.xpath("//*[@id='divClips']//*[@id='btnSaveMuteClip']");
+	By downloadLinkForNormalClipAudio			= By.xpath("//*[@id='NormalClipAudio']//*[@id='spNormalClip']");
+	By downloadLinkForMuteClipAudio 			= By.xpath("//*[@id='MuteClipAudio']//*[@id='spMuteclip']");
+	By closeButtonOnConfigureClipsOverlay 		= By.xpath("//*[@class= 'btn btn-default btnCloseConfig']");
+	By deleteButtonForNormalClip 				= By.xpath("//*[@id='btnDeleteNormalClip']");
+	By deleteButtonForMuteClip 					= By.xpath("//*[@id='btnDeleteMuteClip']");
+	By successMsgForUploadedNormalAudioClip 	= By.xpath("//*[@class='toast-message']");
+	By successMsgForUploadedMuteAudioClip 		= By.xpath("//*[@class='toast-message']");
+	By msgOnConfigureClipsOverlay 				= By.xpath("//*[@class='toast-message']");
+ 	By availableLines 							= By.id("AvailableLines");
+ 	By subAccountsCount 						= By.xpath("//*[@id='SubAccountDiv']//*[@class='subAcc-Item']");
+ 	By activeOptionForSubAccounts 				= By.xpath("//*[@mobileno='919550866282']//*[@class='fa fa-check text-green']");
+ 	By blockedOptionForSubAccounts 				= By.xpath("//*[@mobileno='919550866282']//*[@class='fa fa-remove text-red']");
+ 	By editOptionOfSubAccount 					= By.xpath("//*[@mobileno='919550866282']//*[@class='CEditSubAccount']");
+ 	By viewOptionOfSubAccount 					= By.xpath("//*[@mobileno='919550866282']//*[@class='CViewSubAccount']");
+ 	By addBalanceOptionOfSubAccount 			= By.xpath("//*[@mobileno='919550866282']//*[@class='CAddBalance']");
+ 	By subAccountsNames 						= By.xpath("//*[@id='SubAccountDiv']//*[@class='subAcc-Item']//*[@class='font-18 subAccountName']");
+ 	By subAccounts 								= By.xpath("//*[@id='SubAccountDiv']//*[@class='subAcc-Item']");
+ 	By activeSubAccount 						= By.xpath("//*[@mobileno='919550866282']");
+ 	By transferAmountFieldOnAddBalanceOverlay 	= By.id("txtAddBalance");
+ 	By addButtonOnAddBalanceOverlay 			= By.id("btnAddBalance");
+ 	By currentBalanceOfSubAccount 				= By.xpath("//*[@class='margin-top-10 font-20 subAccountBalance']");
+ 	By successMessageForBalanceTransfer 		= By.xpath("//*[@class='toast-message']");
+ 	By subAccountNameInSubAccountDetails 		= By.xpath("//*[@id='displayName']");
+ 	By subAccountMobileNumbersInSubAccountDetails = By.xpath("//*[@id='displayMobNo']");
+ 	By maxMemberLimitInEditSubAccountOverlay 	= By.id("MaxConCurrency");
+ 	By accountStatusInEditSubAccountOverlay 	= By.id("ddlAccountStatus");
+ 	By saveButtonOnEditsubAccountOverlay 		= By.xpath("//*[@id='btnEditSubAccount']");
+ 	By successMsgOfEditSubAccount 				= By.xpath("//*[@class='toast-message']");
+ 	By rechargeNowWithPaytmButton				= By.id("paytmBtn");
+ 	By enterRechageAmount 						= By.id("amount");
+ 	By walletTransactionId						= By.id("trnxid");
+ 	By proceedButtonOnRechargeOverlay			= By.id("btn_rechargeReq");
+ 	By successMsgForRechageWithPaytm			= By.xpath("//*[@class='modal-content']//p[2]");
  	
- 	public AccountPage(WebDriver driver2){
-        this.driver = driver2;
-    }
+ 	public void clickRechargeNowWithPaytmButton(){
+ 		driver.findElement(rechargeNowWithPaytmButton).click();
+ 	}
  	
- 	public void navigateToGrpTalkHomePage() throws InterruptedException{
+ 	public String successMsgForPaytmRecharge(){
+ 		return driver.findElement(successMsgForRechageWithPaytm).getText();
+ 	}
+ 	
+ 	public void enterDetailsOnRechargeOverlayAndProceed() throws InterruptedException{
+ 		String transactionId= "1234562"+System.currentTimeMillis();
+ 		driver.findElement(enterRechageAmount).sendKeys(CommonMethods.passingData("rechargeAmountThroghPaytm"));
+ 		driver.findElement(walletTransactionId).sendKeys(transactionId);
+ 		driver.findElement(proceedButtonOnRechargeOverlay).click();
+ 		Thread.sleep(2000);
+ 	}
+ 	
+ 	public void navigateToGrpTalkHomePage() throws InterruptedException, AWTException{
  		Thread.sleep(2000);
  		driver.findElement(grpTalkLogo).click();
  	}
  	
- 	//Used Amount In Web
+ 	public void uploadImage() throws InterruptedException, AWTException{
+ 		driver.findElement(chooseImageButton).click();
+ 		Thread.sleep(1000);
+ 		CommonMethods.getUploadFile("D:\\GrpTalk\\TestDataFiles\\Images\\host image.jpg");
+ 		Thread.sleep(13000);
+ 	}
+ 	
  	public String usedAmontInWeb() throws InterruptedException{
- 		Utility.explicitWaitForElementVisibility(driver,usedAmontInWeb);
+ 		CommonMethods.explicitWaitForElementVisibility(usedAmontInWeb);
  		String s = driver.findElement(usedAmontInWeb).getText();
  		String value = s.replaceAll("INR ", "");
  		return value;
  	}
  	
- 	//Click Recharges tab on MyAccount page
  	public boolean clickRechargesTabOnMyAccountPage() throws InterruptedException{
- 		Utility.explicitWaitForElementVisibility(driver,rechargeTabInMyAccount);
+ 		CommonMethods.explicitWaitForElementVisibility(rechargeTabInMyAccount);
  		driver.findElement(rechargeTabInMyAccount).click();
  		return driver.findElement(rechargeTabInMyAccount).isDisplayed();
  	}
  	
- 	//Click All tab on MyAccount page
- 	 	public boolean clickAllTabOnMyAccountPage() throws InterruptedException{
- 	 		Utility.explicitWaitForElementVisibility(driver,allTabInMyAccount);
- 	 		driver.findElement(allTabInMyAccount).click();
- 	 		return driver.findElement(allTabInMyAccount).isDisplayed();
- 	 	}
+ 	public boolean clickAllTabOnMyAccountPage() throws InterruptedException{
+ 	 	CommonMethods.explicitWaitForElementVisibility(allTabInMyAccount);
+ 	 	driver.findElement(allTabInMyAccount).click();
+ 	 	return driver.findElement(allTabInMyAccount).isDisplayed();
+ 	}
  	
- 	//edit user profile
- 	public String editUserProfile() throws InterruptedException{
- 		Utility.explicitWaitForElementVisibility(driver,userNameFieldOnEditProfileOverlay);
+ 	public String editUserProfile() throws InterruptedException, AWTException{
+ 		CommonMethods.explicitWaitForElementVisibility(userNameFieldOnEditProfileOverlay);
  		driver.findElement(userNameFieldOnEditProfileOverlay).clear();
- 		driver.findElement(userNameFieldOnEditProfileOverlay).sendKeys("Ravi Kumar");
+ 		driver.findElement(userNameFieldOnEditProfileOverlay).sendKeys(CommonMethods.passingData("userNameOnEditProfileOverlay"));
+ 		driver.findElement(emailIDfieldOnEditProfileOverlay).clear();
+ 		driver.findElement(emailIDfieldOnEditProfileOverlay).sendKeys(CommonMethods.passingData("emailOnEditProfileOverlay"));
+ 		uploadImage();
  		driver.findElement(saveButtonOnEditProfileOverlay).click();
+ 		
  		return driver.findElement(profileName).getText();
  	}
  	
- 	//click on account tab
  	public void clickOnAccountTab() throws InterruptedException{
  		Thread.sleep(2000);
- 		//Utility.explicitWaitForElementVisibility(driver,account);
  		driver.findElement(account).click();
  	}
  	
- 	//click on change profile button
  	public void ChangeProfileButton() throws InterruptedException{
- 		Utility.explicitWaitForElementVisibility(driver,changeProfileButton);
+ 		CommonMethods.explicitWaitForElementVisibility(changeProfileButton);
  		driver.findElement(changeProfileButton).click();
  	}
  	
@@ -88,93 +193,11 @@ public class AccountPage {
  			System.out.println("successfully closed LiveGroupCallOfRecentlySavedGrpTalkGroup");
 		}
    	}
- 	//HangUp the current group call
+	
  	public void hangUpCurrentGrpTalkcall() throws InterruptedException{
- 		Utility.explicitWaitForElementVisibility(driver,hangUpAllButtonInGrpCall);
+ 		CommonMethods.explicitWaitForElementVisibility(hangUpAllButtonInGrpCall);
  		driver.findElement(hangUpAllButtonInGrpCall).click();
  	}
- 	
- 	By profileTab = By.id("showProfile");
- 	By currrentBalance = By.id("hdnBalance");
- 	By subAccountsTab = By.id("subAccountLi");
- 	By accountManagersTab = By.id("AccountManagerLi");
-
- 	By addSubAccountTab = By.id("ModalAddSubAccount");
- 	By nickNameFieldOnAddSubAccountOverlay = By.id("createProfileName");
- 	By mobileNumberFieldOnAddSubAccountOverlay = By.id("createMobNo");
- 	By quotaSubAccountOnAddSubAccountOverlay = By.id("rdShare");
- 	By poolSubAccountOnAddSubAccountOverlay = By.id("rdPool");
- 	By maxMemberLimitFieldOnAddSubAccountOverlay = By.id("createMemberLimit");
- 	By transferAmountFieldOnAddSubAccountOverlay = By.id("createAmount");
- 	By addButtonOnAddSubAccountOverlay =By.id("createAdd");
- 	By closeButtonOnAddSubAccountOverlay =By.id("createClose");
- 	By closeMarkOnAddSubAccountOverlay =By.id("closeAddSubAcc");
- 	By sendInvitationButtonOnAddSubAccountOverlay = By.id("createInvitation");
- 	By errorMsgForInvalidRegisteredMobileNumberOnSubAccountOverlay = By.id("nonRegisteredMsg");
- 	By availableLinesText = By.id("SubAccountDiv");
- 	
- 	By addAccountManagerTab = By.id("ModalAddAccountManager");
- 	By nickNameFieldOnAddAccountManagerOverlay = By.id("createManagerProfileName");
- 	By mobileNumberFieldOnAddAccountManagerOverlay = By.id("createManagerMobNo");
- 	By closeButtonOnAddAccountManagerOverlay = By.id("createManagerClose");
- 	By addButtonOnAddAccountManagerOverlay =By.id("createManagerAdd");
- 	By sendInvitationButtonOnAddAccountManagerOverlay = By.id("createManagerInvitation");
- 	By closeMarkOnAddAccountManagerOverlay =By.id("closeAddAccMgr");
-	By successMsgForValidRegistredMobileNumber = By.id("actualManagerName");
-	By successMsgWithNameForValidRegistredMobileNumber = By.id("registeredManagerMsg");
-	By errorMsgForInvalidRegisteredMobileNumber = By.id("nonRegisteredMgrMsg");
-	By unAvailabilityMsgOfAccountManagers = By.id("divGetAccountManager");
-	By successMsgForCreationOfAccountManager= By.xpath("//*[@class='toast toast-success']");
-	By accountManagerNameAndNumber = By.xpath("//*[@id='divGetAccountManager']//*[@class='subAcc-Item']"); 
-	By activeStateOfAccountManager = By.xpath("//*[@id='divGetAccountManager']//*[@class='fa fa-check text-green']");
-	By editDetailsButtonOfAccountManager = By.xpath("//*[@id='divGetAccountManager']//*[@class='subAcc-Item']//*[@class='glyphicon glyphicon-pencil']");
-	By accountManagerNameOnEditAccountManagerOverlay = By.id("h4EditAccountManager");
-	By accountStatus = By.id("ddlAccountManagerStatus");
-	By saveButtonOnEditAccountManagerOverlay = By.id("btnEditAccountManager");
-	By successMsgOfBlockedAccountManager= By.xpath("//*[@class='toast toast-success']");
-	By blockedStateOfAccountManager = By.xpath("//*[@id='divGetAccountManager']//*[@class='fa fa-remove text-red']");
-	By deleteOptionForAccountManager = By.xpath("//*[@class='tab-content']//*[@id='divGetAccountManager']//*[@class='DeleteManagerDetails']");
-	By successMsgForDeletedAccountManager = By.xpath("//*[@class='toast toast-success']");
-	By numberOfAccountManagers = By.xpath("//*[@id='divGetAccountManager']//*[@class='subAcc-Item']");
-	By successMsgOfActivatedAccountManager= By.xpath("//*[@class='toast toast-success']");
-	By errorMessage= By.id("nonRegisteredMsg");
-	By successMsg = By.id("registeredMsg");
-	By maxMemberLimitErrorMsg = By.id("memberLimitMsg");
-	By transferAmountLimitErrorMsg = By.id("amountMsg");
-	By configureClips = By.xpath("//*[@class='btn btn-primary btn-pink btnConfiguration']");
-	By chooseFileForMuteClip = By.xpath("//*[@id='divClips']/fieldset[2]/input[2][@value='Choose File']");
-	By chooseFileForNormalclip = By.xpath("//*[@id='divClips']/fieldset[1]/input[2][@value='Choose File']");
-	By saveNormalClip = By.xpath("//*[@id='divClips']//*[@id='btnSaveWelcomeClip']");
-	By saveMuteClip = By.xpath("//*[@id='divClips']//*[@id='btnSaveMuteClip']");
-	By downloadLinkForNormalClipAudio = By.xpath("//*[@id='NormalClipAudio']//*[@id='spNormalClip']");
-	By downloadLinkForMuteClipAudio = By.xpath("//*[@id='MuteClipAudio']//*[@id='spMuteclip']");
-	By closeButtonOnConfigureClipsOverlay = By.xpath("//*[@class= 'btn btn-default btnCloseConfig']");
-	By deleteButtonForNormalClip = By.xpath("//*[@id='btnDeleteNormalClip']");
-	By deleteButtonForMuteClip = By.xpath("//*[@id='btnDeleteMuteClip']");
-	By successMsgForUploadedNormalAudioClip = By.xpath("//*[@class='toast-message']");
-	By successMsgForUploadedMuteAudioClip = By.xpath("//*[@class='toast-message']");
-	By msgOnConfigureClipsOverlay = By.xpath("//*[@class='toast-message']");
- 	By availableLines = By.id("AvailableLines");
- 	By subAccountsCount = By.xpath("//*[@id='SubAccountDiv']//*[@class='subAcc-Item']");
- 	By activeOptionForSubAccounts = By.xpath("//*[@mobileno='918331996838']//*[@class='fa fa-check text-green']");
- 	By blockedOptionForSubAccounts = By.xpath("//*[@mobileno='918331996838']//*[@class='fa fa-remove text-red']");
- 	By editOptionOfSubAccount = By.xpath("//*[@mobileno='918331996838']//*[@class='CEditSubAccount']");
- 	By viewOptionOfSubAccount = By.xpath("//*[@mobileno='918331996838']//*[@class='CViewSubAccount']");
- 	By addBalanceOptionOfSubAccount = By.xpath("//*[@mobileno='918331996838']//*[@class='CAddBalance']");
- 	By subAccountsNames = By.xpath("//*[@id='SubAccountDiv']//*[@class='subAcc-Item']//*[@class='font-18 subAccountName']");
- 	By subAccounts = By.xpath("//*[@id='SubAccountDiv']//*[@class='subAcc-Item']");
- 	By activeSubAccount = By.xpath("//*[@mobileno='918331996838']");
- 	By transferAmountFieldOnAddBalanceOverlay = By.id("txtAddBalance");
- 	By addButtonOnAddBalanceOverlay = By.id("btnAddBalance");
- 	By currentBalanceOfSubAccount = By.xpath("//*[@class='margin-top-10 font-20 subAccountBalance']");
- 	By successMessageForBalanceTransfer = By.xpath("//*[@class='toast-message']");
- 	By subAccountNameInSubAccountDetails = By.xpath("//*[@id='displayName']");
- 	By subAccountMobileNumbersInSubAccountDetails = By.xpath("//*[@id='displayMobNo']");
- 	By maxMemberLimitInEditSubAccountOverlay = By.id("MaxConCurrency");
- 	By accountStatusInEditSubAccountOverlay = By.id("ddlAccountStatus");
- 	By saveButtonOnEditsubAccountOverlay = By.xpath("//*[@id='btnEditSubAccount']");
- 	By successMsgOfEditSubAccount = By.xpath("//*[@class='toast-message']");
- 	
  	
 	public String addBalanceToActiveSubAccount(String addBalance) throws InterruptedException{
  		driver.findElement(addBalanceOptionOfSubAccount).click();
@@ -204,7 +227,7 @@ public class AccountPage {
 	
 	public void enterMaxMemberLimitInEditSubAccountOverlay(){
 		driver.findElement(maxMemberLimitInEditSubAccountOverlay).clear();
-		driver.findElement(maxMemberLimitInEditSubAccountOverlay).sendKeys("3");
+		driver.findElement(maxMemberLimitInEditSubAccountOverlay).sendKeys(CommonMethods.passingData("enterMaxMemberLimitInEditSubAccount"));
 	}
 	
 	public void chanageAccountStatusToBlockedInEditSubAccountOverlay(){
@@ -235,38 +258,17 @@ public class AccountPage {
 		return driver.findElement(subAccountMobileNumbersInSubAccountDetails).getText();
 	}
  	
- 	
  	public void addBalanceToActiveSubAccount1(String addBAlance){
  		List<WebElement> accountNames = driver.findElements(subAccounts);
  		WebElement activeAccount = driver.findElement(activeSubAccount);
  		String addBalanceToSubAccount= addBAlance;
  		String currentSubAccBalance,UpdatedSubAccountBalance;
  		System.out.println("ssss");
- 		currentSubAccBalance= driver.findElement(By.xpath("//*[@id='divGetSubAccount']/*[@mobileno='918331996838']//*[@class='blocks'][1]")).getText();
+ 		currentSubAccBalance= driver.findElement(By.xpath("//*[@id='divGetSubAccount']/*[@mobileno='919550866282']//*[@class='blocks'][1]")).getText();
  			System.out.println(currentSubAccBalance);	
- 			System.out.println( driver.findElement(By.xpath("//*[@mobileno='918331996838']//*[@class='blocks'][1]")).getAttribute("innerhtml"));
-
-//System.out.println( driver.findElement(By.xpath("//*[@id='SubAccountDiv']//*[@class='subAcc-Item']//*[@class='blocks'][1]")).getText());
-// 		for(WebElement name:accountNames){
-// 			currentSubAccBalance = name.findElement(currentBalanceOfSubAccount).getText().toString();
-// 			System.out.println( name.findElement(By.xpath("//*[@class='blocks'][1]")).getText());
-// 			if(name.findElement(activeOptionForSubAccounts).isDisplayed()){
-// 				System.out.println("active otp");
-// 				if(name.getAttribute("mobileno").equalsIgnoreCase("918331996838")){
-// 					System.out.println("hiii");
-// 					driver.findElement(addBalanceOptionOfSubAccount).click();
-// 					driver.findElement(transferAmountFieldOnAddBalanceOverlay).sendKeys(addBalanceToSubAccount);
-// 					driver.findElement(addButtonOnAddBalanceOverlay).click();
-// 				}
-// 				UpdatedSubAccountBalance = name.findElement(currentBalanceOfSubAccount).getText();
-// 	 			System.out.println("current sub account balance:"+currentSubAccBalance );
-// 	 	 		System.out.println("Updated sub account balance:"+UpdatedSubAccountBalance );
-// 			}
-// 		}	
+ 			System.out.println( driver.findElement(By.xpath("//*[@mobileno='919550866282']//*[@class='blocks'][1]")).getAttribute("innerhtml"));
  	}
  
-
- 	
 	public String successMsgForUploadedNormalAudioClip() throws InterruptedException{
 		Thread.sleep(1000);
 		return driver.findElement(successMsgForUploadedNormalAudioClip).getText();
@@ -359,7 +361,6 @@ public class AccountPage {
 		}
 	}
 	
-	
 	public int totalNumberOfAccountManagers(){
 		return driver.findElements(numberOfAccountManagers).size();
 	}
@@ -393,13 +394,13 @@ public class AccountPage {
 	}
 	
 	public void deleteAccountManager() throws InterruptedException{
-		Utility.explicitWaitForElementVisibility(driver,deleteOptionForAccountManager);
+		CommonMethods.explicitWaitForElementVisibility(deleteOptionForAccountManager);
 		Thread.sleep(1000);
 		driver.findElement(deleteOptionForAccountManager).click();
 	}
 	
 	public boolean blockedStateOfAccountManager() throws InterruptedException{
-		Utility.explicitWaitForElementVisibility(driver,blockedStateOfAccountManager);
+		CommonMethods.explicitWaitForElementVisibility(blockedStateOfAccountManager);
 		return driver.findElement(blockedStateOfAccountManager).isDisplayed();
 	}
 	
@@ -415,7 +416,7 @@ public class AccountPage {
 	}
 	
 	public String accountManagerNameOnEditAccountManagerOverlay() throws InterruptedException{
-		Utility.explicitWaitForElementVisibility(driver,accountManagerNameOnEditAccountManagerOverlay);
+		CommonMethods.explicitWaitForElementVisibility(accountManagerNameOnEditAccountManagerOverlay);
 		return driver.findElement(accountManagerNameOnEditAccountManagerOverlay).getText();
 	}
 	
@@ -425,21 +426,19 @@ public class AccountPage {
 	
 	public void clickEditDetailsButtonOfAccountManager() throws InterruptedException{
 	    Thread.sleep(2000);
-//		WebDriverWait wait= new WebDriverWait(driver, 5);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated((editDetailsButtonOfAccountManager)));
-		Utility.explicitWaitForElementVisibility(driver,editDetailsButtonOfAccountManager);
+		CommonMethods.explicitWaitForElementVisibility(editDetailsButtonOfAccountManager);
 		driver.findElement(editDetailsButtonOfAccountManager).click();
 	}
 	
 	public void changeAccountStatus() throws InterruptedException{
-		Utility.explicitWaitForElementVisibility(driver,accountStatus);
+		CommonMethods.explicitWaitForElementVisibility(accountStatus);
 		Select listbox=new Select(driver.findElement(accountStatus));
 		listbox.selectByVisibleText("Blocked");
 	}
 	
 	public void changeAccountStatusToActive() throws InterruptedException{
 		Thread.sleep(1000);
-		Utility.explicitWaitForElementVisibility(driver,accountStatus);
+		CommonMethods.explicitWaitForElementVisibility(accountStatus);
 		Select listbox=new Select(driver.findElement(accountStatus));
 		listbox.selectByVisibleText("Active");
 	}
@@ -471,7 +470,7 @@ public class AccountPage {
  	}
 	
 	public int totalAvailableLines() throws InterruptedException{
-		Utility.explicitWaitForElementVisibility(driver,totalAvailableLines);
+		CommonMethods.explicitWaitForElementVisibility(totalAvailableLines);
  		String lines= driver.findElement(totalAvailableLines).getText();
  		int avaliableLines = Integer.parseInt(lines.replaceAll("[^0-9]", ""));
  		return avaliableLines;
@@ -544,7 +543,6 @@ public class AccountPage {
 	public String maxMemberLimitErrorMsgOnAddSubAccountOverlay() throws InterruptedException{
 		return driver.findElement(maxMemberLimitErrorMsg).getText();
  	}
-	
 	
 	public String transferAmountLimitErrorMsgOnAddSubAccountOverlay() throws InterruptedException{
 		return driver.findElement(transferAmountLimitErrorMsg).getText();
@@ -642,17 +640,14 @@ public class AccountPage {
 	
 	public void errorMsgForInvalidRegisteredMobileNumberOnSubAccountOverlay() throws InterruptedException{
  		driver.findElement(errorMsgForInvalidRegisteredMobileNumberOnSubAccountOverlay).getText();
- 	//This number is not registered with grptalk. Send invitation to download grpTalk
- 		//This Account is Already Sub Account, you can't make this account again as sub Account
 	}
 	
 	public void errorMsgForAlreadyExistSubAccountOnSubAccountOverlay() throws InterruptedException{
  		driver.findElement(errorMsgForInvalidRegisteredMobileNumberOnSubAccountOverlay).getText();
- 		//This Account is Already Sub Account, you can't make this account again as sub Account
 	}
 	
 	public String unAvailabilityMsgOfAccountManagers() throws InterruptedException{
-		Utility.explicitWaitForElementVisibility(driver,unAvailabilityMsgOfAccountManagers);
+		CommonMethods.explicitWaitForElementVisibility(unAvailabilityMsgOfAccountManagers);
 		return driver.findElement(unAvailabilityMsgOfAccountManagers).getText();
 	}
 	

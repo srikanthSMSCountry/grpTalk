@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+	<test name="ContactsPageTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="localUrl" />
+		<classes>
+			<class name="GT.GT.ContactsPageTest" />
+		</classes>
+	</test>
+	<test name="AccountPageTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="localUrl" />
+		<classes>
+			<class name="GT.GT.AccountPageTest" />
+		</classes>
+	</test>
+	<test name="CreateAndCallGroupTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="localUrl" />
+		<classes>
+			<class name="GT.GT.CreateAndCallGroupTest" />
+		</classes>
+	</test>
+	<test name="HomePageTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="loacalHomePage" />
+		<classes>
+			<class name="GT.GT.HomePageTest" />
+		</classes>
+	</test>
+	<test name="WebGrpTalkHomePageTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="localWebHomePage" />
+		<classes>
+			<class name="GT.GT.WebGrpTalkHomePageTest" />
+		</classes>
+	</test>
+</suite>
+
+			

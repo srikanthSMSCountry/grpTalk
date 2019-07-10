@@ -119,14 +119,14 @@ public class CreatingGroup extends BrowserFunctions{
 		driver.findElement(clipsTabInSaveGroupOverlay).click();
 		Thread.sleep(1000);
 		driver.findElement(chooseFileForNormalClipOnSaveGroupOverlay).click();
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded Normalclip");
 	}
 	
 	public void uploadMuteClipOnSaveGroupOverlay() throws InterruptedException, AWTException {
 		Thread.sleep(1000);
 		driver.findElement(chooseFileForMuteClipOnSaveGroupOverlay).click();
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded mute clip");
 	}
 	
@@ -135,14 +135,14 @@ public class CreatingGroup extends BrowserFunctions{
 		driver.findElement(clipsTabInScheduleGroupOverlay).click();
 		Thread.sleep(1000);
 		driver.findElement(chooseFileForNormalClipOnScheduleOverlay).click();
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded Normalclip");
 	}
 	
 	public void uploadMuteClipOnScheduleOverlay() throws InterruptedException, AWTException {
 		Thread.sleep(1000);
 		driver.findElement(chooseFileForMuteClipOnScheduleOverlay).click();
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded mute clip");
 	}
 	
@@ -431,7 +431,7 @@ public class CreatingGroup extends BrowserFunctions{
     }
 
     public int selectSpecificCharacterOfContacts() throws InterruptedException{
-    	Thread.sleep(2000);
+    	Thread.sleep(4000);
     	driver.findElement(selectSpecificCharacterOfContacts).click();
     	Thread.sleep(1000);
     	List<WebElement> ele= driver.findElements(specificCharaterContacts);
@@ -520,7 +520,7 @@ public class CreatingGroup extends BrowserFunctions{
  		driver.findElement(createWebListNameFieldOnOverlayByExcelUpload).sendKeys(listName);
  		driver.findElement(uploadButtonForExcelUploadContactsOnOverlay).click();
  		driver.findElement(saveButtonForDuplicateContactsInDiffList).click();
- 		
+ 		System.out.println("listName="+listName);
  		return listName;
  	}
  	By saveButtonForDuplicateContactsInDiffList = By.id("btnSaveExcel");
@@ -667,11 +667,11 @@ public class CreatingGroup extends BrowserFunctions{
     }
     
     public void selectTestContactsFromContactList() throws InterruptedException{
-    	CommonMethods.explicitWaitForElementVisibility(search_box);
-    	Thread.sleep(1000);
+//    	CommonMethods.explicitWaitForElementVisibility(search_box);
+//    	Thread.sleep(1000);
     	driver.findElement(search_box).clear();
-       	driver.findElement(search_box).sendKeys(CommonMethods.passingData("EnterTestContactInSearchBox"));
-       	Thread.sleep(3000);
+       	driver.findElement(search_box).sendKeys(CommonMethods.passingData("enterTestContactInSearchBox"));
+       	Thread.sleep(2000);
        	List<WebElement> ele=listOfUsers();
        	int j=0;
        	for(int i=0;i<ele.size();i++){
@@ -741,10 +741,15 @@ public class CreatingGroup extends BrowserFunctions{
     }
 
     public String addMorethanNineUserFromContactList() throws InterruptedException{
+//    	CommonMethods.explicitWaitForElementVisibility(search_box);
+//    	Thread.sleep(1000);
+//    	driver.findElement(search_box).clear();
+//       	driver.findElement(search_box).sendKeys(CommonMethods.passingData("searchContactsWithNameAuto"));
+//       	Thread.sleep(2000);
     	List<WebElement> ele=listOfUsers();
     	int i;
     	Actions actions= new Actions(driver);
-       	for(i=0;i<9;i++)
+       	for(i=0;i<27;i=i+3)
     	{
        		actions.moveToElement(ele.get(i));
      		actions.perform();

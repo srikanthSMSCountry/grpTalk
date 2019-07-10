@@ -100,7 +100,7 @@ public class CommonMethods extends BrowserFunctions{
     	JSONParser parser = new JSONParser();
     	JSONObject jsonObject=new JSONObject();
         try {
-        	Object object = parser.parse(new FileReader("D:\\GrpTalk\\src\\main\\java\\utility\\TestData.json"));
+        	Object object = parser.parse(new FileReader(userDirectory+"\\src\\main\\java\\utility\\TestData.json"));
 	    	jsonObject = (JSONObject)object;
 	    	text=(String)jsonObject.get(text);						
         } 

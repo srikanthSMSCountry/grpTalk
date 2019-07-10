@@ -140,7 +140,7 @@ public class AccountPage extends BrowserFunctions{
  	public void uploadImage() throws InterruptedException, AWTException{
  		driver.findElement(chooseImageButton).click();
  		Thread.sleep(1000);
- 		CommonMethods.getUploadFile("D:\\GrpTalk\\TestDataFiles\\Images\\host image.jpg");
+ 		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\Images\\host image.jpg");
  		Thread.sleep(13000);
  	}
  	

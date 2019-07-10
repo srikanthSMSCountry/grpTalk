@@ -42,7 +42,7 @@ public class EditGroupTalk extends BrowserFunctions{
 	By repeatDaysOnAdvancedSettings 						= By.xpath("//*[@class='modal-content']//*[@class='btn weekDay']");
 	By advacedSettingOnEditGrpTalk 							= By.xpath("//*[@id='content']//*[@class='form-inline']//*[@id='adSettings']");
 	By selectedContactsTab 									= By.xpath("//*[@id='myTabList']/li[3]/a/span");
-	By contactOfUser										= By.xpath("//*[@name='TestContact2']");
+	By contactOfUser										= By.xpath("//*[@id='grpCallMobileContacts']//*[@id='profileDetails']");
 	By searchBox											= By.id("search-input");
  	By agendOptionInEditGrpTalk								= By.id("openAgenda");
  	By textAgenda											= By.id("txtAgenda");
@@ -105,14 +105,14 @@ public class EditGroupTalk extends BrowserFunctions{
 	public void uploadNormalClipOnEditGroupOverlay() throws InterruptedException, AWTException {
 		Thread.sleep(1000);
 		driver.findElement(chooseFileOptionForNormalClipOnUploadClipsOverlayInEditGroup).click();
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded Normalclip");
 	}
 	
 	public void uploadMuteClipOnEditGroupOverlay() throws InterruptedException, AWTException {
 		Thread.sleep(1000);
 		driver.findElement(chooseFileOptionForMuteClipOnUploadClipsOverlayInEditGroup).click();
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded Normalclip");
 	}
 	
@@ -142,7 +142,9 @@ public class EditGroupTalk extends BrowserFunctions{
  		driver.findElement(editGroupCallButton).click();
  		CommonMethods.explicitWaitForAlert(driver);
  		driver.switchTo().alert().accept();
+ 		Thread.sleep(2000);
  		crtGrp.selectedContactsTab();
+ 		Thread.sleep(1000);
  		List<WebElement> contacts = driver.findElements(crtGrp.usersListFromSelectedContacts);
  		String contactName = contacts.get(0).getText();
        	contacts.get(0).click();
@@ -317,13 +319,18 @@ public class EditGroupTalk extends BrowserFunctions{
   		Thread.sleep(2000);
   		driver.findElement(onOffSwitchLabelForOpenLineBeforeThirtyMinutesOnAdvancedSettingsInEditGrpTalk).click();
   	}
+  	public List<WebElement> listOfUsers() throws InterruptedException{
+    	CommonMethods.explicitWaitForElementVisibility(contactOfUser);
+    	List<WebElement> listofUsers = driver.findElements(contactOfUser);
+    	return listofUsers;
+    }
   	
     public void selectSecondUserFromContactList() throws InterruptedException{
     	CommonMethods.explicitWaitForElementVisibility(searchBox);
     	driver.findElement(searchBox).sendKeys(CommonMethods.passingData("enterTestContact2InSearchBox"));
-    	CommonMethods.explicitWaitForElementVisibility(contactOfUser);
+    	List<WebElement> ele=listOfUsers();
+		ele.get(0).click();
     	Thread.sleep(1000);
-    	driver.findElement(contactOfUser).click();
     }
 	
 	public int editSavedGroupCall(String name) throws InterruptedException{
@@ -332,7 +339,7 @@ public class EditGroupTalk extends BrowserFunctions{
  		driver.findElement(editGroupCallButton).click();
  		CommonMethods.explicitWaitForAlert(driver);
  		driver.switchTo().alert().accept();
- 		Thread.sleep(1000);
+ 		Thread.sleep(2000);
  		crtGrp.clickPhoneContactsTab();
  		selectSecondUserFromContactList();
  		int selectedUsersCount=crtGrp.selectedUserCount();

@@ -5,8 +5,8 @@
     <classes>
       <class name="GT.GT.CreateAndCallGroupTest">
         <methods>
-          <include name="verifyCallFunctionalityFromAllMembersTab"/>
           <include name="closeBrowser1"/>
+          <include name="verifySelectSpecificCharacterOfContactsInPhoneContacts"/>
           <include name="tearDown"/>
           <include name="beforeCalss"/>
           <include name="setup"/>

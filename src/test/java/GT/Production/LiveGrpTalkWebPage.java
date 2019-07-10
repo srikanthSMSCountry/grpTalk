@@ -43,6 +43,7 @@ public class LiveGrpTalkWebPage{
 	public static WebDriver driver;
 	ExtentReports extent ;
 	ExtentTest logger_ss;
+	public static String userDirectory = System.getProperty("user.dir");
 	//public static Logger logger = Logger.getLogger(AudioTest.class);
 	String downloadFilepath=System.getProperty("user.dir")+"/TestDataFiles/downloads/";
 	StringBuilder sb = new StringBuilder();
@@ -60,7 +61,7 @@ public class LiveGrpTalkWebPage{
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.gecko.driver", "D:\\GrpTalk\\Drivers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", userDirectory+"\\Drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 			logger_ss.log(Status.INFO, "Firefox Browser Launched Successfully");
 		}
@@ -70,7 +71,7 @@ public class LiveGrpTalkWebPage{
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.chrome.driver","D:\\GrpTalk\\Drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",userDirectory+"\\Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			logger_ss.log(Status.INFO, "Chrome Browser Launched Successfully");
 		}
@@ -80,7 +81,7 @@ public class LiveGrpTalkWebPage{
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.edge.driver","D:\\GrpTalk\\Drivers\\MicrosoftWebDriver.exe");
+			System.setProperty("webdriver.edge.driver",userDirectory+"\\Drivers\\MicrosoftWebDriver.exe");
 			driver = new EdgeDriver();
 			logger_ss.log(Status.INFO, "Edge Browser Launched Successfully");
 				}
@@ -90,7 +91,7 @@ public class LiveGrpTalkWebPage{
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.chrome.driver","D:\\GrpTalk\\Drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",userDirectory+"\\Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			logger_ss.log(Status.INFO, "Chrome Browser Launched Successfully");
 		}

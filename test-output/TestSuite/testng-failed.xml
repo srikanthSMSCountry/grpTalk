@@ -7,30 +7,37 @@
     <classes>
       <class name="GT.GT.CreateAndCallGroupTest">
         <methods>
-          <include name="verifyDeleteNormalAndMuteClipsFromScheduleGRoup"/>
           <include name="verifyRetryCallFunctionality"/>
           <include name="closeBrowser1"/>
           <include name="verifyCallFunctionalityOfListMembers"/>
-          <include name="verifyCallFunctionalityFromUnMutedCountInListView"/>
+          <include name="verifyAddMemberInOnGoingGrpCallThroughWebList"/>
           <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
           <include name="verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage"/>
           <include name="verifyMuteDialFunctionalityFromScheduleOverlay"/>
+          <include name="VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule"/>
           <include name="tearDown"/>
-          <include name="VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
-          <include name="removeLeaveGroup"/>
-          <include name="verifyCallFunctionalityFromAllMembersTabInListView"/>
           <include name="verifyPrivateRoomFuntionalityInLiveCallListView"/>
-          <include name="verifySaveGroupWithNormalAndMuteClips"/>
-          <include name="VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
           <include name="verifyCallFunctionalityFromOnCallTab"/>
+          <include name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage"/>
           <include name="verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage"/>
-          <include name="verifyDialFunctionalityOfScheduleGroup"/>
           <include name="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList"/>
-          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
           <include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab"/>
+          <include name="verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage"/>
           <include name="beforeCalss"/>
-          <include name="createAndSaveTheGroupByLeaveGroupName"/>
+          <include name="verifyContactListInPhoneContacts"/>
           <include name="setup"/>
+          <include name="verifyDeleteNormalAndMuteClipsFromScheduleGRoup"/>
+          <include name="verifyCreateListFromExcelUploadOnCreateGrpPage"/>
+          <include name="verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial"/>
+          <include name="verifyCallFunctionalityFromAllMembersTabInListView"/>
+          <include name="verifyCallFunctionalityFromAllMembersTab"/>
+          <include name="verifyDialFunctionalityOfScheduleGroup"/>
+          <include name="verifyCallFunctionalityFromOnCallTabInListView"/>
+          <include name="verifySelectSpecificCharacterOfContactsInPhoneContacts"/>
+          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
+          <include name="verifyMuteDialfunctionalityOnOverlayInGrpCall"/>
+          <include name="verifyUnMuteFromMuteDialfunctionalityInGrpCall"/>
+          <include name="verifyCallFunctionalityFromUnMutedCount"/>
         </methods>
       </class> <!-- GT.GT.CreateAndCallGroupTest -->
     </classes>
@@ -57,6 +64,7 @@
       <class name="GT.GT.AccountPageTest">
         <methods>
           <include name="closeBrowser1"/>
+          <include name="verifyConfigureClipsFunctionalityOnProfilePage"/>
           <include name="verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab"/>
           <include name="verifyEditSubAccountFunctionalityInSubAccountsTab"/>
           <include name="tearDown"/>
@@ -91,29 +99,10 @@
       <class name="GT.GT.WebGrpTalkHomePageTest">
         <methods>
           <include name="closeBrowser1"/>
-          <include name="verifyFunctionalityOfTwitterLogoInFooterSection"/>
-          <include name="verifyAboutLinkInFooterSection"/>
-          <include name="verifyCustomerStoriesTabFunctionality"/>
-          <include name="verifyFunctionalityOfFacebookLogoInFooterSection"/>
-          <include name="verifyFeaturesTabFunctionality"/>
-          <include name="verifyFunctionalityOfYoutubeLogoInFooterSection"/>
-          <include name="verify_FAQ_LinkInFooterSection"/>
-          <include name="tearDown"/>
-          <include name="verifyHomeLinkInFooterSection"/>
-          <include name="verifyPricingTabFunctionality"/>
-          <include name="verifyHowItWorksLinkInFooterSection"/>
-          <include name="verifyTermsAndConditionsLinkInFooterSection"/>
-          <include name="verifyContactLinkInFooterSection"/>
           <include name="verifyGrpTalkLogoFunctionality"/>
-          <include name="verifyFeaturesLinkInFooterSection"/>
-          <include name="verifyBlogLinkInFooterSection"/>
-          <include name="verifyPrivacyAndDataUsageLinkInFooterSection"/>
-          <include name="verifyCustomerStoriesLinkInFooterSection"/>
-          <include name="verifySolutionsTabFunctionality"/>
+          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="verifyHowItWorksTabFunctionality"/>
           <include name="beforeCalss"/>
-          <include name="verifyPricingLinkInFooterSection"/>
         </methods>
       </class> <!-- GT.GT.WebGrpTalkHomePageTest -->
     </classes>

@@ -6,7 +6,7 @@
     "SchoolInvalidPassword"					: 		"11111",
     "NameOfUserOnWebListOverlay"			: 		"grpTalk",
     "moblileNumberOfUserOnWebListOverlay"  	: 		"9550866282",
-    "EnterTestInsearchAndSelectMemberField"	: 		"test",
+    "EnterTestInsearchAndSelectMemberField"	: 		"Auto Ans1",
     "enterTestContact1InSearchBox"			: 		"Auto Ans1",
     "enterTestContact2InSearchBox"			: 		"Auto Ans2",
     "enterMaxMemberLimitInEditSubAccount"	: 		"3",
@@ -31,7 +31,7 @@
     "stagingUrl"				:	"http://staging.grptalk.com/index.aspx?automationKey=84084",
     "localUrl"					:	"http://192.168.75.33:8081/index.aspx?automationKey=84081",
 	"productionUrl"				:	"https://web.grptalk.com/index.aspx?automationKey=88809",
-	"downloadFilepath" 			:	"D:\\grpTalk\\TestDataFiles\\downloads\\",
+	"downloadFilepath" 			:	"\\TestDataFiles\\downloads\\",
 	
 	"localGrpTalksPage"			: 	"http://192.168.75.33:8081/GrpTalks.aspx",
 	"stagingGrpTalksPage"		: 	"http://staging.grptalk.com/GrpTalks.aspx",
@@ -41,8 +41,6 @@
 	"stagingContactsPage" 		:	"http://staging.grptalk.com/Contacts.aspx",
 	"productionContactsPage" 	:	"https://web.grptalk.com/Contacts.aspx",
 	
-	"driverLocation"			:	"D:\\GrpTalk\\Drivers\\",
-	
 	"localWebHomePage"			:	"http://192.168.75.33:8081/login",
 	"loacalHomePage"			:	"http://192.168.75.33:8081",
 	
@@ -50,7 +48,8 @@
 	"stagingHomePage"			: 	"http://staging.grptalk.com",
 	
 	"productionWebHomePage"		: 	"https://web.grptalk.com",
-	"productionHomePage"		:	"https://www.grptalk.com"
+	"productionHomePage"		:	"https://www.grptalk.com",
+	"searchContactsWithNameAuto" : 	"auto"
 	
 	
 }

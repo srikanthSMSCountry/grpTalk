@@ -92,7 +92,7 @@ public class AccountPageTest extends BrowserFunctions{
 		accountpage.clickChooseFileForNormalclip();
 		logger_ss.log(Status.INFO, "Clicked on Choose File option For Normalclip");
 		//String path="D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3";
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded Normalclip");
 		accountpage.saveNormalClip();
 		logger_ss.log(Status.INFO, "Saved Normalclip");
@@ -100,7 +100,7 @@ public class AccountPageTest extends BrowserFunctions{
 		logger_ss.log(Status.INFO, "Success Msg is displayed For UploadedNormalAudioClip");
 		accountpage.clickChooseFileForMuteClip();
 		logger_ss.log(Status.INFO, "Clicked on Choose File option For mute clip");
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\ConfigureClip.mp3");
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\ConfigureClip.mp3");
 		logger_ss.log(Status.INFO, "Uploaded mute clip");
 		accountpage.saveMuteClip();
 		logger_ss.log(Status.INFO, "Saved mute clip");

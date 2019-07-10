@@ -42,16 +42,19 @@ public class BrowserFunctions {
 	public static ExtentTest logger_ss;
 	public String grpTalksPage = "";
 	public static String currentUrl = "";
+	public static String userDirectory;
 	@BeforeTest
 	@Parameters({"browser","url"})
 	public void setup(@Optional("IamBrowser") String browser, @Optional("IamUrl") String url) throws Exception{
 		grpTalksPage = url;
+		userDirectory = System.getProperty("user.dir");
+		System.out.println(userDirectory);
 		if(browser.equalsIgnoreCase("firefox")){
 			ExtentHtmlReporter reporter = new ExtentHtmlReporter("GrpTalk_Report_On_Firefox.html");
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("FireFox Test");
-			System.setProperty("webdriver.gecko.driver",CommonMethods.passingData("driverLocation")+"geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver",userDirectory+"\\Drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 			logger_ss.log(Status.INFO, "Firefox Browser Launched");
 		}
@@ -61,7 +64,7 @@ public class BrowserFunctions {
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("Chrome Test");
-			System.setProperty("webdriver.chrome.driver",CommonMethods.passingData("driverLocation")+"chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",userDirectory+"\\Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			logger_ss.log(Status.INFO, "Chrome Browser Launched");
 		}
@@ -71,7 +74,7 @@ public class BrowserFunctions {
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("Edge Test");
-			System.setProperty("webdriver.edge.driver",CommonMethods.passingData("driverLocation")+"MicrosoftWebDriver.exe");
+			System.setProperty("webdriver.edge.driver",userDirectory+"\\Drivers\\MicrosoftWebDriver.exe");
 			driver = new EdgeDriver();
 			logger_ss.log(Status.INFO, "Edge Browser Launched");
 		}
@@ -81,7 +84,7 @@ public class BrowserFunctions {
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
 			logger_ss = extent.createTest("Chrome Test");
-			System.setProperty("webdriver.chrome.driver",CommonMethods.passingData("driverLocation")+"chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",userDirectory+"\\Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			logger_ss.log(Status.INFO, "Chrome Browser Launched");
 		}

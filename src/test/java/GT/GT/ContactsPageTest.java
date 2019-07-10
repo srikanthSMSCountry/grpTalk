@@ -78,8 +78,8 @@ public class ContactsPageTest extends BrowserFunctions {
 		logger_ss.log(Status.INFO, "Clicked on ExcelUploadTabOnOverlay");
 		contactsPage.clickChooseFileButtonOnOverlay();
 		logger_ss.log(Status.INFO, "Clicked on ChooseFileButtonOnOverlay");
-		String path="D:\\grpTalk\\TestDataFiles\\contacts.xlsx";
-		CommonMethods.getUploadFile("D:\\grpTalk\\TestDataFiles\\contacts.xlsx");
+		String path=userDirectory+"\\TestDataFiles\\contacts.xlsx";
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\contacts.xlsx");
 		logger_ss.log(Status.INFO, "Uploaded file");
 		Thread.sleep(2000);
 		String listName = contactsPage.givenExcelSheetDetailsOnOverlay();

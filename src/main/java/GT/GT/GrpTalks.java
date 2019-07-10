@@ -477,8 +477,10 @@ public class GrpTalks extends BrowserFunctions{
 	}
 	
  	public int selectPrivateRoomTabAndCountTheParticipants() throws InterruptedException{
+ 		Thread.sleep(1000);
  		CommonMethods.explicitWaitForElementVisibility(privateRoomTab);
  		driver.findElement(privateRoomTab).click();
+ 		Thread.sleep(1000);
  		String count_all_members = driver.findElement(privateRoomMembersConut).getText();
  		int i = Integer.parseInt(count_all_members.replaceAll("[^0-9]", ""));
  		return i;
@@ -559,6 +561,8 @@ public class GrpTalks extends BrowserFunctions{
 		 		actions.moveToElement(list);
 		 		actions.perform();
 	    		if(list.getText().contains(ss)){
+	    			Thread.sleep(1000);
+	    			System.out.println(list.getText());
 	    			list.click();
 	    			i++;
 	    			break;
@@ -746,6 +750,7 @@ public class GrpTalks extends BrowserFunctions{
     			break;
     		}
     	}
+    	Thread.sleep(3000);
     	return grpName;
     }
     
@@ -890,7 +895,7 @@ public class GrpTalks extends BrowserFunctions{
   	}
  	
  	public void dialGroupCallButton() throws InterruptedException{
- 		Thread.sleep(5000);
+ 		Thread.sleep(2000);
  		driver.findElement(dialButton).click();
  	}
  	
@@ -912,7 +917,9 @@ public class GrpTalks extends BrowserFunctions{
     }
 
  	public int selectAllParticipantsTabAndCountTheParticipants() throws InterruptedException{
+ 		Thread.sleep(1000);
  		driver.findElement(allMembersTabInGroupCall).click();
+ 		Thread.sleep(1000);
  		String count_all_members = driver.findElement(allMembersCountInGrpCall).getText();
  		int i = Integer.parseInt(count_all_members.replaceAll("[^0-9]", ""));
  		return i;
@@ -926,22 +933,28 @@ public class GrpTalks extends BrowserFunctions{
  	}
 	
  	public int selectOnCallTabAndCountTheParticipants() throws InterruptedException{
+ 		Thread.sleep(1000);
  		CommonMethods.explicitWaitForElementVisibility(onCallCountInGrpCall);
  		driver.findElement(onCallCountInGrpCall).click();
+ 		Thread.sleep(1000);
  		CommonMethods.explicitWaitForElementVisibility(onCallCountInGrpCall);
  		return Integer.parseInt((driver.findElement(onCallCountInGrpCall).getText()).replaceAll("[^0-9]", ""));
  	
  	}
  	
  	public int selectUnMutedTabAndCountTheParticipants() throws InterruptedException{
+ 		Thread.sleep(1000);
  		CommonMethods.explicitWaitForElementVisibility(unMutedTabInGrpCall);
  		driver.findElement(unMutedTabInGrpCall).click();
+ 		Thread.sleep(1000);
  		return Integer.parseInt((driver.findElement(unMutedCountInGrpCall).getText()).replaceAll("[^0-9]", ""));
  	}
  	
  	public int selectDisconnectedTabAndCountTheParticipants() throws InterruptedException{
+ 		Thread.sleep(1000);
  		CommonMethods.explicitWaitForElementVisibility(callEndedCountInGrpCall);
  		driver.findElement(callEndedCountInGrpCall).click();
+ 		Thread.sleep(1000);
  		CommonMethods.explicitWaitForElementVisibility(callEndedCountInGrpCall);
  		return Integer.parseInt((driver.findElement(callEndedCountInGrpCall).getText()).replaceAll("[^0-9]", ""));
  	}
@@ -1046,6 +1059,7 @@ public class GrpTalks extends BrowserFunctions{
  	}
  	
  	public void muteDialGroupCallOnOverlay() throws InterruptedException{
+ 		Thread.sleep(2000);
  		driver.findElement(muteDialGroupCallButtonOnOverlay).click();
  		Thread.sleep(20000);
  	}

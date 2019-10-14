@@ -20,6 +20,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 
@@ -27,7 +28,7 @@ import utility.*;
 public class CreatingGroup extends BrowserFunctions{
   
 	private static final TimeUnit SECONDS = null;
-	
+
 	By errorMsg								= By.className("toast-message");
 	By successMsg							= By.className("toast-message");
 	By selectedContacts			 			= By.className("selectedContacts"); 
@@ -38,6 +39,7 @@ public class CreatingGroup extends BrowserFunctions{
  	By grpTalkName 							= By.id("grpTalkName");
  	By selectedContactsTab 					= By.xpath("//*[@id='myTabList']/li[3]/a/span");
 	By namesOfUsers 						= By.xpath("//div[@id='grpCallMobileContacts']//div[@class='contacts margin-right-5 margin-bottom-5 ']");
+	By namesOfUsers1 						= By.xpath("//div[@id='grpCallMobileContacts']//div[@class='contacts margin-right-5 margin-bottom-5  selected ']");
 	By search_box 							= By.xpath("//*[@placeholder='Search']");
  	By onOffSwitchLabelForDialInOnlyOnAdvancedSettings 			= By.xpath("//*[@for='dialinswitch']");
  	By onOffSwitchLabelForAllowNonMembersOnAdvancedSettings 	= By.xpath("//*[@for='allownonswitch']");
@@ -67,9 +69,9 @@ public class CreatingGroup extends BrowserFunctions{
  	By saveContactbuttonOnWebListOverlay 	= By.id("saveContact");
 	By errorMessage 						= By.xpath("//*[@id='grpCallMobileContacts']");
 	By nameOfUser 							= By.xpath("//*[@id='profileDetails']/p[1]");
- 	By phoneContacts 						= By.xpath("//*[@id='myTabList']//*[contains(@class,'mobileContacts')]");
+ 	static By phoneContacts 						= By.xpath("//*[@id='myTabList']//*[contains(@class,'mobileContacts')]");
  	By selectedUserList 					= By.xpath("//*[@class='contacts margin-right-5 margin-bottom-5  selected']");
- 	By overlaySaveGroup 					= By.id("saveDate");
+ 	static By overlaySaveGroup 					= By.id("saveDate");
  	By selectedContactFromContactList 		= By.xpath("//*[@class='contacts margin-right-5 margin-bottom-5  selected']");
  	By selectSpecificCharacterOfContacts 	= By.xpath("//*[@id='grpCallMobileContacts']/ul/li[4]");
  	By specificCharaterContacts 			= By.xpath("//*[@id='grpCallMobileContacts']//*[@class='contacts margin-right-5 margin-bottom-5 ']//*[@id='profileDetails']/p[1]");
@@ -88,8 +90,11 @@ public class CreatingGroup extends BrowserFunctions{
 	By searchAndSelectMemberOnSaveGrpOverlay  						= By.xpath("//*[@id='txtAssignManger']");
 	By listContactsONCreateGroupPage 								= By.xpath("//div[@id='grpCallWebContacts']//div[@class='contacts margin-right-5 margin-bottom-5 ']");
 	By agendaOfConference											= By.id("txtAgenda");
-	
-	
+	By clickweblist													=By.xpath("//*[@class='webContacts']");
+	By clickweblist1												=By.xpath("//*[@class='webContacts active']");
+	By clickselectedcontacts										=By.xpath("//*[@class='selectedContacts']");
+	By clickselectedcontacts1										=By.xpath("//*[@class='selectedContacts active']//*[@class='count']");
+	By groups									=By.xpath("//*[@id='grptalks-li']");
 	By clipsTabInScheduleGroupOverlay					= By.xpath("//*[@id='datepickerModal']//*[@class='CustomClips']");
 	By clipsTabInSaveGroupOverlay						= By.xpath("//*[@id='saveModal']//*[@class='CustomClips']");
 	
@@ -112,6 +117,13 @@ public class CreatingGroup extends BrowserFunctions{
 	By normalAudioClipOnScheduleGroupOverlay			= By.xpath("//*[@id='scheduleClipsTab']//*[@id='TempNormalClip']");
 	By muteAudioClipOnScheduleGroupOverlay				= By.xpath("//*[@id='scheduleClipsTab']//fieldset[2]//*[@class='pull-left AudioPlay']");
 	
+	By saveButtonForDuplicateContactsInDiffList = By.id("saveExcelContacts");
+ 	By createWebListNameFieldOnOverlayByExcelUpload = By.id("xlNewWebList");
+ 	By uploadButtonForExcelUploadContactsOnOverlay 	= By.id("saveExcelContacts");
+ 	By buttonForExcelSheetHasHeaderOnOverlay= By.id("header_2");
+	By chooseFileButtonOnOverlay 			= By.xpath("//*[@id='excelFormBody']//*[@value='Choose File']");
+	By successMsgForCreatedWebListFromExcelUpload = By.className("toast-message");
+ 	
 	
 	
 	public void uploadNormalClipOnSaveGroupOverlay() throws InterruptedException, AWTException {
@@ -162,10 +174,16 @@ public class CreatingGroup extends BrowserFunctions{
 		return listContacts.size();
 	}
 	
+	public void clickOnGroupsTab() throws InterruptedException{
+ 		Thread.sleep(2000);
+		//driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS) ;
+ 		driver.findElement(groups).click();
+ 	}
+	
 	public String createAndCallTheGrp() throws InterruptedException{
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		driver.findElement(GrpTalks.createGrp).click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		CommonMethods.clickMethod(phoneContacts);
 		Thread.sleep(1000);
 		driver.findElement(search_box).clear();
@@ -186,9 +204,9 @@ public class CreatingGroup extends BrowserFunctions{
 		driver.findElement(grpTalkName).clear(); 
 		driver.findElement(grpTalkName).sendKeys(name);
 		driver.findElement(startNowButton).click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		driver.findElement(dialGroupCallButtonOnOverlayInCreateGrpTalk).click(); 
-		Thread.sleep(15000);
+		Thread.sleep(10000);
 		return name;
 	}
 	
@@ -331,11 +349,11 @@ public class CreatingGroup extends BrowserFunctions{
 	}
 	
 	public String createAndSaveTheGrpWithOneParticipant() throws InterruptedException{
-			Thread.sleep(2000);
+			Assert.assertTrue(CommonMethods.elementExistsOrNot(GrpTalks.createGrp));
 			driver.findElement(GrpTalks.createGrp).click();
-			Thread.sleep(2000);
+			Assert.assertTrue(CommonMethods.elementExistsOrNot(CreatingGroup.phoneContacts));
 			CommonMethods.clickMethod(phoneContacts);
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			driver.findElement(search_box).clear();
 			driver.findElement(search_box).sendKeys(CommonMethods.passingData("enterTestContact1InSearchBox"));
 			List<WebElement> ele=listOfUsers();
@@ -343,9 +361,12 @@ public class CreatingGroup extends BrowserFunctions{
 			driver.findElement(grpTalkName).clear(); 
 			driver.findElement(grpTalkName).sendKeys(name);
 			driver.findElement(saveButton).click();
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
+			boolean check=CommonMethods.elementExistsOrNot(CreatingGroup.overlaySaveGroup);
+			Assert.assertTrue(check);
+			System.out.println("after overlay assertion:"+check);
 			driver.findElement(overlaySaveGroup).click();
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			return name;
 	}
  	
@@ -519,16 +540,12 @@ public class CreatingGroup extends BrowserFunctions{
  		number.selectByVisibleText("Column B");
  		driver.findElement(createWebListNameFieldOnOverlayByExcelUpload).sendKeys(listName);
  		driver.findElement(uploadButtonForExcelUploadContactsOnOverlay).click();
- 		driver.findElement(saveButtonForDuplicateContactsInDiffList).click();
+ 		Thread.sleep(2000);
+ 		//driver.findElement(saveButtonForDuplicateContactsInDiffList).click();
+ 		//Thread.sleep(2000);
  		System.out.println("listName="+listName);
  		return listName;
  	}
- 	By saveButtonForDuplicateContactsInDiffList = By.id("btnSaveExcel");
- 	By createWebListNameFieldOnOverlayByExcelUpload = By.id("xlNewWebList");
- 	By uploadButtonForExcelUploadContactsOnOverlay 	= By.id("saveExcelContacts");
- 	By buttonForExcelSheetHasHeaderOnOverlay= By.id("header_2");
-	By chooseFileButtonOnOverlay 			= By.xpath("//*[@id='excelFormBody']//*[@value='Choose File']");
-	By successMsgForCreatedWebListFromExcelUpload = By.className("toast-message");
  	
 	public String successMsgForCreatedWebListFromExcelUpload() throws InterruptedException{
 		CommonMethods.explicitWaitForElementVisibility(successMsgForCreatedWebListFromExcelUpload);
@@ -684,6 +701,24 @@ public class CreatingGroup extends BrowserFunctions{
        	}
     }
     
+    public void deselectTestContactsFromContactList() throws InterruptedException{
+//    	CommonMethods.explicitWaitForElementVisibility(search_box);
+//    	Thread.sleep(1000);
+    	driver.findElement(search_box).clear();
+       	driver.findElement(search_box).sendKeys(CommonMethods.passingData("enterTestContactInSearchBox"));
+       	Thread.sleep(2000);
+       	List<WebElement> ele=listOfUsers1();
+       	int j=0;
+       	for(int i=0;i<ele.size();i++){
+       		Thread.sleep(1000);
+       		ele.get(i).click();
+       		if(j==2){
+       			break;
+       		}
+       		j++;
+       	}
+    }
+    
     public String selectContactFromContactList() throws InterruptedException{
     	driver.findElement(search_box).clear();
        	driver.findElement(search_box).sendKeys(CommonMethods.passingData("enterTestContact1InSearchBox"));
@@ -735,8 +770,18 @@ public class CreatingGroup extends BrowserFunctions{
     }
     
     public List<WebElement> listOfUsers() throws InterruptedException{
-    	CommonMethods.explicitWaitForElementVisibility(namesOfUsers);
+    	//CommonMethods.explicitWaitForElementVisibility(namesOfUsers);
+    	CommonMethods.elementExistsOrNot(namesOfUsers);
+    	Thread.sleep(1000);
     	List<WebElement> listofUsers = driver.findElements(namesOfUsers);
+    	return listofUsers;
+    }
+    
+    public List<WebElement> listOfUsers1() throws InterruptedException{
+    	//CommonMethods.explicitWaitForElementVisibility(namesOfUsers);
+    	CommonMethods.elementExistsOrNot(namesOfUsers1);
+    	Thread.sleep(1000);
+    	List<WebElement> listofUsers = driver.findElements(namesOfUsers1);
     	return listofUsers;
     }
 
@@ -801,5 +846,33 @@ public class CreatingGroup extends BrowserFunctions{
     	driver.findElement(scheduleButton).click();
     }
     
+    
+    public void clickweblisttab() throws InterruptedException{
+    	//CommonMethods.explicitWaitForElementVisibility(clickweblist);
+    	//CommonMethods.elementExistsOrNot(clickweblist);
+    	Thread.sleep(1000);
+    	driver.findElement(clickweblist).click();
+    }
+    
+    public void clickweblisttab1() throws InterruptedException{
+    	//CommonMethods.explicitWaitForElementVisibility(clickweblist);
+    	//CommonMethods.elementExistsOrNot(clickweblist);
+    	Thread.sleep(1000);
+    	driver.findElement(clickweblist1).click();
+    }
+    
+    
+    
+    public int clickselectedcontactstab() throws InterruptedException{
+    	//CommonMethods.explicitWaitForElementVisibility(clickweblist);
+    	//CommonMethods.elementExistsOrNot(clickweblist);
+    	Thread.sleep(1000);
+    	driver.findElement(clickselectedcontacts).click();
+    	Thread.sleep(1000);
+    	int count = Integer.parseInt((driver.findElement(clickselectedcontacts1).getText()).replaceAll("[^0-9]", ""));
+    	//int count = driver.findElements(clickselectedcontacts1).size();
+    	return count;
+    	
+    }
 }
 

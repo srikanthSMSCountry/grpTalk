@@ -119,9 +119,9 @@ public class HomePageTest extends BrowserFunctions{
 	
 	
 	@Test
-	public void verifyGrpTalkEmailAndContactDisplayedInHeaderScetion(){
+	public void verifyGrpTalkEmailAndContactDisplayedInHeaderScetion() throws InterruptedException{
 		logger_ss = extent.createTest("verifyGrpTalkEmailAndContactDisplayedInHeaderScetion","verifyGrpTalkEmailAndContactDisplayedInHeaderScetion");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.visibilityOfGrpTalkEmail();
 		logger_ss.log(Status.INFO, "verfied visibilityOfGrpTalkEmail");
 		homePage.visibilityOfGrpTalkContactNumber();
@@ -136,7 +136,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyFeaturesTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFeaturesTabFunctionality","verifyFeaturesTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		String url=homePage.featuresTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on featuresTab and get current url");
 		Assert.assertEquals(url, currentUrl+"/Features");
@@ -147,7 +147,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyHowItWorksTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyHowItWorksTabFunctionality","verifyHowItWorksTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		String url=homePage.howItWorksTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on howItWorksTab and get current url");
 		Assert.assertEquals(url, currentUrl+"/how-it-works");
@@ -158,7 +158,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyPricingTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPricingTabFunctionality","verifyPricingTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		String textMessage=homePage.pricingTabFunctionality();
 		Assert.assertTrue(textMessage.contains("Thank you for submitting your details."));
 		logger_ss.log(Status.INFO, "clicked on pricing tab and verfied PricingTabFunctionality");
@@ -172,7 +172,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyCustomerStoriesTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyCustomerStoriesTabFunctionality","verifyCustomerStoriesTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		String url=homePage.customerStoriesTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on ustomerStories tab and get current url");
 		Assert.assertEquals(url, currentUrl+"/Customer-Stories");
@@ -183,7 +183,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifySolutionsTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifySolutionsTabFunctionality","verifySolutionsTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		driver.navigate().refresh();
 		String url=homePage.solutionsTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on solutions tab and get current url");
@@ -195,7 +195,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyAppStoreTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAppStoreTabFunctionality","verifyAppStoreTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickAppStoreTab();
 		logger_ss.log(Status.INFO, "clicked on AppStoreTab");
 		String url=homePage.getCurrentUrl();
@@ -208,7 +208,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyPlayStoreTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPlayStoreTabFunctionality","verifyPlayStoreTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickPlayStoreTab();
 		logger_ss.log(Status.INFO, "clicked on PlayStoreTab");
 		String url=homePage.getCurrentUrl();
@@ -221,7 +221,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyStartDemoFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyStartDemoFunctionality","verifyStartDemoFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickStartDemoTab();
 		logger_ss.log(Status.INFO, "clicked on StartDemoTab with out enter mobile number");
 		Assert.assertEquals(homePage.getAlertText(), "Please Enter Your Mobile Number");
@@ -244,7 +244,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyWebLoginFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyWebLoginFunctionality","verifyWebLoginFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickWebLoginTab();
 		logger_ss.log(Status.INFO, "clicked on web login tab");
 		String url=homePage.getCurrentUrl();
@@ -263,7 +263,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyYouTubeVideoFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyYouTubeVideoFunctionality","verifyYouTubeVideoFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		//homePage.clickPlayButtonForYoutubeVideo();
 		Assert.assertTrue(homePage.visibilityOfYoutubeVideo());
 		logger_ss.log(Status.INFO, "Successfully verfied YouTubeVideoFunctionality");
@@ -272,8 +272,9 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyContactSalesButtonFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyContactSalesButtonFunctionality","verifyContactSalesButtonFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickContactSalesTab();
+		driver.switchTo().alert().accept();
 		logger_ss.log(Status.INFO, "clicked on ContactSalesTab without entered email");
 		homePage.enterEmail();
 		logger_ss.log(Status.INFO, "Entered email ");
@@ -292,7 +293,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyScanQRCodeTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyScanQRCodeTabFunctionality","verifyScanQRCodeTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickScanQRCodeTab();
 		logger_ss.log(Status.INFO, "clicked on ScanQRCodeTab");
 		String url=homePage.getCurrentUrl();
@@ -307,7 +308,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyHomeLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyHomeLinkInFooterSection","verifyHomeLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickHomeLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on HomeLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -320,7 +321,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyAboutLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAboutLinkInFooterSection","verifyAboutLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickAboutLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on AboutLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -333,7 +334,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyHowItWorksLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyHowItWorksLinkInFooterSection","verifyHowItWorksLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickHowItWorksLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on HowItWorksLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -346,7 +347,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyPricingLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPricingLinkInFooterSection","verifyPricingLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickPricingLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on PricingLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -359,7 +360,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyFeaturesLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFeaturesLinkInFooterSection","verifyFeaturesLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickFeaturesLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on FeaturesLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -372,7 +373,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyWebLoginLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyWebLoginLinkInFooterSection","verifyWebLoginLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickWebLoginLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on WebLoginLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -385,7 +386,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyCustomerStoriesLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyCustomerStoriesLinkInFooterSection","verifyCustomerStoriesLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickCustomerStoriesLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on CustomerStoriesLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -398,7 +399,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyBlogLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyBlogLinkInFooterSection","verifyBlogLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		System.out.println(driver.getWindowHandle());
 		homePage.clickBlogLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on BlogLinkInFooterSection");
@@ -422,7 +423,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyFunctionalityOfFacebookLogoInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFunctionalityOfFacebookLogoInFooterSection","verifyFunctionalityOfFacebookLogoInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		System.out.println(driver.getWindowHandle());
 		homePage.clickFacebookLogoInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on FacebookLogoInFooterSection");
@@ -459,7 +460,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyFunctionalityOfTwitterLogoInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFunctionalityOfTwitterLogoInFooterSection","verifyFunctionalityOfTwitterLogoInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickTwitterLogoInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on TwitterLogoInFooterSection");
 		homePage.switchToNewTab();
@@ -504,7 +505,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test(priority=5)
 	public void verifyChatFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyChatFunctionality","verifyChatFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		Thread.sleep(3000);
 		homePage.clickChatOption();
 		logger_ss.log(Status.INFO, "Switched to Chat Option");
@@ -521,7 +522,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyFunctionalityOfYoutubeLogoInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFunctionalityOfYoutubeLogoInFooterSection","verifyFunctionalityOfYoutubeLogoInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickYoutubeLogoInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on YoutubeLogoInFooterSection");
 		homePage.switchToNewTab();
@@ -545,7 +546,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyContactLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyContactLinkInFooterSection","verifyContactLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickContactLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on ContactLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -559,7 +560,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verify_FAQ_LinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verify_FAQ_LinkInFooterSection","verify_FAQ_LinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.click_FAQ_LinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on FAQ_LinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -572,7 +573,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyTermsAndConditionsLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyTermsAndConditionsLinkInFooterSection","verifyTermsAndConditionsLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickTermsAndConditionsLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on TermsAndConditionsLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -585,7 +586,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyPrivacyAndDataUsageLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPrivacyAndDataUsageLinkInFooterSection","verifyPrivacyAndDataUsageLinkInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		homePage.clickPrivacyAndDataUsageLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on PrivacyAndDataUsageLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -598,7 +599,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyRequest_A_PriceTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyRequest_A_PriceTabFunctionality","verifyRequest_A_PriceTabFunctionality");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		String textMessage=homePage.request_A_PriceTabFunctionality();
 		Assert.assertTrue(textMessage.contains("Thank you for submitting your details."));
 		logger_ss.log(Status.INFO, "clicked on pricing tab and verfied PricingTabFunctionality");
@@ -612,7 +613,7 @@ public class HomePageTest extends BrowserFunctions{
 	@Test
 	public void verifyCopyRightTextInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyCopyRightTextInFooterSection","verifyCopyRightTextInFooterSection");
-		HomePage homePage = new HomePage(driver);
+		HomePage homePage = new HomePage();
 		Assert.assertEquals(homePage.copyRightTextInFooterSection(), "COPYRIGHT 2018 GRPTALK BY TELEBU. ALL RIGHTS RESERVED.");
 		logger_ss.log(Status.INFO, "get copyRightTextInFooterSection and verified");
 		logger_ss.log(Status.INFO, "successfully verified CopyRightTextInFooterSection");

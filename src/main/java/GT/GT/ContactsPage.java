@@ -1,25 +1,22 @@
 package GT.GT;
 
-import java.awt.AWTException;
-import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import utility.*;
+import utility.BrowserFunctions;
+import utility.CommonMethods;
 
 public class ContactsPage extends BrowserFunctions{
-	
+
 	By saveButtonForDuplicateContactsInDiffList = By.id("btnSaveExcel");
 	By contactsTab 							= By.xpath("//*[@id='contacts-li']/a");
  	By createNewGrpListButton 				= By.xpath("//*[@id='callLogs']//*[@id='createGrpList']");
@@ -58,6 +55,14 @@ public class ContactsPage extends BrowserFunctions{
  	By buttonForExcelSheetHasHeaderOnOverlay= By.id("header_2");
  	By createWebListNameFieldOnOverlayByExcelUpload = By.id("xlNewWebList");
  	By uploadButtonForExcelUploadContactsOnOverlay 	= By.id("saveExcelContacts");
+ 	By Editlistincontacts						=By.xpath("//*[@class='fa fa-ellipsis-v']");
+ 	By Addcontactfromlist					=By.xpath("//*[@class='list highlight']//*[@class='addNewContact']");
+ 	By Exceluploadinweblist					=By.xpath("//*[@class='excelContacts active']");
+ 	By selectcontactlist 					=By.id("ddlxlWebList");
+ 	By uploadexel							=By.id("saveExcelContacts");
+ 	
+ 	By ErrorMsgFordupcontact	= By.xpath("//*[@class='toast toast-error']");
+ 	
  	
  	public String givenExcelSheetDetailsOnOverlay() throws InterruptedException{
  		Thread.sleep(1000);
@@ -68,8 +73,31 @@ public class ContactsPage extends BrowserFunctions{
  		number.selectByVisibleText("Column B");
  		driver.findElement(createWebListNameFieldOnOverlayByExcelUpload).sendKeys(listName);
  		driver.findElement(uploadButtonForExcelUploadContactsOnOverlay).click();
- 		driver.findElement(saveButtonForDuplicateContactsInDiffList).click();
  		Thread.sleep(2000);
+ 		int size = driver.findElements(saveButtonForDuplicateContactsInDiffList).size();
+ 		if(size>0) {
+ 			driver.findElement(saveButtonForDuplicateContactsInDiffList).click();
+ 	 		Thread.sleep(2000);
+ 		}
+ 		return listName;
+ 	}
+ 	
+ 	public String givenExcelSheetDetails() throws InterruptedException{
+ 		Thread.sleep(1000);
+ 		driver.findElement(buttonForExcelSheetHasHeaderOnOverlay).click();
+ 		Select name=new Select(driver.findElement(By.id("ddlname_Sheet1")));
+ 		name.selectByVisibleText("Column A");
+ 		Select number=new Select(driver.findElement(By.id("ddlmobile_Sheet1")));
+ 		number.selectByVisibleText("Column B");
+ 		//driver.findElement(createWebListNameFieldOnOverlayByExcelUpload).sendKeys(listName);
+ 		//driver.findElement(selectcontactlist).click();
+ 		//driver.findElement(uploadButtonForExcelUploadContactsOnOverlay).click();
+ 		//Thread.sleep(2000);
+ 		//int size = driver.findElements(saveButtonForDuplicateContactsInDiffList).size();
+ 		///if(size>0) {
+ 			driver.findElement(uploadexel).click();
+ 	 		Thread.sleep(2000);
+ 		//}
  		return listName;
  	}
  	
@@ -96,12 +124,14 @@ public class ContactsPage extends BrowserFunctions{
 	}
 	
  	public void clickExcelUploadTabOnOverlay() throws InterruptedException{
- 		CommonMethods.explicitWaitForElementVisibility(excelUploadTabOnOverlay);
+ 		Thread.sleep(2000);
+ 		//CommonMethods.explicitWaitForElementVisibility(excelUploadTabOnOverlay);
  		driver.findElement(excelUploadTabOnOverlay).click();
  	}
  	
  	public void clickChooseFileButtonOnOverlay() throws InterruptedException{
- 		CommonMethods.explicitWaitForElementVisibility(chooseFileButtonOnOverlay);
+ 		//CommonMethods.explicitWaitForElementVisibility(chooseFileButtonOnOverlay);
+ 		Thread.sleep(2000);
  		driver.findElement(chooseFileButtonOnOverlay).click();
  	}
  	
@@ -131,6 +161,25 @@ public class ContactsPage extends BrowserFunctions{
  		CommonMethods.explicitWaitForElementVisibility(plusButtonToCreateNewWebList);
  		Thread.sleep(1000);
  		driver.findElement(plusButtonToCreateNewWebList).click();
+ 	}
+ 	
+ 	public void clickEditlistincontacts() throws InterruptedException{
+ 		CommonMethods.explicitWaitForElementVisibility(Editlistincontacts);
+ 		Thread.sleep(1000);
+ 		driver.findElement(Editlistincontacts).click();
+ 	}
+ 	
+ 	public void clickAddcontactfromlist() throws InterruptedException{
+ 		CommonMethods.explicitWaitForElementVisibility(Addcontactfromlist);
+ 		Thread.sleep(1000);
+ 		driver.findElement(Addcontactfromlist).click();
+ 	}
+ 	
+ 	 	
+ 	public void clickExceluploadinweblist() throws InterruptedException{
+ 		CommonMethods.explicitWaitForElementVisibility(Exceluploadinweblist);
+ 		Thread.sleep(1000);
+ 		driver.findElement(Exceluploadinweblist).click();
  	}
  	
  	//click mobile Contacts Tab On Overlay
@@ -180,9 +229,9 @@ public class ContactsPage extends BrowserFunctions{
  	public String addcontactFromWebListGroupOnOverlay() throws InterruptedException{
  		CommonMethods.explicitWaitForElementVisibility(listOfUsersInWebListGroupOnOverlay);
  		List<WebElement> ele=driver.findElements(listOfUsersInWebListGroupOnOverlay);
- 		ele.get(0).click();
+ 		ele.get(1).click();
  		driver.findElement(addToListButtonOnOverlay).click();
- 		String s=ele.get(0).getText();
+ 		String s=ele.get(1).getText();
  		return s;
  	}
  	
@@ -255,7 +304,7 @@ public class ContactsPage extends BrowserFunctions{
  		
  	}
  	
- 	String contactName= "Srikanth@smsc";	
+ 	String contactName= "Srikanth";	
  	long x = 8000000000L;
  	long y = 9999999999L;
  	Random r = new Random();
@@ -277,6 +326,15 @@ public class ContactsPage extends BrowserFunctions{
  		driver.findElement(addcontactButtonOnOverlay).click();
  		CommonMethods.explicitWaitForAlert(driver);
  		driver.switchTo().alert().accept();
+ 	}
+ 	
+ 	public void enterDetailsInAddContactTabOnOverlay1() throws InterruptedException{
+ 		driver.findElement(nameFieldInAddContactsTabOnOverlay).sendKeys(contactName);
+ 		driver.findElement(mobileNumberFieldInAddContactsTabOnOverlay).sendKeys(contactNumber);
+ 		CommonMethods.explicitWaitForElementVisibility(addcontactButtonOnOverlay);
+ 		driver.findElement(addcontactButtonOnOverlay).click();
+ 		//CommonMethods.explicitWaitForAlert(driver);
+ 		//driver.switchTo().alert().accept();
  	}
  	
  	public void clickDropDownToggle() throws InterruptedException{
@@ -398,6 +456,8 @@ public class ContactsPage extends BrowserFunctions{
  	}
  	
  	public void clickOnContactsTab() throws InterruptedException{
+ 		 JavascriptExecutor js = (JavascriptExecutor) driver;
+ 		 js.executeScript("window.scrollBy(0,1000)");
  		CommonMethods.explicitWaitForElementVisibility(contactsTab);
  		driver.findElement(contactsTab).click();
  	}
@@ -408,4 +468,8 @@ public class ContactsPage extends BrowserFunctions{
  		driver.findElement(createNewGrpListButton).click();
  	}
 	
+ 	public String Errormsgfordupcontact() throws InterruptedException{
+		Thread.sleep(2000);
+ 		return driver.findElement(ErrorMsgFordupcontact).getText();
+  	}
 }

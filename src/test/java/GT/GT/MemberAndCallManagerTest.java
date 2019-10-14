@@ -17,6 +17,7 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -34,12 +35,21 @@ import utility.CommonMethods;
 public class MemberAndCallManagerTest extends BrowserFunctions{
 
 	public static Logger logger = Logger.getLogger(CreateAndCallGroupTest.class);
+	CommonMethods CommonMethods=new CommonMethods();
+	//public String homeUrl="http://192.168.75.33:8081/index.aspx?automationKey=84081";
 	
-	public String homeUrl="http://192.168.75.33:8081/index.aspx?automationKey=84081";
+	@BeforeClass
+	public void beforeCalss(){
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("GrpTalk_Report_Of_MemberAndCallManagerTest.html");
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		logger_ss = extent.createTest("MemberAndCallManagerTest");
+		logger_ss.log(Status.INFO, "MemberAndCallManagerTest");
+	}
 	
 	@Test
 	public void verifyMemberRemoveFromGrp() throws InterruptedException, AWTException{
-		driver.get(homeUrl);
+		//driver.get(homeUrl);
 		logger_ss = extent.createTest("verifyMemberRemoveFromGrp","verifyMemberRemoveFromGrp");
 		CreatingGroup crtgrp = new CreatingGroup();
 		GrpTalks grpTalks = new GrpTalks();
@@ -50,7 +60,7 @@ public class MemberAndCallManagerTest extends BrowserFunctions{
 	
 	@Test
 	public void verifyCallFunctionalityFromSecondaryModerator() throws InterruptedException{
-		driver.get(homeUrl);
+		//driver.get(homeUrl);
 		CreatingGroup crtgrp = new CreatingGroup();
 		GrpTalks grpTalks = new GrpTalks();
 		grpTalks.selectSecModeratorGroup("Sec15");

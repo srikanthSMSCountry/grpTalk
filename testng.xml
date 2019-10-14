@@ -9,7 +9,14 @@
 				<methods>
        				 <include name="verifyCreateListFromContactsPage" />
        				 <include name="verifyCreateListFromExcelUpload" />
-      			</methods>
+       				 <include name="verifyAddContactsFromMobileContactsTabOnOverlay"/>
+       				 <include name="verifyCreateListFromContactsPageUsingPlusSymbol" />
+       				 <include name="verifyCreateListFromExcelUploadviaedit" />
+       				 <include name="verifyDeleteListFromContactsPage" />
+       				 <include name="verifyReNameListFromContactsPage" />
+       				 <include name="verifyAddContactsFromAddContactsTabOnOverlay" />
+       				 
+       			</methods>
 			</class>
 		</classes>
 	</test>
@@ -19,9 +26,19 @@
 		<classes>
 			<class name="GT.GT.AccountPageTest">
 				<methods>
-       				 <include name="verifyAllAndRechargesTabsOnMyAccountPage" />
+					 <include name="verifyAllAndRechargesTabsOnMyAccountPage" />
        				 <include name="verifyAllTabsAreDisplayedOnMyAccountPage" />
-      			</methods>
+       				 <include name="verifyEditUserProfile" />
+       				 <include name="verifyTotalAmountUsedByUser" />
+       				 <include name="verifyTheCountOfAccountManagersInAccountManagersTab" />
+       				 <include name="verifyAddAccountManagerFunctionalityByGivingNonRegisteredNumberInAccountManagersTab" />
+       				 <include name="verifyAccountManagerFunctionalityInAccountManagersTab" />
+       				 <include name="verifyAddSubAccountFunctionalityWithAlreadyExistedSubAccount" />
+       				 <include name="verifyAddSubAccountFunctionalityWithAlreadyExistedMainAccount" />
+       				 <include name="verifyAddSubAccountFunctionalityByGivingNonRegisteredNumberInSubAccountsTab" />
+       				 <include name="verifyViewSubAccountDetailsFunctionalityInSubAccountsTab" />
+       				 <include name="verifybalancecheckinsubaccounts" />
+       			</methods>
       		</class>	
 		</classes>
 	</test>
@@ -34,10 +51,88 @@
        				 <include name="verifySearchOptionWithPartialValidUserName" />
        				 <include name="verifyFooterTextDisplayedOnMyGrpTalksPage" />
        				 <include name="verifySearchOptionWithfullValidUserName" />
+       				 <include name="verifyCallFunctionalityFromAllMembersTabInListView" />
+       				 <include name="verifyErrorMessageWhenJunkDataGivenInSearchBox" />
+       				 <include name="verifyFooterTextDisplayedOnMyGrpTalksPage" />
+       				 <!-- <include name="verifyHeaderTabsAndLogosDisplayedOnGrpTalksPage" /> -->
+       				 <include name="verifyContactListInPhoneContacts" />
+       				 <!-- <include name="verifySearchOptionWithPartialValidUserName" />
+       				 <include name="verifySearchOptionWithfullValidUserName" />
+					<include name="verifySelectContactFromContactList" /> -->
+					<include name="verifySelectSpecificCharacterOfContactsInPhoneContacts" />
+					<!-- <include name="verifyNumberOfUsersFromSelectedContactsTab" /> -->
+					<include name="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList" />
+					<include name="verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage" />
+					<!-- <include name="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutSelectingAnyPhoneContacts" />
+					<include name="verifyErrorMsgWhenWeSubmitSaveButtonWithOutSelectingAnyPhoneContacts" />
+					<include name="method11" />
+					<include name="removeLeaveGroup" />
+					<include name="createAndSaveTheGroup" />
+					<include name="createAndSaveTheGroupByLeaveGroupName" /> -->
+					<include name="verifyCallFunctionalityOfListMembers" />
+					<!-- <include name="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutSelectingAnyPhoneContacts" />
+					<include name="verifyErrorMsgWhenWeSubmitStartNowButtonWithOutEnterGrpTalkName" />
+					<!-- <include name="verifyErrorMsgWhenWeSubmitSaveButtonWithOutEnterGrpTalkName" /> -->
+					<include name="verifyQuickDialButtonFunctionalityofGroupsInMyGrpTalk" /> -->
+					<include name="verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk" />
+					<!-- <include name="verifyErrorMsgWhenWeSubmitScheduleButtonWithOutEnterGrpTalkName" />
+					<include name="verifyGrpTalkNameOnCreateGroupAndGrpTalksPages" />
+					<include name="verify_list_Of_Group_Users_On_MyGrpTalk_Page" />
+					<!-- <include name="verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage" /> -->
+					<include name="verifyCreateWebLIstFromCreateGrpPage" /> -->
+					<include name="verifyCreateListFromExcelUploadOnCreateGrpPage" />
+					<!-- <include name="verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage" />
+					<include name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage" /> -->
+					<include name="verifyCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup" />
+					<include name="verifyMuteCallFunctionalityFromCreateGroupTalkPageByCreatingNewGroup" />
+					<include name="verifyAddMemberInOnGoingGrpCallFromCreateGroupTalkPageByCreatingNewGroup" />
+					<include name="verifySaveGroupWithNormalAndMuteClips" />
+					<include name="verifyNormalAndMuteClipsFunctionalityOnSaveGroupOverlay" />
+					<!-- <include name="verifyNormalAndMuteClipsFunctionalityOnScheduleOverlay" /> -->
+					<include name="verifyScheduleGroupWithNormalAndMuteClips" />
+					<include name="verifyDeleteNormalAndMuteClipsFromScheduleGRoup" />
+					<!-- <include name="verifyEditGroupWithNormalAndMuteClips" /> -->
+					<include name="verifyCanclefunctionalityOnOverlayInGrpCall" />
+					<include name="verifyAllButtonsDisplayedOnCallOverlay" />
+					<include name="verifyMuteDialfunctionalityOnOverlayInGrpCall" />
+					<include name="verifyUnMuteFromMuteDialfunctionalityInGrpCall" />
+					<include name="verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial" />
+					<include name="verifyHangUpInOnGoingCallOfindividualUser" />
+					<include name="verifyAddMemberInOnGoingGrpCallThroughContacts" />
+					<include name="verifyAddMemberInOnGoingGrpCallThroughWebList" />
+					<include name="verifyHistoryOfGroup" />
+					<include name="verifyScheduleGrpTalk" />
+					<include name="verifyDatePickerFunctionalityForScheduleOnEditGrpTalks" />
+					<include name="verifyDatePickerFunctionalityOnEditGrpTalks" />
+					<!-- <include name="verifyRepeatDaysFunctionalityOnEditGrpTalks" /> -->
+					<include name="VerifyDialInOptionInAdvancedSettingsOnOverlayForSchedule" />
+					<include name="VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule" />
+					<include name="VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk" />
+					<!-- <include name="VerifyAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk" /> -->
+					<include name="VerifyDialInOptionAndAllowNonMembersOptionInAdvancedSettingsOnOverlayInEditGrpTalk" />
+					<include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab" />
+					<include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab" />
+					<include name="verifyRetryCallFunctionality" />
+					<!-- <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTabInListView" /> -->
+					<!-- <include name="verifyCallFunctionalityWhenMuteAllButtonIsClickedInUnMutedTab" /> -->
+					<!-- <include name="verifyPrivateRoomFuntionalityInLiveCall" /> -->
+					<!-- <include name="verifyMuteAndUnmuteFunctionalityInLiveCallWhenParticipantsAreInPrivateRoom" /> -->
+					<!-- <include name="verifyPrivateRoomFuntionalityInLiveCallListView" /> -->
+					<!-- <include name="verifyCallFunctionalityFromOnCallTab" /> -->
+					<include name="verifyCallFunctionalityFromUnMutedCount" />
+					<!-- <include name="verifyCallFunctionalityFromUnMutedCountInListView" /> -->
+					<include name="verifyMuteDialFunctionalityFromScheduleOverlay" />
+					<!-- <include name="verifyfunctionalityOfExcelReportDownloadOptionOnHistory" /> -->
+					<include name="verifyDialFunctionalityOfScheduleGroup" />
+					<!-- <include name="verifyNonRepeatedGroupCallFunctionalityThroughHistory" /> -->
+					<!-- <include name="verifyCallFunctionalityFromOnCallTabInListView" /> -->
+       				 
+       				 
       			</methods>
       		</class>
 		</classes>
 	</test>
+	
 
 </suite>
 

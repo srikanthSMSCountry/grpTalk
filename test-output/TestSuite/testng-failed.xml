@@ -1,50 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]">
-  <test thread-count="5" name="CreateAndCallGroupTest(failed)">
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="stagingUrl"/>
-    <classes>
-      <class name="GT.GT.CreateAndCallGroupTest">
-        <methods>
-          <include name="verifyRetryCallFunctionality"/>
-          <include name="closeBrowser1"/>
-          <include name="verifyCallFunctionalityOfListMembers"/>
-          <include name="verifyAddMemberInOnGoingGrpCallThroughWebList"/>
-          <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
-          <include name="verifyRemoveFunctionalityOfSavedGroupsOnMyGrpTalkPage"/>
-          <include name="verifyMuteDialFunctionalityFromScheduleOverlay"/>
-          <include name="VerifyAssignCallManagerOptionInAdvancedSettingsOnOverlayForSchedule"/>
-          <include name="tearDown"/>
-          <include name="verifyPrivateRoomFuntionalityInLiveCallListView"/>
-          <include name="verifyCallFunctionalityFromOnCallTab"/>
-          <include name="verifyRemoveContactFromSavedGroupOnMyGrpTalkPage"/>
-          <include name="verifyAddContactsFromContactsListByEditngSavedGroupOnMyGrpTalkPage"/>
-          <include name="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList"/>
-          <include name="verifyCallFunctionalityOfDialAllButtonInCallEndedTab"/>
-          <include name="verifyCallFunctionalityOfTestContactsFromCreateGroupTalkPage"/>
-          <include name="beforeCalss"/>
-          <include name="verifyContactListInPhoneContacts"/>
-          <include name="setup"/>
-          <include name="verifyDeleteNormalAndMuteClipsFromScheduleGRoup"/>
-          <include name="verifyCreateListFromExcelUploadOnCreateGrpPage"/>
-          <include name="verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial"/>
-          <include name="verifyCallFunctionalityFromAllMembersTabInListView"/>
-          <include name="verifyCallFunctionalityFromAllMembersTab"/>
-          <include name="verifyDialFunctionalityOfScheduleGroup"/>
-          <include name="verifyCallFunctionalityFromOnCallTabInListView"/>
-          <include name="verifySelectSpecificCharacterOfContactsInPhoneContacts"/>
-          <include name="verifyFooterTextDisplayedOnMyGrpTalksPage"/>
-          <include name="verifyMuteDialfunctionalityOnOverlayInGrpCall"/>
-          <include name="verifyUnMuteFromMuteDialfunctionalityInGrpCall"/>
-          <include name="verifyCallFunctionalityFromUnMutedCount"/>
-        </methods>
-      </class> <!-- GT.GT.CreateAndCallGroupTest -->
-    </classes>
-  </test> <!-- CreateAndCallGroupTest(failed) -->
+<suite name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="ContactsPageTest(failed)">
     <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="stagingUrl"/>
+    <parameter name="url" value="localUrl"/>
     <classes>
       <class name="GT.GT.ContactsPageTest">
         <methods>
@@ -53,39 +12,102 @@
           <include name="tearDown"/>
           <include name="verifyCreateListFromExcelUpload"/>
           <include name="setup"/>
+          <include name="verifyAddContactsFromAddContactsTabOnOverlay"/>
         </methods>
       </class> <!-- GT.GT.ContactsPageTest -->
     </classes>
   </test> <!-- ContactsPageTest(failed) -->
   <test thread-count="5" name="AccountPageTest(failed)">
     <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="stagingUrl"/>
+    <parameter name="url" value="localUrl"/>
     <classes>
       <class name="GT.GT.AccountPageTest">
         <methods>
           <include name="closeBrowser1"/>
           <include name="verifyConfigureClipsFunctionalityOnProfilePage"/>
-          <include name="verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab"/>
-          <include name="verifyEditSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifyViewSubAccountDetailsFunctionalityInSubAccountsTab"/>
+          <include name="verifyTotalAmountUsedByUser"/>
           <include name="tearDown"/>
+          <include name="verifyErrorMsgOnAddSubAccountOverlayWhenMemeberLimitExceedsMainAccountMaxMemberLimit"/>
           <include name="beforeCalss"/>
+          <include name="verifyAccountManagerFunctionalityInAccountManagersTab"/>
+          <include name="verifyAddSubAccountFunctionalityWithAlreadyExistedSubAccount"/>
+          <include name="verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab"/>
+          <include name="verifyErrorMsgOnAddSubAccountOverlayWhenTransferAmountExceedsMainAccountAvailableAmountLimit"/>
+          <include name="verifyEditSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifyExistingSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifybalancecheckinsubaccounts"/>
           <include name="setup"/>
         </methods>
       </class> <!-- GT.GT.AccountPageTest -->
     </classes>
   </test> <!-- AccountPageTest(failed) -->
+  <test thread-count="5" name="CreateAndCallGroupTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="localUrl"/>
+    <classes>
+      <class name="GT.GT.CreateAndCallGroupTest">
+        <methods>
+          <include name="closeBrowser1"/>
+          <include name="verifyAddMemberInOnGoingGrpCallThroughWebList"/>
+          <include name="verifyCallFunctionalityOfIndividualDialInCallEndedTab"/>
+          <include name="verifyMuteDialFunctionalityFromScheduleOverlay"/>
+          <include name="tearDown"/>
+          <include name="verifyPrivateRoomFuntionalityInLiveCallListView"/>
+          <include name="verifySaveGroupWithNormalAndMuteClips"/>
+          <include name="verifyCallFunctionalityFromOnCallTab"/>
+          <include name="verifyfunctionalityOfExcelReportDownloadOptionOnHistory"/>
+          <include name="verifyRepeatDaysFunctionalityOnEditGrpTalks"/>
+          <include name="verifyCallFunctionalityOfContactsFromCreateGroupTalkPage"/>
+          <include name="verifyAddMoreNumberOfUsersthanMaximunLimitFromContactList"/>
+          <include name="verifyCreateListFromExcelUploadandphonecontacts"/>
+          <include name="beforeCalss"/>
+          <include name="verifyErrorMessageWhenJunkDataGivenInSearchBox"/>
+          <include name="setup"/>
+          <include name="verifyCreateListFromExcelUploadOnCreateGrpPage"/>
+          <include name="verifyMuteFunctionalityInOnGoingGrpCallThroughNormalDial"/>
+          <include name="verifyCallFunctionalityFromUnMutedCountInListView"/>
+          <include name="VerifyDialInOptionInAdvancedSettingsOnOverlayInEditGrpTalk"/>
+          <include name="verifyDialFunctionalityOfScheduleGroup"/>
+          <include name="verifySelectSpecificCharacterOfContactsInPhoneContacts"/>
+          <include name="verifyAddMemberInOnGoingGrpCallThroughContacts"/>
+          <include name="verifyCallFunctionalityFromQuickDialButtonInMyGrpTalk"/>
+          <include name="verifyCallFunctionalityFromUnMutedCount"/>
+        </methods>
+      </class> <!-- GT.GT.CreateAndCallGroupTest -->
+    </classes>
+  </test> <!-- CreateAndCallGroupTest(failed) -->
+  <test thread-count="5" name="MemberAndCallManagerTest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="secModeratorUrl"/>
+    <classes>
+      <class name="GT.GT.MemberAndCallManagerTest">
+        <methods>
+          <include name="closeBrowser1"/>
+          <include name="beforeCalss"/>
+          <include name="verifyMemberRemoveFromGrp"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="verifyCallFunctionalityFromSecondaryModerator"/>
+        </methods>
+      </class> <!-- GT.GT.MemberAndCallManagerTest -->
+    </classes>
+  </test> <!-- MemberAndCallManagerTest(failed) -->
   <test thread-count="5" name="HomePageTest(failed)">
     <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="stagingHomePage"/>
+    <parameter name="url" value="loacalHomePage"/>
     <classes>
       <class name="GT.GT.HomePageTest">
         <methods>
           <include name="closeBrowser1"/>
           <include name="verifyFunctionalityOfYoutubeLogoInFooterSection"/>
+          <include name="verifyFunctionalityOfFacebookLogoInFooterSection"/>
+          <include name="verifyGrpTalkEmailAndContactDisplayedInHeaderScetion"/>
           <include name="verifyPlayStoreTabFunctionality"/>
           <include name="verifyFunctionalityOfTwitterLogoInFooterSection"/>
           <include name="beforeCalss"/>
           <include name="tearDown"/>
+          <include name="verifyAboutLinkInFooterSection"/>
           <include name="verifyAppStoreTabFunctionality"/>
           <include name="setup"/>
         </methods>
@@ -94,15 +116,40 @@
   </test> <!-- HomePageTest(failed) -->
   <test thread-count="5" name="WebGrpTalkHomePageTest(failed)">
     <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="stagingWebHomePage"/>
+    <parameter name="url" value="localWebHomePage"/>
     <classes>
       <class name="GT.GT.WebGrpTalkHomePageTest">
         <methods>
           <include name="closeBrowser1"/>
-          <include name="verifyGrpTalkLogoFunctionality"/>
+          <include name="verifyFunctionalityOfTwitterLogoInFooterSection"/>
+          <include name="verifyVisibilityOfImgQRCodeOnWebGrpTalkPage"/>
           <include name="tearDown"/>
+          <include name="verifyHomeLinkInFooterSection"/>
+          <include name="verifyHowItWorksLinkInFooterSection"/>
+          <include name="verifyTermsAndConditionsLinkInFooterSection"/>
+          <include name="verifyCopyRightTextInFooterSection"/>
+          <include name="verifyContactLinkInFooterSection"/>
+          <include name="verifyGrpTalkLogoFunctionality"/>
+          <include name="verifyContactSalesButtonFunctionality"/>
+          <include name="verifySolutionsTabFunctionality"/>
           <include name="setup"/>
           <include name="beforeCalss"/>
+          <include name="verifyPricingLinkInFooterSection"/>
+          <include name="verifyWebLoginFunctionality"/>
+          <include name="verifyAboutLinkInFooterSection"/>
+          <include name="verifyCustomerStoriesTabFunctionality"/>
+          <include name="verifyFunctionalityOfFacebookLogoInFooterSection"/>
+          <include name="verifyFeaturesTabFunctionality"/>
+          <include name="verifyFunctionalityOfYoutubeLogoInFooterSection"/>
+          <include name="verifyWebLoginLinkInFooterSection"/>
+          <include name="verify_FAQ_LinkInFooterSection"/>
+          <include name="verifyPricingTabFunctionality"/>
+          <include name="verifyPlayStoreTabFunctionality"/>
+          <include name="verifyFeaturesLinkInFooterSection"/>
+          <include name="verifyPrivacyAndDataUsageLinkInFooterSection"/>
+          <include name="verifyGrpTalkEmailAndContactDisplayedInHeaderScetion"/>
+          <include name="verifyCustomerStoriesLinkInFooterSection"/>
+          <include name="verifyHowItWorksTabFunctionality"/>
         </methods>
       </class> <!-- GT.GT.WebGrpTalkHomePageTest -->
     </classes>

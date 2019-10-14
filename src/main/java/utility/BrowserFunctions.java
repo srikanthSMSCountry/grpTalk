@@ -1,6 +1,5 @@
 package utility;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
@@ -88,76 +87,82 @@ public class BrowserFunctions {
 			driver = new ChromeDriver();
 			logger_ss.log(Status.INFO, "Chrome Browser Launched");
 		}
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	    switch(url){  
 	        case "stagingUrl":  
 	        	driver.get(CommonMethods.passingData("stagingUrl"));
 	    		logger_ss.log(Status.INFO, "Staging GrpTalk home page opend");
 	    		currentUrl = CommonMethods.passingData("stagingUrl");
-	    		Thread.sleep(10000); 
+	    		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;  
 	        case "productionUrl":  
 	        	driver.get(CommonMethods.passingData("productionUrl"));
 	    		logger_ss.log(Status.INFO, "Production GrpTalk home page opend");
 	    		currentUrl = CommonMethods.passingData("productionUrl");
-	    		Thread.sleep(10000);
+	    		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;  
 	        case "localUrl":  
 	        	driver.get(CommonMethods.passingData("localUrl"));
 	    		logger_ss.log(Status.INFO, "Local GrpTalk home page opend");
 	    		currentUrl = CommonMethods.passingData("localUrl");
-	    		Thread.sleep(10000);
+	    		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;
+	        case "secModeratorUrl":  
+	        	driver.get(CommonMethods.passingData("secModeratorUrl"));
+	    		logger_ss.log(Status.INFO, "Staging secModeratorUrl home page opend");
+	    		currentUrl = CommonMethods.passingData("secModeratorUrl");
+	    		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	            break; 
 	        case "stagingHomePage":  
 	        	driver.get(CommonMethods.passingData("stagingHomePage"));
 	        	logger_ss.log(Status.INFO, "stagingHomePage opend");
 	        	currentUrl = CommonMethods.passingData("stagingHomePage");
-	    		Thread.sleep(10000); 
+	        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 	            break;
 	        case "stagingWebHomePage":  
 	        	driver.get(CommonMethods.passingData("stagingHomePage")+"/login");
 	        	logger_ss.log(Status.INFO, "stagingWebHomePage opend");
 	        	currentUrl = CommonMethods.passingData("stagingHomePage");
-	    		Thread.sleep(10000); 
+	        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 	            break;
 	        case "productionWebHomePage":  
 	        	driver.get(CommonMethods.passingData("productionWebHomePage"));
 	        	logger_ss.log(Status.INFO, "productionWebHomePage opend");
 	        	currentUrl = CommonMethods.passingData("productionWebHomePage");
-	    		Thread.sleep(10000); 
+	        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;
 	        case "productionHomePage":  
 	        	driver.get(CommonMethods.passingData("productionHomePage"));
 	        	logger_ss.log(Status.INFO, "productionHomePage opend");
 	        	currentUrl = CommonMethods.passingData("productionHomePage");
-	    		Thread.sleep(10000); 
+	        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;
 	        case "localWebHomePage":  
 	        	driver.get(CommonMethods.passingData("loacalHomePage")+"/login");
 	        	logger_ss.log(Status.INFO, "localWebHomePage opend");
 	        	currentUrl = CommonMethods.passingData("loacalHomePage");
-	    		Thread.sleep(10000); 
+	        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;
 	        case "loacalHomePage":  
 	        	driver.get(CommonMethods.passingData("loacalHomePage"));
 	        	logger_ss.log(Status.INFO, "loacalHomePage opend");
 	        	currentUrl = CommonMethods.passingData("loacalHomePage");
-	    		Thread.sleep(10000); 
+	        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;
 	           
 	        default :  
 	        	driver.get(CommonMethods.passingData("stagingUrl"));
 	    		logger_ss.log(Status.INFO, "Staging GrpTalk home page opend");
 	    		currentUrl = CommonMethods.passingData("stagingUrl");
-	    		Thread.sleep(10000);
+	    		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	            break;
 	    }  
+	    Thread.sleep(2000);
 	}
 	
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException, InterruptedException {
-		
+		try{
 		if (result.getStatus() == ITestResult.FAILURE) {
 			System.out.println("TestCase failed");
 			String temp = CommonMethods.getScreenshot();
@@ -172,7 +177,7 @@ public class BrowserFunctions {
 		navigateToGrpTalksPage();
 		CommonMethods.handleAlert();
 
-		try{
+		
 			if(driver.findElements(By.xpath("//*[@id='date']//label")).size()!=0){
 				grpTalks.closeLiveGroupCallOfRecentlySavedGrpTalkGroup1();
 				navigateToGrpTalksPage();
@@ -217,6 +222,10 @@ public class BrowserFunctions {
 	        case "loacalHomePage":  
 	        	driver.navigate().to(CommonMethods.passingData("loacalHomePage"));
 	            break;
+	        case "secModeratorUrl":  
+	        	driver.navigate().to(CommonMethods.passingData("stagingGrpTalksPage"));
+	            break;
+	            
         	default:
         		driver.navigate().to(CommonMethods.passingData("stagingGrpTalksPage"));
         		break;

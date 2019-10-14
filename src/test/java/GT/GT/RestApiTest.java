@@ -92,7 +92,7 @@ public class RestApiTest extends BrowserFunctions {
 		driver.get("http://staging.grptalk.com/index.aspx?automationkey=narasimha");
 		GrpTalks grpTalks = new GrpTalks();
 		logger_ss.log(Status.INFO, "Select Saved group");
-		grpTalks.selectSavedGroupByName("Demo_Sreenivas_50");
+		grpTalks.selectSavedGroupByName("Srenivas_Demo_8");
 		
 		String hostContactNumber = driver.findElement(hostNumber).getText().replaceAll("[^a-zA-Z0-9]", "");
 		logger_ss.log(Status.INFO, "Get all participants from group");
@@ -169,8 +169,9 @@ public class RestApiTest extends BrowserFunctions {
 		logger_ss.log(Status.INFO, "Verify status code for onCall and disconnect participants request");
 		int statusCode = response.getStatusCode();
 		System.out.println("oncall status code::"+statusCode);
-		Thread.sleep(25000);
-		
+		Thread.sleep(40000);
+		driver.navigate().refresh();
+		Thread.sleep(10000);
 		logger_ss.log(Status.INFO, "Verify OnCall is displayed for onCall participants");
 		List<WebElement> liveCallMembers = driver.findElements(allMembersInLiveCall);
 		System.out.println("live call members size==="+liveCallMembers.size());
@@ -207,7 +208,7 @@ public class RestApiTest extends BrowserFunctions {
 		Response handRaiseResponse = request.post();
 		int handRaiseStatusCode = handRaiseResponse.getStatusCode();
 		System.out.println("handRaiseStatusCode::"+handRaiseStatusCode);
-		Thread.sleep(15000);
+		Thread.sleep(20000);
 		driver.navigate().refresh();
 		Thread.sleep(10000);
 		logger_ss.log(Status.INFO, "Verify handRaise is displayed for selected participants");
@@ -223,6 +224,7 @@ public class RestApiTest extends BrowserFunctions {
 		}
 		logger_ss.log(Status.INFO, "Get participants for hangUp");
 		requestParams = new JSONObject();
+		
 		int hangUpParticipantCount = 2;
 		List<String> hangedUpMembers = new ArrayList<String>();
 		String hangUpString = "";
@@ -245,9 +247,9 @@ public class RestApiTest extends BrowserFunctions {
 
 		int hangUpStatusCode = hangUpResponse.getStatusCode();
 		System.out.println("hangUp status code==="+hangUpStatusCode);
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		driver.navigate().refresh();
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		logger_ss.log(Status.INFO, "Verify hangUp is displayed for selected participants");
 		List<WebElement> liveCallMembers3 = driver.findElements(allMembersInLiveCall);
 		for (WebElement ele : liveCallMembers3) {
@@ -283,10 +285,10 @@ public class RestApiTest extends BrowserFunctions {
 		Response incomingcallResponse = request.post();
 
 		int incomingcallStatusCode = incomingcallResponse.getStatusCode();
-		System.out.println("handRaise status code==="+incomingcallStatusCode);
+		System.out.println("incomingcallStatusCode==="+incomingcallStatusCode);
 		Thread.sleep(20000);
 		driver.navigate().refresh();
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		logger_ss.log(Status.INFO, "Verify OnCall is displayed for incoming participants");
 		List<WebElement> liveCallMembers4 = driver.findElements(allMembersInLiveCall);
 		for (WebElement ele : liveCallMembers4) {

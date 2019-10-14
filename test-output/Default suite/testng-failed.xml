@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="GT.GT.CreateAndCallGroupTest">
+      <class name="GT.GT.AccountPageTest">
         <methods>
           <include name="closeBrowser1"/>
-          <include name="verifySelectSpecificCharacterOfContactsInPhoneContacts"/>
+          <include name="verifyConfigureClipsFunctionalityOnProfilePage"/>
+          <include name="verifyViewSubAccountDetailsFunctionalityInSubAccountsTab"/>
+          <include name="verifyTotalAmountUsedByUser"/>
+          <include name="verifyAddSubAccountFunctionalityByGivingNonRegisteredNumberInSubAccountsTab"/>
           <include name="tearDown"/>
+          <include name="verifyErrorMsgOnAddSubAccountOverlayWhenMemeberLimitExceedsMainAccountMaxMemberLimit"/>
+          <include name="verifyRechargeWithPaytm"/>
           <include name="beforeCalss"/>
+          <include name="verifyAccountManagerFunctionalityInAccountManagersTab"/>
+          <include name="verifyAddSubAccountFunctionalityWithAlreadyExistedSubAccount"/>
+          <include name="verifyAddSubAccountFunctionalityWithAlreadyExistedMainAccount"/>
+          <include name="verifyTheCountOfAccountManagersInAccountManagersTab"/>
+          <include name="verifyAddBalanceFunctionalityToExistingSubAccountInSubAccountsTab"/>
+          <include name="verifyAddSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifyErrorMsgOnAddSubAccountOverlayWhenTransferAmountExceedsMainAccountAvailableAmountLimit"/>
+          <include name="verifyAllAndRechargesTabsOnMyAccountPage"/>
+          <include name="verifyEditSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifyExistingSubAccountFunctionalityInSubAccountsTab"/>
+          <include name="verifybalancecheckinsubaccounts"/>
+          <include name="verifyAllTabsAreDisplayedOnMyAccountPage"/>
           <include name="setup"/>
+          <include name="verifyAddAccountManagerFunctionalityByGivingNonRegisteredNumberInAccountManagersTab"/>
+          <include name="verifyEditUserProfile"/>
         </methods>
-      </class> <!-- GT.GT.CreateAndCallGroupTest -->
+      </class> <!-- GT.GT.AccountPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

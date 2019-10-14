@@ -38,9 +38,8 @@ import utility.*;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
-public class LiveGrpTalkWebPage{
+public class LiveGrpTalkWebPage extends BrowserFunctions{
 	public static Logger logger = Logger.getLogger(LiveGrpTalkWebPage.class);
-	public static WebDriver driver;
 	ExtentReports extent ;
 	ExtentTest logger_ss;
 	public static String userDirectory = System.getProperty("user.dir");
@@ -51,103 +50,11 @@ public class LiveGrpTalkWebPage{
 	public String homePageUrl = "https://www.grptalk.com";
 	//public String loginWeburl = webUrl+"/login";
 	
-	
-	@BeforeTest	
-	@Parameters("browser")
-	public void setup(@Optional("IamOptional") String browser) throws Exception{
-		
-		if(browser.equalsIgnoreCase("firefox")){
-			ExtentHtmlReporter reporter = new ExtentHtmlReporter("smsc_report_WEbGrpTalkHomePage.html");
-			extent = new ExtentReports();
-			extent.attachReporter(reporter);
-			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.gecko.driver", userDirectory+"\\Drivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-			logger_ss.log(Status.INFO, "Firefox Browser Launched Successfully");
-		}
-		
-		else if(browser.equalsIgnoreCase("chrome")){
-			ExtentHtmlReporter reporter = new ExtentHtmlReporter("smsc_report_WEbGrpTalkHomePage.html");
-			extent = new ExtentReports();
-			extent.attachReporter(reporter);
-			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.chrome.driver",userDirectory+"\\Drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-			logger_ss.log(Status.INFO, "Chrome Browser Launched Successfully");
-		}
-		
-		else if(browser.equalsIgnoreCase("Edge")){
-			ExtentHtmlReporter reporter = new ExtentHtmlReporter("smsc_report_WEbGrpTalkHomePage.html");
-			extent = new ExtentReports();
-			extent.attachReporter(reporter);
-			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.edge.driver",userDirectory+"\\Drivers\\MicrosoftWebDriver.exe");
-			driver = new EdgeDriver();
-			logger_ss.log(Status.INFO, "Edge Browser Launched Successfully");
-				}
-		else{
-			//throw new Exception("Browser is not correct");
-			ExtentHtmlReporter reporter = new ExtentHtmlReporter("smsc_report_WEbGrpTalkHomePage.html");
-			extent = new ExtentReports();
-			extent.attachReporter(reporter);
-			logger_ss = extent.createTest("BeforeTest");
-			System.setProperty("webdriver.chrome.driver",userDirectory+"\\Drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-			logger_ss.log(Status.INFO, "Chrome Browser Launched Successfully");
-		}
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("https://web.grptalk.com/");
-		logger_ss.log(Status.INFO, "GrpTalk home page opend successfully");
-		Thread.sleep(10000);
-	}
 
-//	@BeforeTest
-//	public void initialiseBrowser() throws InterruptedException {
-//		ExtentHtmlReporter reporter = new ExtentHtmlReporter("smsc_report_WEbGrpTalkHomePage.html");
-//		extent = new ExtentReports();
-//		extent.attachReporter(reporter);
-//		logger_ss = extent.createTest("BeforeTest");
-//		System.setProperty("webdriver.chrome.driver", "D:\\GrpTalk\\Drivers\\chromedriver.exe");
-//		System.out.println(System.getProperty("user.dir"));
-//		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-//		chromePrefs.put("profile.default_content_settings.popups", 0);
-//		chromePrefs.put("download.default_directory", downloadFilepath);
-//		ChromeOptions options = new ChromeOptions();
-//		options.setExperimentalOption("prefs", chromePrefs);
-//		DesiredCapabilities cap = DesiredCapabilities.chrome();
-//		cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-//		cap.setCapability(ChromeOptions.CAPABILITY, options);
-//		driver = new ChromeDriver(cap);
-//		//driver = new ChromeDriver();
-//		logger_ss.log(Status.INFO, "Chrome Browser Launched Successfully");
-//		//logger.info("Started in Chrome Browser");
-//		// driver = new HtmlUnitDriver();
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//		// driver.get("http://ec2-34-216-45-200.us-west-2.compute.amazonaws.com/#/competitive-trends/702");
-//		driver.manage().window().maximize();
-//		driver.get("http://staging.grptalk.com/login");
-//		logger_ss.log(Status.INFO, "Web GrpTalk home page opend successfully");
-//		Thread.sleep(6000);
-//	}
-
-//	@AfterTest
-//	public void closeBrowser() {
-//		driver.quit();
-//		logger_ss.log(Status.INFO, "Successfully closed browser");
-//	}
-	
-	@AfterTest
-	@Parameters("browser")
-	public void closeBrowser1(@Optional("IamOptional") String browser) throws Exception {
-			driver.quit();
-	}
-	
-	
 	@Test
 	public void verifyVisibilityOfImgQRCodeOnWebGrpTalkPage(){
 		logger_ss = extent.createTest("verifyVisibilityOfImgQRCodeOnWebGrpTalkPage","verifyVisibilityOfImgQRCodeOnWebGrpTalkPage");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		Assert.assertTrue(homePage.visibilityOfImgQRCode());
 		logger_ss.log(Status.INFO, "Successfully verfied visibilityOfImgQRCode");
 	}
@@ -155,7 +62,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyGrpTalkEmailAndContactDisplayedInHeaderScetion(){
 		logger_ss = extent.createTest("verifyGrpTalkEmailAndContactDisplayedInHeaderScetion","verifyGrpTalkEmailAndContactDisplayedInHeaderScetion");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		Assert.assertTrue(homePage.visibilityOfGrpTalkEmail());
 		logger_ss.log(Status.INFO, "Successfully verfied visibilityOfGrpTalkEmail");
 		Assert.assertTrue(homePage.visibilityOfGrpTalkContactNumber());
@@ -170,7 +77,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyPlayStoreTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPlayStoreTabFunctionality","verifyPlayStoreTabFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickPlayStoreTab();
 		logger_ss.log(Status.INFO, "clicked on PlayStoreTab");
 		String url=homePage.getCurrentUrl();
@@ -183,7 +90,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyGrpTalkLogoFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyGrpTalkLogoFunctionality","verifyGrpTalkLogoFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		Thread.sleep(2000);
 		homePage.clickGrpTalkLogo();
 		logger_ss.log(Status.INFO, "Clicked on grpTalk logo");
@@ -197,7 +104,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyAppStoreTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAppStoreTabFunctionality","verifyAppStoreTabFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickAppStoreTab();
 		logger_ss.log(Status.INFO, "Clicked on AppStoreTab");
 		String url=homePage.getCurrentUrl();
@@ -210,7 +117,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyFeaturesTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFeaturesTabFunctionality","verifyFeaturesTabFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		String url=homePage.featuresTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on features tab and get current url");
 		Assert.assertEquals(url, homePageUrl+"/Features");
@@ -221,7 +128,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyHowItWorksTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFeaturesTabFunctionality","verifyFeaturesTabFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		String url=homePage.howItWorksTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on howItWorks tab and get current url");
 		Assert.assertEquals(url, homePageUrl+"/how-it-works");
@@ -232,7 +139,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyPricingTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPricingTabFunctionality","verifyPricingTabFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		String textMessage=homePage.pricingTabFunctionality();
 		Assert.assertTrue(textMessage.contains("Thank you for submitting your details."));
 		logger_ss.log(Status.INFO, "clicked on pricing tab and verfied PricingTabFunctionality");
@@ -246,7 +153,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyCustomerStoriesTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyCustomerStoriesTabFunctionality","verifyCustomerStoriesTabFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		String url=homePage.customerStoriesTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on customerStories tab and get current url");
 		Assert.assertEquals(url, homePageUrl+"/Customer-Stories");
@@ -257,7 +164,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifySolutionsTabFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifySolutionsTabFunctionality","verifySolutionsTabFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		driver.navigate().refresh();
 		String url=homePage.sloutionsTabFunctionality();
 		logger_ss.log(Status.INFO, "clicked on solutions tab and get current url");
@@ -270,7 +177,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyWebLoginFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyWebLoginFunctionality","verifyWebLoginFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickWebLoginTab();
 		logger_ss.log(Status.INFO, "clicked on WebLoginTab");
 		//homePage.switchToNewTab();
@@ -289,7 +196,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyContactSalesButtonFunctionality() throws InterruptedException{
 		logger_ss = extent.createTest("verifyContactSalesButtonFunctionality","verifyContactSalesButtonFunctionality");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickContactSalesTab();
 		logger_ss.log(Status.INFO, "clicked on ContactSalesTab with out enter email");
 //		Assert.assertEquals(homePage.getAlertTextForEmail(), "Please Enter Your Email");
@@ -312,7 +219,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyHomeLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyHomeLinkInFooterSection","verifyHomeLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickHomeLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on HomeLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -325,7 +232,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyAboutLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyAboutLinkInFooterSection","verifyAboutLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickAboutLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on AboutLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -338,7 +245,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyHowItWorksLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyHowItWorksLinkInFooterSection","verifyHowItWorksLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickHowItWorksLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on HowItWorksLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -351,7 +258,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyPricingLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPricingLinkInFooterSection","verifyPricingLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickPricingLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on PricingLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -364,7 +271,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyFeaturesLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFeaturesLinkInFooterSection","verifyFeaturesLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickFeaturesLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on FeaturesLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -377,7 +284,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyWebLoginLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyWebLoginLinkInFooterSection","verifyWebLoginLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickWebLoginLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on WebLoginLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -390,7 +297,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyCustomerStoriesLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyCustomerStoriesLinkInFooterSection","verifyCustomerStoriesLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickCustomerStoriesLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on CustomerStoriesLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -403,7 +310,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyAAAlogLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyBlogLinkInFooterSection","verifyBlogLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickBlogLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on BlogLinkInFooterSection");
 		homePage.switchToNewTab();
@@ -426,7 +333,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyFunctionalityOfFacebookLogoInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFunctionalityOfFacebookLogoInFooterSection","verifyFunctionalityOfFacebookLogoInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickFacebookLogoInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on FacebookLogoInFooterSection");
 		homePage.switchToNewTab();
@@ -449,7 +356,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyFunctionalityOfTwitterLogoInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFunctionalityOfTwitterLogoInFooterSection","verifyFunctionalityOfTwitterLogoInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickTwitterLogoInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on TwitterLogoInFooterSection");
 		homePage.switchToNewTab();
@@ -472,7 +379,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyFunctionalityOfYoutubeLogoInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyFunctionalityOfYoutubeLogoInFooterSection","verifyFunctionalityOfYoutubeLogoInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickYoutubeLogoInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on YoutubeLogoInFooterSection");
 		homePage.switchToNewTab();
@@ -495,7 +402,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyContactLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyContactLinkInFooterSection","verifyContactLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickContactLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on ContactLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -509,7 +416,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verify_FAQ_LinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verify_FAQ_LinkInFooterSection","verify_FAQ_LinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.click_FAQ_LinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on FAQ LinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -522,7 +429,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyTermsAndConditionsLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyTermsAndConditionsLinkInFooterSection","verifyTermsAndConditionsLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickTermsAndConditionsLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on TermsAndConditionsLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -535,7 +442,7 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyPrivacyAndDataUsageLinkInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyPrivacyAndDataUsageLinkInFooterSection","verifyPrivacyAndDataUsageLinkInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		homePage.clickPrivacyAndDataUsageLinkInFooterSection();
 		logger_ss.log(Status.INFO, "clicked on PrivacyAndDataUsageLinkInFooterSection");
 		String url=homePage.getCurrentUrl();
@@ -548,37 +455,37 @@ public class LiveGrpTalkWebPage{
 	@Test
 	public void verifyCopyRightTextInFooterSection() throws InterruptedException{
 		logger_ss = extent.createTest("verifyCopyRightTextInFooterSection","verifyCopyRightTextInFooterSection");
-		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage(driver);
+		WebGrpTalkHomePage homePage = new WebGrpTalkHomePage();
 		Assert.assertEquals(homePage.copyRightTextInFooterSection(), "COPYRIGHT 2018 GRPTALK BY TELEBU. ALL RIGHTS RESERVED.");
 		logger_ss.log(Status.INFO, "get copyRightTextInFooterSection and compared");
 		logger_ss.log(Status.INFO, "Successfully verified CopyRightTextInFooterSection");
 	}
 	
-	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException, InterruptedException {
-		if (result.getStatus() == ITestResult.FAILURE) {
-			String temp = getScreenshot();
-			logger_ss.fail(result.getThrowable().getMessage(),
-					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		}
-		extent.flush();
-		driver.navigate().to(webUrl);
-		driver.navigate().refresh();
-		Thread.sleep(2000);
-	}	
-	public static String getScreenshot()
-	{
-		TakesScreenshot ts=(TakesScreenshot) driver;
-		File src=ts.getScreenshotAs(OutputType.FILE);
-		String path=System.getProperty("user.dir")+"/Screenshot/"+System.currentTimeMillis()+".png";
-		File destination=new File(path);
-		try 
-		{
-			FileUtils.copyFile(src, destination);
-		} catch (IOException e) 
-		{
-			System.out.println("Capture Failed "+e.getMessage());
-		}
-		return path;
-	}
+//	@AfterMethod
+//	public void tearDown(ITestResult result) throws IOException, InterruptedException {
+//		if (result.getStatus() == ITestResult.FAILURE) {
+//			String temp = getScreenshot();
+//			logger_ss.fail(result.getThrowable().getMessage(),
+//					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+//		}
+//		extent.flush();
+//		driver.navigate().to(webUrl);
+//		driver.navigate().refresh();
+//		Thread.sleep(2000);
+//	}	
+//	public static String getScreenshot()
+//	{
+//		TakesScreenshot ts=(TakesScreenshot) driver;
+//		File src=ts.getScreenshotAs(OutputType.FILE);
+//		String path=System.getProperty("user.dir")+"/Screenshot/"+System.currentTimeMillis()+".png";
+//		File destination=new File(path);
+//		try 
+//		{
+//			FileUtils.copyFile(src, destination);
+//		} catch (IOException e) 
+//		{
+//			System.out.println("Capture Failed "+e.getMessage());
+//		}
+//		return path;
+//	}
 }

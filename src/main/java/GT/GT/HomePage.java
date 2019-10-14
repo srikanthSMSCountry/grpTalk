@@ -9,17 +9,18 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
-	WebDriver driver;
+import utility.BrowserFunctions;
+
+public class HomePage extends BrowserFunctions{
 	
 	By grpTalkEmail 				= By.xpath("//*[@class='col-sm-6 col-xs-12 hidden-xs']//*[@class='hdrlnkeml']");
 	By grpTalkContactNumber 		= By.xpath("//*[@class='col-sm-6 col-xs-9 contctusheads']//*[@class='hdrlnkeml']");
-	By grpTalkLogo 					= By.xpath("//*[@id='page-top']//nav[1]//*[@id='mainHome']//*[@alt='grptalk-logo']");
+	By grpTalkLogo 					= By.xpath("//*[@alt='grptalk-logo']");
 	By featuresTab 					= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Features']");
 	By howItWorksTab 				= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='How grptalk Works']");
 	By pricingTab 					= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Plans and Pricings of grp talk']");
 	By customerStoriesTab			= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Case Study']");
-	By blogTab 						= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Blog']");
+	//By blogTab 						= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@title='Blog']");
 	By webLoginTab 					= By.xpath("//*[@class='nav navbar-nav navbar-right']//*[@class='page-scroll btn-pink']");
 	By mobileNumberField 			= By.id("txtNumber");
 	By startDemoButton 				= By.id("subscribe-button");
@@ -41,7 +42,7 @@ public class HomePage {
 	By grpTalkLogoInFooterSection 	= By.id("footerClick");
 	By copyRightTextInFooterSection = By.xpath("//*[@class='col-sm-6']");
 	By homeLinkInFooterSection 		= By.xpath("//*[@class='mr-xs']//*[@class='f-cont-li-01']//li[1]//a[1]");
-	By aboutLinkInFooterSection 	= By.xpath("//*[@href='/About-us']");
+	By aboutLinkInFooterSection 	= By.xpath("//*[@class='f-cont-li-01\']/li[2]");
 	By howItWorksLinkInFooterSection= By.xpath("//*[@class='f-cont-li-01']//*[@href='/how-it-works']");
 	By pricingLinkInFooterSection 	= By.xpath("//*[@class='f-cont-li-01']//*[@href='/Pricing']");
 	By featuresLinkInFooterSection 	= By.xpath("//*[@class='col-md-2 col-sm-4 col-xs-12 f-cont-menu clearfix']//*[@title='Features']");
@@ -85,10 +86,6 @@ public class HomePage {
     By sentTextInChat 				= By.xpath("//*[@class='main_2b __client_1w']//*[@class='message_20 _green_Tb']//*[@class='text_14']");
     By closingChatOption 			= By.xpath("//*[@class='closeIcon_1U']");
     
-	public HomePage(WebDriver driver2){
-        this.driver = driver2;
-    }
-	
 	public void closingChatOption(){
 		driver.findElement(closingChatOption).click();
 	}

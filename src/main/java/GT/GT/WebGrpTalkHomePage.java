@@ -9,8 +9,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebGrpTalkHomePage {
-	WebDriver driver;
+import utility.BrowserFunctions;
+
+public class WebGrpTalkHomePage extends BrowserFunctions{
 	
 	By grpTalkEmail 						= By.xpath("//*[@class='col-sm-6 col-xs-12 hidden-xs']//*[@class='hdrlnkeml']");
 	By grpTalkContactNumber 				= By.xpath("//*[@class='col-sm-6 col-xs-9 contctusheads']//*[@class='hdrlnkeml']");
@@ -65,12 +66,8 @@ public class WebGrpTalkHomePage {
     By imgQRCodeOnWebGrpTalkPage 			= By.id("imgQrCode");
     By textDisplayedOnChatBox				= By.className("Linkify");
     By chatFrame 							= By.xpath("//*[@id='drift-widget-container']//*[@id='drift-widget']");
-    
-	public WebGrpTalkHomePage(WebDriver driver2){
-        this.driver = driver2;
-    }
-	
-	public String textDisplayedOnChatBox(){
+
+    public String textDisplayedOnChatBox(){
 		return driver.findElement(textDisplayedOnChatBox).getText();
 	}
 	

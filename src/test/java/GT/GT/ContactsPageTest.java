@@ -6,12 +6,13 @@ import java.io.IOException;
 import org.junit.Ignore;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
@@ -81,11 +82,11 @@ public class ContactsPageTest extends BrowserFunctions {
 		String path=userDirectory+"\\TestDataFiles\\contacts.xlsx";
 		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\contacts.xlsx");
 		logger_ss.log(Status.INFO, "Uploaded file");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		String listName = contactsPage.givenExcelSheetDetailsOnOverlay();
 		System.out.println("lsit--"+listName);
 		logger_ss.log(Status.INFO, "given excel sheet details on overlay");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		//Assert.assertEquals(contactsPage.successMsgForCreatedWebListFromExcelUpload(), "New List Created Successfully");
 		//Assert.assertEquals(contactsPage.successMsgForCreatedWebListFromExcelUpload(), "Contact(s) Inserted Successfully");
 		logger_ss.log(Status.INFO, "verified successMsgForCreatedWebListFromExcelUpload");
@@ -97,6 +98,41 @@ public class ContactsPageTest extends BrowserFunctions {
 		logger_ss.log(Status.INFO, "Successfully verified the functionality of CreateListFromExcelUpload");
 	}
 
+	@Test
+	public void verifyCreateListFromExcelUploadviaedit() throws InterruptedException, AWTException{
+		logger_ss = extent.createTest("verifyCreateListFromExcelUploadviaedit","verifyCreateListFromExcelUploadviaedit");
+		ContactsPage contactsPage = new ContactsPage();
+		contactsPage.clickOnContactsTab();
+		logger_ss.log(Status.INFO, "Clicked on contacts tab in myGrpTalks page");
+		contactsPage.clickEditlistincontacts();
+		logger_ss.log(Status.INFO, "Clicked on edit WebList");
+		contactsPage.clickAddcontactfromlist();
+		logger_ss.log(Status.INFO, "Clicked on addcontact from WebList");
+		//contactsPage.clickExceluploadinweblist();
+		//logger_ss.log(Status.INFO, "Clicked on addcontact from WebList");
+		contactsPage.clickExcelUploadTabOnOverlay();
+		logger_ss.log(Status.INFO, "Clicked on ExcelUploadTabOnOverlay");
+		contactsPage.clickChooseFileButtonOnOverlay();
+		logger_ss.log(Status.INFO, "Clicked on ChooseFileButtonOnOverlay");
+		String path=userDirectory+"\\TestDataFiles\\contacts.xlsx";
+		CommonMethods.getUploadFile(userDirectory+"\\TestDataFiles\\contacts.xlsx");
+		logger_ss.log(Status.INFO, "Uploaded file");
+		//Thread.sleep(2000);
+		//String listName = contactsPage.givenExcelSheetDetails();
+		//System.out.println("lsit--"+listName);
+		//logger_ss.log(Status.INFO, "given excel sheet details on overlay");
+		//Thread.sleep(3000);
+		//Assert.assertEquals(contactsPage.successMsgForCreatedWebListFromExcelUpload(), "New List Created Successfully");
+		//Assert.assertEquals(contactsPage.successMsgForCreatedWebListFromExcelUpload(), "Contact(s) Inserted Successfully");
+		//logger_ss.log(Status.INFO, "verified successMsgForCreatedWebListFromExcelUpload");
+		//boolean result=contactsPage.selectRecentlyCreatedList(listName);
+		//logger_ss.log(Status.INFO, "Successfully selected Recently Created List");
+		//Assert.assertTrue(result);
+		//Assert.assertEquals(contactsPage.listOfContactsInWebList(), 2);
+		//logger_ss.log(Status.INFO, "Successfully verified the listOfContactsInWebList");
+		//logger_ss.log(Status.INFO, "Successfully verified the functionality of CreateListFromExcelUpload");
+		
+	}
 	@Test
 	public void verifyDeleteListFromContactsPage() throws InterruptedException{
 		logger_ss = extent.createTest("verifyDeleteListFromContactsPage","verify Delete List From Contacts Page");
@@ -281,5 +317,48 @@ public class ContactsPageTest extends BrowserFunctions {
 //		driver.navigate().to(homePageUrl);
 //		Thread.sleep(2000);
 //	}
+	
+	@Test
+	public void verifyAddduplicateContactsFromAddContactsTabOnOverlay() throws InterruptedException{
+		logger_ss = extent.createTest("verifyAddduplicateContactsFromAddContactsTabOnOverlay","verifyAddduplicateContactsFromAddContactsTabOnOverlay");
+		ContactsPage contactsPage = new ContactsPage();
+		contactsPage.clickOnContactsTab();
+		logger_ss.log(Status.INFO, "Clicked on contacts tab in myGrpTalks page");
+		contactsPage.clickOnCreateNewGrpListButton();
+		logger_ss.log(Status.INFO, "Clicked On Create New Grp List Button in contacts page");
+		String list = contactsPage.givenListNameInEnterlistNamefield();
+		logger_ss.log(Status.INFO, "given List Name In EnterlistName field");
+		contactsPage.selectRecentlyCreatedList(list);
+		logger_ss.log(Status.INFO, "Selected Recently Created List");
+		contactsPage.clickDropDownToggle();
+		logger_ss.log(Status.INFO, "clicked on DropDown Toggle of selected created list");
+		contactsPage.clickAddContactsOnToggleDropDown();
+		logger_ss.log(Status.INFO, "clicked on addContacts On Toggle DropDown");
+		contactsPage.clickAddContactsTabOnOverlay();
+		logger_ss.log(Status.INFO, "clicked on addContacts tab on overlay ");
+		contactsPage.enterDetailsInAddContactTabOnOverlay();
+		logger_ss.log(Status.INFO, "entered Details In Add Contact Tab On Overlay");
+		String contactName=contactsPage.returnContactName();
+		String contactNumber=contactsPage.returnContactNumber();
+		Assert.assertTrue(contactsPage.addedContactNameInListOnContactPage(contactName,contactNumber));
+		logger_ss.log(Status.INFO, "verified the added Contact Name In List On Contact Page");
+		Thread.sleep(1000);
+		contactsPage.selectRecentlyCreatedList(list);
+		logger_ss.log(Status.INFO, "Selected Recently Created List");
+		contactsPage.clickDropDownToggle();
+		logger_ss.log(Status.INFO, "clicked on DropDown Toggle of selected created list");
+		contactsPage.clickAddContactsOnToggleDropDown();
+		logger_ss.log(Status.INFO, "clicked on addContacts On Toggle DropDown");
+		contactsPage.clickAddContactsTabOnOverlay();
+		logger_ss.log(Status.INFO, "clicked on addContacts tab on overlay ");
+		contactsPage.enterDetailsInAddContactTabOnOverlay1();
+		logger_ss.log(Status.INFO, "entered Details In Add Contact Tab On Overlay");
+		//String contactName1=contactsPage.returnContactName1();
+		//String contactNumber1=contactsPage.returnContactNumber1();
+		Thread.sleep(1000);
+		AssertJUnit.assertEquals(contactsPage.Errormsgfordupcontact(), "Contact Already Exist in List");
+		logger_ss.log(Status.INFO, "Successfully verified functionality of AddContactsFromAddContactsTabOnOverlay");
+	}
+	
 
 }
